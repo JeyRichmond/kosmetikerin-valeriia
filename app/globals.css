@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+/* === Цвета бренда (бело-золотая палитра) === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-gold: #eebb11;
+  --brand-gold-light: #e9d9b6;
+  --brand-dark: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* === Кастомные компоненты === */
+@layer components {
+  .btn-primary {
+    padding: 0.5rem 1.5rem;          
+    border-radius: 0.375rem;         
+    font-weight: 600;                
+    background-color: var(--brand-gold);
+    color: #ffffff;
+    transition: background-color 300ms ease;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .btn-primary:hover {
+    background-color: var(--brand-gold-light);
+  }
+
+  .card {
+    padding: 1.5rem;                 
+    border-radius: 0.5rem;           
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); 
+    background-color: #ffffff;
+    color: var(--brand-dark);
+  }
+
+  .section-title {
+    font-size: 1.5rem;               
+    font-weight: 700;                
+    margin-bottom: 1rem;             
+    color: var(--brand-dark);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* === Базовые стили === */
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: var(--brand-dark);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === Плавный скролл для якорей === */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes bookingPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(238, 187, 17, 0.5);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 14px rgba(238, 187, 17, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(238, 187, 17, 0);
+  }
+}
+
+.floating-booking {
+  animation: bookingPulse 2.8s infinite;
 }
