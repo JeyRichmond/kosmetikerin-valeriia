@@ -20,7 +20,7 @@ const translations = {
     hero: {
       title: "Kosmetikerin Valeriia",
       subtitle:
-        "Professionelle Behandlungen für Gesicht & Depilation in angenehmer Atmosphäre.",
+        "Professionelle Behandlungen für Gesicht & Haarentfernung in angenehmer Atmosphäre.",
       primaryCta: "Termin buchen",
       secondaryCta: "Preisliste ansehen",
     },
@@ -37,9 +37,9 @@ const translations = {
     prices: {
       title: "Preise & Behandlungen",
       description:
-        "Beispiele für Behandlungen. Alle Texte und Preise sind vorläufig – nur als Layout.",
-      categoryDepilation: "WAXING – FRAUEN",
-      categoryDepilation1: "WAXING – MÄNNER",
+        "Beispiele für Behandlungen. Alle Texte und Preise sind vorläufig - nur als Layout.",
+      categoryDepilation: "WAXING - FRAUEN",
+      categoryDepilation1: "WAXING - MÄNNER",
       categoryFace: "GESICHTSBEHANDLUNGEN",
       categoryBrow: "BROW & LASH LIFTING",
       categoryAugen: "AUGENBRAUEN & WIMPERN",
@@ -49,7 +49,7 @@ const translations = {
     about: {
       title: "Über mich",
       text:
-        "Hallo, ich bin Valeria – diplomierte Kosmetikerin mit über 10 Jahren Erfahrung im Bereich Waxing, Brow Styling und professioneller Hautpflege.\n\n" +
+        "Hallo, ich bin Valeria - diplomierte Kosmetikerin mit über 10 Jahren Erfahrung im Bereich Waxing, Brow Styling und professioneller Hautpflege.\n\n" +
         "Meine berufliche Laufbahn begann in der Ukraine, wo ich viele Jahre in Beauty-Studios gearbeitet, zahlreiche Schulungen besucht und meine Techniken perfektioniert habe. Heute freue ich mich, meine Leidenschaft und Expertise nach Zürich zu bringen.\n\n" +
         "Ich glaube, dass Schönheit mit Wohlbefinden beginnt. Deshalb arbeite ich besonders sanft, präzise und hygienisch, mit hochwertigen Produkten und individuellem Ansatz. Mein Ziel ist, dass jede Kundin sich nach der Behandlung leicht, gepflegt und selbstbewusst fühlt.\n\n" +
         "Meine Spezialisierungen:\n" +
@@ -69,7 +69,7 @@ const translations = {
       dummyAddressLine3: "(in den Räumlichkeiten",
       dummyAddressLine4: "von Belmed-Esthetic)",
       dummyAddressLine5: "📍 Bitte klingeln → Valeriia",
-      hoursTextLine1: "Mo–Sa: 10:00–21:00",
+      hoursTextLine1: "Mo - Sa: 10:00 - 21:00",
       socialLabel: "Web & Social",
       mapLabel: "Karte",
       whatsapp: "WhatsApp",
@@ -110,9 +110,9 @@ const translations = {
     prices: {
       title: "Prices & Treatments",
       description:
-        "Examples of treatments. All texts and prices are provisional – layout purposes only.",
-      categoryDepilation: "WAXING – WOMEN",
-      categoryDepilation1: "WAXING – MEN",
+        "Examples of treatments. All texts and prices are provisional - layout purposes only.",
+      categoryDepilation: "WAXING - WOMEN",
+      categoryDepilation1: "WAXING - MEN",
       categoryFace: "FACIAL TREATMENTS",
       categoryBrow: "BROW & LASH LIFTING",
       categoryAugen: "EYEBROWS & LASHES",
@@ -122,9 +122,9 @@ const translations = {
     about: {
       title: "About Me",
       text:
-        "Hello, I’m Valeria – a certified beautician with over 10 years of experience in waxing, brow styling, and professional skincare.\n\n" +
+        "Hello, I'm Valeria - a certified beautician with over 10 years of experience in waxing, brow styling, and professional skincare.\n\n" +
         "My career began in Ukraine, where I worked many years in beauty studios, attended numerous trainings, and perfected my techniques. Today, I am excited to bring my passion and expertise to Zurich.\n\n" +
-        "I believe beauty starts with well-being. That’s why I work especially gently, precisely, and hygienically, using high-quality products and a personalized approach. My goal is for every client to feel light, cared-for, and confident after treatment.\n\n" +
+        "I believe beauty starts with well-being. That's why I work especially gently, precisely, and hygienically, using high-quality products and a personalized approach. My goal is for every client to feel light, cared-for, and confident after treatment.\n\n" +
         "My specializations:\n" +
         " • Waxing & Hair Removal (gentle, fast, for smooth skin without irritation)\n" +
         " • Brow & Lash Styling\n" +
@@ -142,7 +142,7 @@ const translations = {
       dummyAddressLine3: "(inside the premises",
       dummyAddressLine4: "of Belmed-Esthetic)",
       dummyAddressLine5: "📍 Please ring → Valeriia",
-      hoursTextLine1: "Mon–Sat: 10:00–21:00",
+      hoursTextLine1: "Mon - Sat: 10:00 - 21:00",
       socialLabel: "Web & Social",
       mapLabel: "Map",
       whatsapp: "WhatsApp",
@@ -183,9 +183,9 @@ const translations = {
     prices: {
       title: "Ціни та процедури",
       description:
-        "Приклади процедур. Всі тексти та ціни попередні – лише для макету.",
-      categoryDepilation: "ВІСК – ЖІНКИ",
-      categoryDepilation1: "ВІСК – ЧОЛОВІКИ",
+        "Приклади процедур. Всі тексти та ціни попередні - лише для макету.",
+      categoryDepilation: "ВІСК - ЖІНКИ",
+      categoryDepilation1: "ВІСК - ЧОЛОВІКИ",
       categoryFace: "ДОГЛЯД ЗА ОБЛИЧЧЯМ",
       categoryBrow: "BROW & LASH LIFTING",
       categoryAugen: "БРОВИ ТА ВІЇ",
@@ -195,9 +195,9 @@ const translations = {
     about: {
       title: "Про мене",
       text:
-        "Привіт, я Валерія – сертифікований косметолог з понад 10-річним досвідом у депіляції, оформленні брів та догляді за шкірою.\n\n" +
+        "Привіт, я Валерія - сертифікований косметолог з понад 10-річним досвідом у депіляції, оформленні брів та догляді за шкірою.\n\n" +
         "Моя кар’єра почалася в Україні, де я працювала багато років у студіях краси, пройшла численні навчання та вдосконалила свої техніки. Сьогодні я рада приносити свою пристрасть та досвід до Цюріха.\n\n" +
-        "Я вірю, що краса починається з добробуту. Тому я працюю максимально дбайливо, точно та гігієнічно, використовуючи високоякісні продукти та індивідуальний підхід. Моя мета – щоб кожна клієнтка почувалася легкою, доглянутою та впевненою після процедури.\n\n" +
+        "Я вірю, що краса починається з добробуту. Тому я працюю максимально дбайливо, точно та гігієнічно, використовуючи високоякісні продукти та індивідуальний підхід. Моя мета - щоб кожна клієнтка почувалася легкою, доглянутою та впевненою після процедури.\n\n" +
         "Мої спеціалізації:\n" +
         " • Депіляція та видалення волосся (делікатно, швидко, для гладкої шкіри без подразнень)\n" +
         " • Оформлення брів та вій\n" +
@@ -215,7 +215,7 @@ const translations = {
       dummyAddressLine3: "(у приміщенні",
       dummyAddressLine4: "Belmed-Esthetic)",
       dummyAddressLine5: "📍 Будь ласка, дзвоніть → Valeriia",
-      hoursTextLine1: "Пн–Сб: 10:00–21:00",
+      hoursTextLine1: "Пн - Сб: 10:00 - 21:00",
       socialLabel: "Web & Social",
       mapLabel: "Карта",
       whatsapp: "WhatsApp",
