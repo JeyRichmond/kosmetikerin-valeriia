@@ -269,7 +269,7 @@ export default function HomePage() {
         <meta property="og:type" content="website" />
       </Head>
 
-      
+    
     <div className="min-h-screen bg-white text-(--brand-dark) flex flex-col">
 
       {/* Header */}
