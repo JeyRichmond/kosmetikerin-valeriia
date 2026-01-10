@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kosmetikerin Valeriia – Zürich",
   description:
-    "Professionelle Kosmetik-, Gesichts- & Depilation-Behandlungen in Zürich. Jetzt Termin buchen!",
+    "Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!",
   openGraph: {
     title: "Kosmetikerin Valeriia – Zürich",
     description:
-      "Professionelle Kosmetik-, Gesichts- & Depilation-Behandlungen in Zürich. Jetzt Termin buchen!",
+      "Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!",
     url: "https://kosmetikerin-valeriia.ch",
     siteName: "Kosmetikerin Valeriia",
     locale: "de_CH",

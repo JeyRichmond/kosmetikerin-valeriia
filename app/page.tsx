@@ -259,12 +259,12 @@ export default function HomePage() {
         <title>Kosmetikerin Valeriia – Zürich</title>
         <meta
           name="description"
-          content="Professionelle Kosmetik-, Gesichts- & Depilation-Behandlungen in Zürich. Jetzt Termin buchen!"
+          content="Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!"
         />
         <meta property="og:title" content="Kosmetikerin Valeriia – Zürich" />
         <meta
           property="og:description"
-          content="Professionelle Kosmetik-, Gesichts- & Depilation-Behandlungen in Zürich. Jetzt Termin buchen!"
+          content="Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!"
         />
         <meta property="og:type" content="website" />
       </Head>
