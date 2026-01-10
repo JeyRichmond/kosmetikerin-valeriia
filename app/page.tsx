@@ -256,12 +256,12 @@ export default function HomePage() {
     <>
       {/* SEO */}
       <Head>
-        <title>Kosmetikerin Valeriia – Zürich</title>
+        <title>Kosmetikerin Valeriia - Zürich</title>
         <meta
           name="description"
           content="Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!"
         />
-        <meta property="og:title" content="Kosmetikerin Valeriia – Zürich" />
+        <meta property="og:title" content="Kosmetikerin Valeriia - Zürich" />
         <meta
           property="og:description"
           content="Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!"

@@ -14,11 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kosmetikerin Valeriia – Zürich",
+  title: "Kosmetikerin Valeriia - Zürich",
   description:
     "Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!",
+  verification: {
+    google: "-DdpvDqDOj5fO8OIE4wPY-NdRscQzcb8zg3Qk-xMOzM",
+  },
   openGraph: {
-    title: "Kosmetikerin Valeriia – Zürich",
+    title: "Kosmetikerin Valeriia - Zürich",
     description:
       "Professionelle Kosmetik, Gesichtsbehandlungen & Haarentfernung in Zürich. Jetzt Termin buchen!",
     url: "https://kosmetikerin-valeriia.ch",
