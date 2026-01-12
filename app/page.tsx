@@ -45,6 +45,10 @@ const translations = {
       categoryAugen: "AUGENBRAUEN & WIMPERN",
       categoryPeeling: "PEELING-BEHANDLUNGEN",
       book: "Termin buchen",
+      label: "Preise & Behandlungen",
+      title1: "Preisliste",
+      intro: "Alle kosmetischen Behandlungen, Preise und Behandlungsdauer auf einen Blick. Transparent, professionell und individuell auf Sie abgestimmt.",
+
     },
     about: {
       title: "Über mich",
@@ -118,6 +122,10 @@ const translations = {
       categoryAugen: "EYEBROWS & LASHES",
       categoryPeeling: "PEELING TREATMENTS",
       book: "Book Appointment",
+      label: "Prices & Treatments",
+      title1: "Price List",
+      intro: "All cosmetic treatments, prices and treatment durations at a glance. Transparent, professional and individually tailored to you.",
+   
     },
     about: {
       title: "About Me",
@@ -191,6 +199,10 @@ const translations = {
       categoryAugen: "БРОВИ ТА ВІЇ",
       categoryPeeling: "Пілінги",
       book: "Записатися",
+      label: "Ціни та процедури",
+      title1: "Прайс-лист",
+      intro: "Усі косметичні процедури, ціни та тривалість в одному місці. Прозоро, професійно та індивідуально для вас.",
+    
     },
     about: {
       title: "Про мене",
@@ -522,8 +534,8 @@ export default function HomePage() {
   </div>
 </div>
 </section>
- 
-        {/* Prices section */}
+
+{/* Prices section */}
         <section
           id="prices"
           className="border-t border-gray-100"
@@ -532,6 +544,38 @@ export default function HomePage() {
           }}
         ></section>
 
+ {/* ================= PRICES SECTION ================= */}
+<section
+  id="prices"
+  className="relative scroll-mt-24"
+>
+
+  {/* HERO HEADER */}
+  <div className="max-w-6xl mx-auto px-4 pt-20 pb-12 text-center">
+
+    <span className="inline-block mb-3 text-xs uppercase tracking-[0.35em] text-(--brand-gold)">
+      {t.prices.label}
+    </span>
+
+    <h2 className="text-3xl md:text-4xl font-semibold text-(--brand-dark) tracking-tight">
+      {t.prices.title1}
+    </h2>
+
+    <p className="mt-4 text-sm md:text-base text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      {t.prices.intro}
+    </p>
+
+    {/* decorative divider */}
+    <div className="mt-8 flex justify-center">
+      <div className="h-px w-24 bg-linear-to-r from-transparent via-(--brand-gold) to-transparent" />
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* ================= PRICES ACCORDIONS ================= */}
 {/* FACE */}
 <PriceAccordion
   title={t.prices.categoryFace}
@@ -983,7 +1027,7 @@ Erleben Sie den Unterschied – schonende Haarentfernung mit modernem Wachs, ide
 
                   {/* Instagram */}
                   <a
-                    href="https://www.instagram.com/kosmetikerin_schweiz"
+                    href="https://www.instagram.com/kosmetikerin_valeriia"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 hover:border-(--brand-gold) hover:bg-black/5 transition-colors"
