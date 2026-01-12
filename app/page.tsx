@@ -1054,7 +1054,7 @@ Erleben Sie den Unterschied – schonende Haarentfernung mit modernem Wachs, ide
               <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm h-50">
                <iframe
                 title="Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.755947902559!2d8.5419189!3d47.3784507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa0a78383c4fb%3A0x3c33ad066d10cf93!2sWeinbergstrasse%2018%2C%208001%20Z%C3%BCrich!5e0!3m2!1sde!2sch!4v1700000000000!5m2!1sde!2sch"
+                src="https://www.google.com/maps/place/Kosmetikerin+Valeriia/@47.3784507,8.5419189,16z/data=!4m16!1m9!3m8!1s0x479aa0a78383c4fb:0x3c33ad066d10cf93!2sWeinbergstrasse+18,+8001+Z%C3%BCrich!3b1!8m2!3d47.3784471!4d8.5444938!10e3!16s%2Fg%2F11c1wqqcwk!3m5!1s0x479aa13c5020309d:0xeea018b7890a540c!8m2!3d47.3784471!4d8.5444938!16s%2Fg%2F11yvtsshkm?hl=ru&entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
