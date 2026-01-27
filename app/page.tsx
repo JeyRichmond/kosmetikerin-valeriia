@@ -1109,6 +1109,11 @@ Erleben Sie den Unterschied – schonende Haarentfernung mit modernem Wachs, ide
             </div>
           </div>
         </div>
+
+        <p className="sr-only">
+  Kosmetikerin in Zürich – professionelle Gesichtsbehandlungen, Peelings und Haarentfernung.
+</p>
+
       </section>
       </main>
 
