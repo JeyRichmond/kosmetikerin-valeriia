@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import FloatingBookingButton from "@/components/FloatingBookingButton";
 
@@ -97,44 +98,59 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
+      {/* ================== GOOGLE ANALYTICS ================== */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-ZQY7NH7WTP"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ZQY7NH7WTP');
+        `}
+      </Script>
+
+      {/* ================== SCHEMA.ORG ================== */}
+      <Script
+        id="schema-beautysalon"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["BeautySalon", "LocalBusiness"],
+          "@id": "https://kosmetikerin-valeriia.ch/#beautysalon",
+          "telephone": "+41 76 516 51 54",
+          name: "Kosmetikerin Valeriia",
+          url: "https://kosmetikerin-valeriia.ch",
+          logo: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
+          image: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
+          description:
+            "Professionelle Behandlungen für Gesicht & Haarentfernung in Zürich.",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Zürich",
+            addressCountry: "CH",
+          },
+          areaServed: {
+            "@type": "AdministrativeArea",
+            name: "Zürich",
+          },
+          priceRange: "$$",
+          sameAs: ["https://kosmetikerinvaleriia.setmore.com"],
+        })}
+      </Script>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
 
         {/* Floating booking button */}
+
         <FloatingBookingButton />
-
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BeautySalon",
-      "@id": "https://kosmetikerin-valeriia.ch/#beautysalon",
-      "name": "Kosmetikerin Valeriia",
-      "url": "https://kosmetikerin-valeriia.ch",
-      "logo": "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
-      "image": "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
-      "description":
-        "Professionelle Behandlungen für Gesicht & Haarentfernung in Zürich.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Zürich",
-        "addressCountry": "CH"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Zürich"
-      },
-      "priceRange": "$$",
-      "sameAs": [
-        "https://kosmetikerinvaleriia.setmore.com"
-      ]
-    }),
-  }}
-/>
-
 
       </body>
     </html>
