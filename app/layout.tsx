@@ -132,6 +132,7 @@ export default function RootLayout({
           address: {
             "@type": "PostalAddress",
             addressLocality: "Zürich",
+            postalCode: "8001",
             addressCountry: "CH",
           },
           areaServed: {
