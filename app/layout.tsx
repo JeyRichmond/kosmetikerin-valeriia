@@ -114,35 +114,84 @@ export default function RootLayout({
 
       {/* ================== SCHEMA.ORG ================== */}
       <Script
-        id="schema-beautysalon"
-        type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": ["BeautySalon", "LocalBusiness"],
-          "@id": "https://kosmetikerin-valeriia.ch/#beautysalon",
-          "telephone": "+41 76 516 51 54",
-          name: "Kosmetikerin Valeriia",
-          url: "https://kosmetikerin-valeriia.ch",
-          logo: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
-          image: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
-          description:
-            "Professionelle Behandlungen für Gesicht & Haarentfernung in Zürich.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Zürich",
-            postalCode: "8001",
-            addressCountry: "CH",
-          },
-          areaServed: {
-            "@type": "AdministrativeArea",
-            name: "Zürich",
-          },
-          priceRange: "$$",
-          sameAs: ["https://kosmetikerinvaleriia.setmore.com"],
-        })}
-      </Script>
+  id="schema-beautysalon"
+  type="application/ld+json"
+  strategy="afterInteractive"
+>
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": ["BeautySalon", "LocalBusiness"],
+    "@id": "https://kosmetikerin-valeriia.ch/#beautysalon",
+    name: "Kosmetikerin Valeriia",
+    url: "https://kosmetikerin-valeriia.ch",
+    logo: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
+    image: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
+    description:
+      "Professionelle Gesichtsbehandlungen, Peelings & Haarentfernung in Zürich.",
+
+    telephone: "+41 76 516 51 54",
+
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Weinbergstrasse 18",
+      addressLocality: "Zürich",
+      postalCode: "8001",
+      addressCountry: "CH",
+    },
+
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 47.3785,
+      longitude: 8.5419,
+    },
+
+    areaServed: {
+      "@type": "City",
+      name: "Zürich",
+    },
+
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "09:00",
+        closes: "21:00",
+      },
+    ],
+
+    priceRange: "$$",
+    currenciesAccepted: "CHF",
+    paymentAccepted: "Cash, Credit Card, TWINT",
+
+    sameAs: ["https://kosmetikerinvaleriia.setmore.com"],
+
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Behandlungen",
+      itemListElement: [
+        {
+          "@type": "OfferCatalog",
+          name: "Gesichtsbehandlungen",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Peelings",
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Haarentfernung",
+        },
+      ],
+    },
+  })}
+</Script>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

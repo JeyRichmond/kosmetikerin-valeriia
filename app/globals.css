@@ -2,10 +2,11 @@
 
 /* === Цвета бренда (бело-золотая палитра) === */
 :root {
-  --brand-gold: #eebb11;
-  --brand-gold-light: #e9d9b6;
+  --brand-gold: #d5aa1b;
+  --brand-gold-light: #F3E5C3;
   --brand-dark: #000000;
 }
+
 
 /* === Кастомные компоненты === */
 @layer components {
@@ -58,7 +59,7 @@
 @keyframes bookingPulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(238, 187, 17, 0.5);
+    box-shadow: 0 0 0 0 rgba(250, 206, 10, 0.658);
   }
   70% {
     transform: scale(1.05);
