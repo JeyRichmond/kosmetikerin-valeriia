@@ -143,16 +143,50 @@ export default function HomePage() {
                 </button>
               </div>
 
-              {/* Бургер-кнопка */}
+ {/* Бургер-кнопка (Mobile) */}
               <button 
-                className="md:hidden p-2 hover:bg-gray-50 rounded-full transition-colors" 
+                className="md:hidden p-2 text-gray-800 relative z-110" 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                type="button"
               >
                 <div className="flex flex-col gap-1.5 items-end">
-                  <div className={`h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
-                  <div className={`h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
-                  <div className={`h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
+                  <div className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
+                  <div className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
+                  <div className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
                 </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* --- МОБИЛЬНОЕ МЕНЮ --- */}
+        <div 
+          className={`fixed inset-0 z-100 bg-white transition-all duration-300 md:hidden ${
+            isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+          }`}
+        >
+          <div className="flex flex-col h-full pt-24 px-8 space-y-8">
+            <nav className="flex flex-col space-y-6 text-2xl font-bold uppercase tracking-widest text-gray-900">
+              {['home', 'prices', 'about', 'contact'].map((item) => (
+                <a key={item} href={`#${item}`} onClick={() => setIsMenuOpen(false)}>
+                  {t.nav[item as keyof typeof t.nav]}
+                </a>
+              ))}
+            </nav>
+
+            <div className="pt-8 border-t border-gray-100 space-y-6">
+              <div className="flex gap-4">
+                {(["de", "en", "ua"] as LangKey[]).map((l) => (
+                  <button key={l} onClick={() => toggleLang(l)} className={`text-lg font-bold ${lang === l ? "text-(--brand-gold)" : "text-gray-300"}`}>
+                    {l.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+              <button 
+                onClick={() => { openBooking(); setIsMenuOpen(false); }} 
+                className="w-full bg-(--brand-gold) text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg"
+              >
+                {t.hero.primaryCta}
               </button>
             </div>
           </div>
