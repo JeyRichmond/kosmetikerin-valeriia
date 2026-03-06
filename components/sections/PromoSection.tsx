@@ -3,40 +3,60 @@
 import { motion } from "framer-motion";
 
 export default function PromoSection() {
+  const bookingLink = "https://kosmetikerinvaleriia.setmore.com/team/0101b36a-e3f3-4441-a43d-3e609a6d6fd7?step=additional-products&products=631b3413-ec75-4ad5-83df-893be0e47dc6&type=service&staff=0101b36a-e3f3-4441-a43d-3e609a6d6fd7&staffSelected=false";
+
   return (
     <section className="border-b border-gray-100 bg-white">
-      <div className="max-w-6xl mx-auto px-4 pt-10 pb-12">
+      <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden shadow-sm border border-gray-100"
-          style={{
-            backgroundImage: "url('/back5.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="relative rounded-3xl overflow-hidden shadow-sm border border-gray-100 min-h-55 flex items-center"
         >
-          {/* overlay */}
-          <div className="absolute inset-0 bg-black/1" />
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url('/back5.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
 
-          <div className="relative p-8 sm:p-12 text-black/90">
-            <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.3em]">
-              <span className="w-8 h-px bg-black/70" />
-              <span>Aktion des Monats</span>
+          {/* Мягкий светлый градиент для читаемости на любом экране */}
+          <div className="absolute inset-0 bg-white/60 md:bg-white/40" />
+
+          <div className="relative p-6 sm:p-10 w-full flex flex-col md:flex-row md:items-center justify-between gap-6">
+            
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-medium">
+                <span className="w-6 h-px bg-gray-400" />
+                <span>Aktion des Monats</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
+                Brow + Lash <span className="text-(--brand-gold)">Combo</span>
+              </h2>
+
+              <p className="text-gray-700 text-sm sm:text-base">
+                <span className="font-bold">100 CHF</span> statt <span className="line-through opacity-60">180 CHF</span>
+                <span className="block text-[11px] text-gray-500 uppercase tracking-tighter mt-1 italic">
+                  *Nur von 1. bis 31. März!
+                </span>
+              </p>
             </div>
 
-            <h2 className="mt-6 text-2xl sm:text-3xl font-semibold">
-              Brow + Lash Combo
-            </h2>
-
-            <p className="mt-3 text-black/90 text-sm sm:text-base max-w-md">
-              100 CHF statt 180 CHF
-              <br />
-              Nur von 1. bis 31. März!
-            </p>
+            <a
+              href={bookingLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-black text-white text-[11px] uppercase tracking-[0.15em] px-8 py-3.5 rounded-full hover:bg-(--brand-gold) transition-all duration-300 shadow-md active:scale-95 text-center"
+            >
+              Jetzt buchen
+            </a>
           </div>
         </motion.div>
 
