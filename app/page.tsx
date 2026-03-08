@@ -150,31 +150,6 @@ export default function HomePage() {
                   {t.hero.primaryCta}
                 </button>
               </div>
-
-{/* 1. КНОПКА БУРГЕР / КРЕСТИК */}
-<button 
-  // Мы меняем relative на fixed, когда меню открыто, 
-  // чтобы кнопка не зависела от прозрачного хедера
-  className={`md:hidden p-3 focus:outline-none transition-all duration-300 ${
-    isMenuOpen 
-      ? "fixed top-12 right-4 z-[201] text-black" 
-      : "relative z-[200] text-gray-900"
-  }`} 
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
-  aria-label="Toggle Menu"
->
-  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center">
-    <span className={`h-0.5 bg-current transition-all duration-300 origin-center ${
-      isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
-    }`} />
-    <span className={`h-0.5 bg-current transition-all duration-300 ${
-      isMenuOpen ? 'opacity-0' : 'w-4'
-    }`} />
-    <span className={`h-0.5 bg-current transition-all duration-300 origin-center ${
-      isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
-    }`} />
-  </div>
-</button>
             </div>
           </div>
         </div>
@@ -329,6 +304,28 @@ export default function HomePage() {
           </p>
         </section>
       </main>
+
+      {/* ГАРАНТИРОВАННАЯ КНОПКА-КРЕСТИК (Вне хедера) */}
+<button 
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  // Используем fixed, чтобы она всегда была в углу экрана
+  // z-[9999] — это "королевский" слой, выше которого ничего нет
+  className="md:hidden fixed top-[52px] right-6 p-3 focus:outline-none transition-all duration-300"
+  style={{ zIndex: 9999 }}
+  type="button"
+>
+  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center">
+    <span className={`h-0.5 bg-black transition-all duration-300 transform origin-center ${
+      isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
+    }`} />
+    <span className={`h-0.5 bg-black transition-all duration-300 ${
+      isMenuOpen ? 'opacity-0' : 'w-4'
+    }`} />
+    <span className={`h-0.5 bg-black transition-all duration-300 transform origin-center ${
+      isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
+    }`} />
+  </div>
+</button>
 
       {/* 2. МОБИЛЬНОЕ МЕНЮ (Вынеси это в самый конец файла, ПЕРЕД последним </div>) */}
 {/* Это критично: если оно будет в конце, оно перекроет всё остальное */}
