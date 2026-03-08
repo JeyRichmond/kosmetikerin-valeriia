@@ -150,70 +150,26 @@ export default function HomePage() {
                   {t.hero.primaryCta}
                 </button>
               </div>
-{/* 1. БУРГЕР-КНОПКА */}
+
+{/* 1. КНОПКА БУРГЕР / КРЕСТИК (Внутри Header) */}
 <button 
-  // Оставляем её ВНУТРИ хедера, но поднимаем z-index выше меню
-  // Используем z-[200], чтобы она точно была над всеми слоями
-  className="md:hidden p-2 relative z-[200] focus:outline-none" 
+  // Ставим z-[200], чтобы она была над меню. 
+  // bg-white/80 поможет ей не теряться, если под ней будет текст
+  className="md:hidden p-2 relative z-[200] focus:outline-none rounded-full" 
   onClick={() => setIsMenuOpen(!isMenuOpen)}
 >
   <div className="flex flex-col gap-1.5 items-end">
-    {/* Верхняя линия */}
     <span className={`h-0.5 bg-black transition-all duration-300 ${
       isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
     }`} />
-    {/* Средняя линия */}
     <span className={`h-0.5 bg-black transition-all duration-300 ${
       isMenuOpen ? 'opacity-0' : 'w-4'
     }`} />
-    {/* Нижняя линия */}
     <span className={`h-0.5 bg-black transition-all duration-300 ${
       isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
     }`} />
   </div>
 </button>
-
-{/* 2. МОБИЛЬНОЕ МЕНЮ */}
-<div 
-  // Ставим z-[150] (ниже кнопки, но выше основного контента)
-  // Добавляем !bg-white, чтобы перебить любую прозрачность
-  className={`fixed inset-0 z-[150] !bg-white transition-all duration-300 md:hidden ${
-    isMenuOpen ? "translate-x-0 opacity-100 visible" : "translate-x-full opacity-0 invisible"
-  }`}
-  // Inline-стиль как "тяжелая артиллерия" против прозрачности
-  style={{ backgroundColor: 'white' }} 
->
-  {/* Контент меню (отступы сверху, чтобы не перекрыть кнопку) */}
-  <div className="flex flex-col h-full pt-32 px-8 space-y-8 bg-white">
-    <nav className="flex flex-col space-y-6 text-2xl font-bold uppercase tracking-widest text-gray-900">
-      {['home', 'prices', 'about', 'contact'].map((item) => (
-        <a key={item} href={`#${item}`} onClick={() => setIsMenuOpen(false)}>
-          {t.nav[item as keyof typeof t.nav]}
-        </a>
-      ))}
-    </nav>
-
-    <div className="pt-8 border-t border-gray-100 space-y-6 bg-white">
-      <div className="flex gap-4">
-        {(["de", "en", "ua"] as LangKey[]).map((l) => (
-          <button 
-            key={l} 
-            onClick={() => toggleLang(l)} 
-            className={`text-lg font-bold ${lang === l ? "text-(--brand-gold)" : "text-gray-300"}`}
-          >
-            {l.toUpperCase()}
-          </button>
-        ))}
-      </div>
-      <button 
-        onClick={() => { openBooking(); setIsMenuOpen(false); }} 
-        className="w-full bg-(--brand-gold) text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg"
-      >
-        {t.hero.primaryCta}
-      </button>
-    </div>
-  </div>
-</div>
             </div>
           </div>
         </div>
@@ -368,6 +324,60 @@ export default function HomePage() {
           </p>
         </section>
       </main>
+
+      {/* 2. МОБИЛЬНОЕ МЕНЮ (Вынеси это в самый конец файла, ПЕРЕД последним </div>) */}
+{/* Это критично: если оно будет в конце, оно перекроет всё остальное */}
+<div 
+  className={`fixed inset-0 w-screen h-screen bg-white md:hidden transition-all duration-500 ease-in-out ${
+    isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+  }`}
+  // z-[150] гарантирует, что меню ниже кнопки (200), но выше контента (акций и т.д.)
+  style={{ 
+    zIndex: 150, 
+    backgroundColor: 'white', 
+    position: 'fixed',
+    top: 0,
+    left: 0
+  }}
+>
+  <div className="flex flex-col h-full pt-32 px-8 space-y-10">
+    <nav className="flex flex-col space-y-8">
+      {['home', 'prices', 'about', 'contact'].map((item) => (
+        <a 
+          key={item} 
+          href={`#${item}`} 
+          onClick={() => setIsMenuOpen(false)}
+          className="text-3xl font-bold uppercase tracking-[0.2em] text-gray-900 border-b border-gray-100 pb-4"
+        >
+          {t.nav[item as keyof typeof t.nav]}
+        </a>
+      ))}
+    </nav>
+
+    <div className="pt-10 space-y-8">
+      <div className="flex gap-8">
+        {(["de", "en", "ua"] as LangKey[]).map((l) => (
+          <button 
+            key={l} 
+            onClick={() => toggleLang(l)} 
+            className={`text-xl font-bold uppercase tracking-widest ${
+              lang === l ? "text-(--brand-gold)" : "text-gray-300"
+            }`}
+          >
+            {l}
+          </button>
+        ))}
+      </div>
+      
+      <button 
+        onClick={() => { openBooking(); setIsMenuOpen(false); }} 
+        className="w-full bg-(--brand-gold) text-white py-5 rounded-2xl font-bold uppercase tracking-widest shadow-xl active:scale-95 transition-transform"
+      >
+        {t.hero.primaryCta}
+      </button>
+    </div>
+  </div>
+</div>
 
       {/* --- FOOTER --- */}
       <footer className="border-t border-gray-100 bg-white">
