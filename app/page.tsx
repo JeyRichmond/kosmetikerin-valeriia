@@ -151,21 +151,26 @@ export default function HomePage() {
                 </button>
               </div>
 
-{/* 1. КНОПКА БУРГЕР / КРЕСТИК (Внутри Header) */}
+{/* 1. КНОПКА БУРГЕР / КРЕСТИК */}
 <button 
-  // Ставим z-[200], чтобы она была над меню. 
-  // bg-white/80 поможет ей не теряться, если под ней будет текст
-  className="md:hidden p-2 relative z-[200] focus:outline-none rounded-full" 
+  // Мы меняем relative на fixed, когда меню открыто, 
+  // чтобы кнопка не зависела от прозрачного хедера
+  className={`md:hidden p-3 focus:outline-none transition-all duration-300 ${
+    isMenuOpen 
+      ? "fixed top-12 right-4 z-[201] text-black" 
+      : "relative z-[200] text-gray-900"
+  }`} 
   onClick={() => setIsMenuOpen(!isMenuOpen)}
+  aria-label="Toggle Menu"
 >
-  <div className="flex flex-col gap-1.5 items-end">
-    <span className={`h-0.5 bg-black transition-all duration-300 ${
+  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center">
+    <span className={`h-0.5 bg-current transition-all duration-300 origin-center ${
       isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
     }`} />
-    <span className={`h-0.5 bg-black transition-all duration-300 ${
+    <span className={`h-0.5 bg-current transition-all duration-300 ${
       isMenuOpen ? 'opacity-0' : 'w-4'
     }`} />
-    <span className={`h-0.5 bg-black transition-all duration-300 ${
+    <span className={`h-0.5 bg-current transition-all duration-300 origin-center ${
       isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
     }`} />
   </div>
