@@ -305,24 +305,28 @@ export default function HomePage() {
         </section>
       </main>
 
-      {/* ГАРАНТИРОВАННАЯ КНОПКА-КРЕСТИК (Вне хедера) */}
 <button 
   onClick={() => setIsMenuOpen(!isMenuOpen)}
-  // Используем fixed, чтобы она всегда была в углу экрана
-  // z-[9999] — это "королевский" слой, выше которого ничего нет
-  className="md:hidden fixed top-[52px] right-6 p-3 focus:outline-none transition-all duration-300"
+  // Изменили top-[52px] на top-[46px], чтобы поднять кнопку выше (ближе к центру шапки)
+  className="md:hidden fixed top-[46px] right-6 p-3 focus:outline-none transition-all duration-300"
   style={{ zIndex: 9999 }}
   type="button"
 >
-  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center">
+  {/* Центрируем содержимое внутри контейнера */}
+  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center relative">
+    {/* Верхняя линия: при Х-состоянии смещаем чуть больше для симметрии */}
     <span className={`h-0.5 bg-black transition-all duration-300 transform origin-center ${
-      isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
+      isMenuOpen ? 'w-6 rotate-45 translate-y-[4px]' : 'w-6'
     }`} />
+    
+    {/* Средняя линия */}
     <span className={`h-0.5 bg-black transition-all duration-300 ${
       isMenuOpen ? 'opacity-0' : 'w-4'
     }`} />
+    
+    {/* Нижняя линия: при Х-состоянии смещаем симметрично вверх */}
     <span className={`h-0.5 bg-black transition-all duration-300 transform origin-center ${
-      isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
+      isMenuOpen ? 'w-6 -rotate-45 -translate-y-[4px]' : 'w-5'
     }`} />
   </div>
 </button>
