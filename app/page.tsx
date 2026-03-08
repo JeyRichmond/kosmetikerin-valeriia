@@ -144,50 +144,63 @@ export default function HomePage() {
               </div>
 
  {/* Бургер-кнопка (Mobile) */}
-              <button 
-                className="md:hidden p-2 text-gray-800 relative z-110" 
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                type="button"
-              >
-                <div className="flex flex-col gap-1.5 items-end">
-                  <div className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
-                  <div className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
-                  <div className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
-                </div>
-              </button>
+              {/* Бургер/Крестик (Теперь зафиксирован сверху) */}
+        <button 
+          className="md:hidden p-2 text-gray-900 relative z-130 focus:outline-none" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className="flex flex-col gap-1.5 items-end">
+            <span className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
+            <span className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
+            <span className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
+          </div>
+        </button>
             </div>
           </div>
         </div>
 
-        {/* --- МОБИЛЬНОЕ МЕНЮ --- */}
-        <div 
-          className={`fixed inset-0 z-100 bg-white transition-all duration-300 md:hidden ${
-            isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-          }`}
-        >
-          <div className="flex flex-col h-full pt-24 px-8 space-y-8">
-            <nav className="flex flex-col space-y-6 text-2xl font-bold uppercase tracking-widest text-gray-900">
-              {['home', 'prices', 'about', 'contact'].map((item) => (
-                <a key={item} href={`#${item}`} onClick={() => setIsMenuOpen(false)}>
-                  {t.nav[item as keyof typeof t.nav]}
-                </a>
-              ))}
-            </nav>
+        {/* МОБИЛЬНОЕ МЕНЮ */}
+  <div 
+    className={`fixed inset-0 z-105 bg-white transition-all duration-500 ease-in-out md:hidden ${
+      isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+    }`}
+  >
+    <div className="flex flex-col h-full pt-32 pb-10 px-8">
+      {/* Список ссылок */}
+      <nav className="flex flex-col space-y-6">
+        {['home', 'prices', 'about', 'contact'].map((item) => (
+          <a 
+            key={item} 
+            href={`#${item}`} 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-2xl font-bold uppercase tracking-[0.2em] text-gray-900 border-b border-gray-50 pb-4 flex justify-between items-center group"
+          >
+            {t.nav[item as keyof typeof t.nav]}
+            <span className="text-(--brand-gold) opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </a>
+        ))}
+      </nav>
 
-            <div className="pt-8 border-t border-gray-100 space-y-6">
-              <div className="flex gap-4">
-                {(["de", "en", "ua"] as LangKey[]).map((l) => (
-                  <button key={l} onClick={() => toggleLang(l)} className={`text-lg font-bold ${lang === l ? "text-(--brand-gold)" : "text-gray-300"}`}>
-                    {l.toUpperCase()}
-                  </button>
-                ))}
-              </div>
+            {/* Нижний блок: Языки и Кнопка */}
+      <div className="mt-auto space-y-8">
+        <div className="flex justify-start gap-6 border-b border-gray-100 pb-6">
+          {(["de", "en", "ua"] as LangKey[]).map((l) => (
+            <button 
+              key={l} 
+              onClick={() => toggleLang(l)} 
+              className={`text-sm font-bold uppercase tracking-widest ${lang === l ? "text-(--brand-gold)" : "text-gray-300"}`}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+
               <button 
-                onClick={() => { openBooking(); setIsMenuOpen(false); }} 
-                className="w-full bg-(--brand-gold) text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg"
-              >
-                {t.hero.primaryCta}
-              </button>
+          onClick={() => { openBooking(); setIsMenuOpen(false); }} 
+          className="w-full bg-(--brand-gold) text-white py-5 rounded-xl font-bold uppercase tracking-widest shadow-lg shadow-(--brand-gold)/30 active:scale-[0.98] transition-transform"
+        >
+          {t.hero.primaryCta}
+        </button>
             </div>
           </div>
         </div>
@@ -200,7 +213,7 @@ export default function HomePage() {
         <PricesSection t={t} />
         <AboutSection t={t} />
 
-        {/* CONTACT SECTION (Оставлена без изменений, как вы просили) */}
+        {/* CONTACT SECTION */}
         <section id="contact" className="border-t border-gray-100 bg-white">
           <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
             <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] items-start">
