@@ -19,20 +19,28 @@ export default function HomePage() {
     return "de";
   });
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // 2. Вместо useEffect с setState, используем useSyncExternalStore или простую проверку.
-  // Но чтобы не усложнять, сделаем так:
+const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasRendered, setHasRendered] = useState(false);
 
   useEffect(() => {
-    // Используем setTimeout, чтобы вызов setState ушел в очередь макрозадач.
-    // Это на 100% убирает ошибку "synchronously within an effect".
+    // 1. Убираем ошибку линтера через setTimeout
     const timeout = setTimeout(() => {
       setHasRendered(true);
     }, 0);
-    return () => clearTimeout(timeout);
-  }, []);
+
+    // 2. Блокируем скролл основной страницы, когда меню открыто
+    // Это критично, чтобы контент сайта не просвечивал и не двигался под меню
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      clearTimeout(timeout);
+      document.body.style.overflow = 'unset'; // Сбрасываем при уходе со страницы
+    };
+  }, [isMenuOpen]); // Важно добавить isMenuOpen сюда
 
   const t = translations[lang] ?? translations.de;
   const { openBooking } = useBooking();
@@ -143,26 +151,16 @@ export default function HomePage() {
                 </button>
               </div>
 
- {/* Бургер-кнопка (Mobile) */}
-<button 
-  className="md:hidden p-3 text-gray-900 fixed top-10 right-4 z-[200] focus:outline-none bg-white/50 backdrop-blur-sm rounded-full shadow-sm" 
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
-  type="button"
->
-  <div className="flex flex-col gap-1.5 items-end w-6">
-    <span className={`h-0.5 bg-black transition-all duration-300 origin-center ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
-    <span className={`h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
-    <span className={`h-0.5 bg-black transition-all duration-300 origin-center ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
-  </div>
-</button>
-
 {/* МОБИЛЬНОЕ МЕНЮ */}
 <div 
-  className={`fixed inset-0 z-[180] bg-white transition-all duration-500 ease-in-out md:hidden ${
-    isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+  className={`fixed inset-0 w-full h-full bg-white z-[9998] transition-all duration-300 md:hidden ${
+    isMenuOpen 
+      ? "translate-y-0 opacity-100 visible" 
+      : "-translate-y-full opacity-0 invisible"
   }`}
+  style={{ backgroundColor: 'white' }} // Принудительно белый фон для надежности
 >
-  <div className="flex flex-col h-full pt-32 pb-10 px-8">
+  <div className="flex flex-col h-full pt-32 pb-10 px-8 relative z-[9999]">
     {/* Список ссылок */}
     <nav className="flex flex-col space-y-6">
       {['home', 'prices', 'about', 'contact'].map((item) => (
@@ -170,16 +168,16 @@ export default function HomePage() {
           key={item} 
           href={`#${item}`} 
           onClick={() => setIsMenuOpen(false)}
-          className="text-2xl font-bold uppercase tracking-[0.2em] text-gray-900 border-b border-gray-50 pb-4 flex justify-between items-center group"
+          className="text-2xl font-bold uppercase tracking-[0.2em] text-gray-900 border-b border-gray-100 pb-4 flex justify-between items-center"
         >
           {t.nav[item as keyof typeof t.nav]}
-          <span className="text-(--brand-gold) opacity-100">→</span>
+          <span className="text-(--brand-gold)">→</span>
         </a>
       ))}
     </nav>
 
-    {/* Нижний блок: Языки и Кнопка */}
-    <div className="mt-auto space-y-8">
+    {/* Нижний блок */}
+    <div className="mt-auto space-y-8 bg-white pt-4">
       <div className="flex justify-start gap-6 border-b border-gray-100 pb-6">
         {(["de", "en", "ua"] as LangKey[]).map((l) => (
           <button 
@@ -192,22 +190,34 @@ export default function HomePage() {
         ))}
       </div>
 
-      {/* Кнопка внутри меню */}
       <button 
         onClick={() => { openBooking(); setIsMenuOpen(false); }} 
-        className="w-full bg-(--brand-gold) text-white py-5 rounded-xl font-bold uppercase tracking-widest shadow-lg shadow-(--brand-gold)/30 active:scale-[0.98] transition-transform"
+        className="w-full bg-(--brand-gold) text-white py-5 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-transform"
       >
         {t.hero.primaryCta}
       </button>
 
       <div className="text-center">
-        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+        <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
           {t.contact.dummyPhone}
         </p>
       </div>
     </div>
   </div>
 </div>
+
+{/* Исправленная кнопка Бургера/Крестика */}
+<button 
+  className="md:hidden p-3 text-gray-900 fixed top-6 right-4 z-[9999] focus:outline-none bg-white rounded-full shadow-md border border-gray-100" 
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  type="button"
+>
+  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center">
+    <span className={`h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
+    <span className={`h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
+    <span className={`h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
+  </div>
+</button>
             </div>
           </div>
         </div>
