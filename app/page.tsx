@@ -305,39 +305,31 @@ export default function HomePage() {
         </section>
       </main>
 
+      {/* КНОПКА-КРЕСТИК */}
 <button 
   onClick={() => setIsMenuOpen(!isMenuOpen)}
-  // Изменили top-[52px] на top-[46px], чтобы поднять кнопку выше (ближе к центру шапки)
-  className="md:hidden fixed top-[46px] right-6 p-3 focus:outline-none transition-all duration-300"
+  className="md:hidden fixed top-10.5 right-6 p-3 focus:outline-none transition-all duration-300"
   style={{ zIndex: 9999 }}
   type="button"
 >
-  {/* Центрируем содержимое внутри контейнера */}
-  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center relative">
-    {/* Верхняя линия: при Х-состоянии смещаем чуть больше для симметрии */}
+  <div className="flex flex-col gap-1.5 items-end w-6 h-6 justify-center">
     <span className={`h-0.5 bg-black transition-all duration-300 transform origin-center ${
-      isMenuOpen ? 'w-6 rotate-45 translate-y-[4px]' : 'w-6'
+      isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
     }`} />
-    
-    {/* Средняя линия */}
     <span className={`h-0.5 bg-black transition-all duration-300 ${
       isMenuOpen ? 'opacity-0' : 'w-4'
     }`} />
-    
-    {/* Нижняя линия: при Х-состоянии смещаем симметрично вверх */}
     <span className={`h-0.5 bg-black transition-all duration-300 transform origin-center ${
-      isMenuOpen ? 'w-6 -rotate-45 -translate-y-[4px]' : 'w-5'
+      isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
     }`} />
   </div>
 </button>
 
-      {/* 2. МОБИЛЬНОЕ МЕНЮ (Вынеси это в самый конец файла, ПЕРЕД последним </div>) */}
-{/* Это критично: если оно будет в конце, оно перекроет всё остальное */}
+      {/* 2. МОБИЛЬНОЕ МЕНЮ */}
 <div 
   className={`fixed inset-0 w-screen h-screen bg-white md:hidden transition-all duration-500 ease-in-out ${
-    isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+    isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
   }`}
-  // z-[150] гарантирует, что меню ниже кнопки (200), но выше контента (акций и т.д.)
   style={{ 
     zIndex: 150, 
     backgroundColor: 'white', 
@@ -346,41 +338,75 @@ export default function HomePage() {
     left: 0
   }}
 >
-  <div className="flex flex-col h-full pt-32 px-8 space-y-10">
-    <nav className="flex flex-col space-y-8">
-      {['home', 'prices', 'about', 'contact'].map((item) => (
+  {/* Декоративный элемент: легкий градиент на фоне для глубины */}
+  <div className="absolute inset-0 bg-linear-to-b from-gray-50/50 to-white pointer-events-none" />
+
+  <div className="relative flex flex-col h-full pt-36 px-10 space-y-12 overflow-y-auto">
+    
+    {/* Основная навигация */}
+    <nav className="flex flex-col space-y-2">
+      {['home', 'prices', 'about', 'contact'].map((item, index) => (
         <a 
           key={item} 
           href={`#${item}`} 
           onClick={() => setIsMenuOpen(false)}
-          className="text-3xl font-bold uppercase tracking-[0.2em] text-gray-900 border-b border-gray-100 pb-4"
+          // Добавили stagger-эффект (задержку) для появления пунктов
+          className={`group flex items-center justify-between text-2xl font-bold uppercase tracking-[0.15em] text-gray-900 border-b border-gray-100 py-5 transition-all duration-500 ${
+            isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+          style={{ transitionDelay: `${index * 100}ms` }}
         >
-          {t.nav[item as keyof typeof t.nav]}
+          <span>{t.nav[item as keyof typeof t.nav]}</span>
+          <span className="text-(--brand-gold) opacity-0 group-hover:opacity-100 transition-opacity">→</span>
         </a>
       ))}
     </nav>
 
-    <div className="pt-10 space-y-8">
-      <div className="flex gap-8">
-        {(["de", "en", "ua"] as LangKey[]).map((l) => (
-          <button 
-            key={l} 
-            onClick={() => toggleLang(l)} 
-            className={`text-xl font-bold uppercase tracking-widest ${
-              lang === l ? "text-(--brand-gold)" : "text-gray-300"
-            }`}
-          >
-            {l}
-          </button>
-        ))}
+    {/* Нижний блок: Языки и Кнопка */}
+    <div className={`space-y-10 transition-all duration-700 delay-400 ${
+      isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+    }`}>
+      
+      {/* Переключатель языков с индикатором */}
+      <div className="flex flex-col space-y-4">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold">
+          {lang === 'de' ? 'Sprache' : lang === 'ua' ? 'Мова' : 'Language'}
+        </span>
+        <div className="flex gap-6">
+          {(["de", "en", "ua"] as LangKey[]).map((l) => (
+            <button 
+              key={l} 
+              onClick={() => toggleLang(l)} 
+              className={`relative text-lg font-extrabold uppercase tracking-widest transition-colors ${
+                lang === l ? "text-(--brand-gold)" : "text-gray-300 hover:text-gray-600"
+              }`}
+            >
+              {l}
+              {lang === l && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-(--brand-gold) rounded-full" />
+              )}
+            </button>
+          ))}
+        </div>
       </div>
       
-      <button 
-        onClick={() => { openBooking(); setIsMenuOpen(false); }} 
-        className="w-full bg-(--brand-gold) text-white py-5 rounded-2xl font-bold uppercase tracking-widest shadow-xl active:scale-95 transition-transform"
-      >
-        {t.hero.primaryCta}
-      </button>
+      {/* Главная кнопка действия */}
+      <div className="pt-4">
+        <button 
+          onClick={() => { openBooking(); setIsMenuOpen(false); }} 
+          className="w-full bg-(--brand-gold) text-white py-5 rounded-full font-bold uppercase tracking-[0.2em] shadow-xl shadow-gold/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+        >
+          <span>{t.hero.primaryCta}</span>
+          <span className="text-xl">✨</span>
+        </button>
+      </div>
+
+      {/* Футер внутри меню для завершенности */}
+      <div className="text-center pt-4">
+        <p className="text-[10px] text-gray-400 uppercase tracking-widest opacity-60">
+          © {new Date().getFullYear()} Kosmetikerin Valeriia
+        </p>
+      </div>
     </div>
   </div>
 </div>
