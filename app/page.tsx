@@ -20,19 +20,27 @@ export default function HomePage() {
   });
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // 2. Вместо useEffect с setState, используем useSyncExternalStore или простую проверку.
-  // Но чтобы не усложнять, сделаем так:
   const [hasRendered, setHasRendered] = useState(false);
 
   useEffect(() => {
-    // Используем setTimeout, чтобы вызов setState ушел в очередь макрозадач.
-    // Это на 100% убирает ошибку "synchronously within an effect".
+    // 1. Убираем ошибку линтера через setTimeout
     const timeout = setTimeout(() => {
       setHasRendered(true);
     }, 0);
-    return () => clearTimeout(timeout);
-  }, []);
+
+    // 2. Блокируем скролл основной страницы, когда меню открыто
+    // Это критично, чтобы контент сайта не просвечивал и не двигался под меню
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      clearTimeout(timeout);
+      document.body.style.overflow = 'unset'; // Сбрасываем при уходе со страницы
+    };
+  }, [isMenuOpen]); // Важно добавить isMenuOpen сюда
 
   const t = translations[lang] ?? translations.de;
   const { openBooking } = useBooking();
@@ -143,51 +151,75 @@ export default function HomePage() {
                 </button>
               </div>
 
- {/* Бургер-кнопка (Mobile) */}
-              {/* Бургер/Крестик (Теперь зафиксирован сверху) */}
-        <button 
-          className="md:hidden p-2 text-gray-900 relative z-[130] focus:outline-none" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <div className="flex flex-col gap-1.5 items-end">
-            <span className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`} />
-            <span className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
-            <span className={`h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'}`} />
-          </div>
-        </button>
-            </div>
-          </div>
-        </div>
+{/* Кнопка Бургер / Крестик */}
+<button 
+  // Мы меняем relative на fixed и ставим z-[150], чтобы кнопка была ВСЕГДА поверх меню
+  className={`md:hidden p-2 fixed top-12 right-4 z-[150] transition-colors duration-300 focus:outline-none ${
+    isMenuOpen ? 'text-black' : 'text-gray-900'
+  }`} 
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  type="button"
+>
+  <div className="flex flex-col gap-1.5 items-end">
+    {/* Верхняя линия: при open поворачивается на 45 градусов */}
+    <span className={`h-0.5 bg-current transition-all duration-300 ${
+      isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
+    }`} />
+    
+    {/* Средняя линия: при open исчезает */}
+    <span className={`h-0.5 bg-current transition-all duration-300 ${
+      isMenuOpen ? 'opacity-0' : 'w-4'
+    }`} />
+    
+    {/* Нижняя линия: при open поворачивается на -45 градусов */}
+    <span className={`h-0.5 bg-current transition-all duration-300 ${
+      isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-5'
+    }`} />
+  </div>
+</button>
 
-        {/* --- МОБИЛЬНОЕ МЕНЮ --- */}
-        <div 
-          className={`fixed inset-0 z-100 bg-white transition-all duration-300 md:hidden ${
-            isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-          }`}
+{/* --- МОБИЛЬНОЕ МЕНЮ --- */}
+<div 
+  // Здесь z-100 — это ниже чем z-150 у кнопки, поэтому крестик будет сверху
+  className={`fixed inset-0 z-[140] bg-white transition-all duration-300 ease-in-out md:hidden ${
+    isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+  }`}
+>
+  <div className="flex flex-col h-full pt-32 px-8 space-y-8">
+    <nav className="flex flex-col space-y-6 text-2xl font-bold uppercase tracking-widest text-gray-900">
+      {['home', 'prices', 'about', 'contact'].map((item) => (
+        <a 
+          key={item} 
+          href={`#${item}`} 
+          onClick={() => setIsMenuOpen(false)}
+          className="border-b border-gray-50 pb-2"
         >
-          <div className="flex flex-col h-full pt-24 px-8 space-y-8">
-            <nav className="flex flex-col space-y-6 text-2xl font-bold uppercase tracking-widest text-gray-900">
-              {['home', 'prices', 'about', 'contact'].map((item) => (
-                <a key={item} href={`#${item}`} onClick={() => setIsMenuOpen(false)}>
-                  {t.nav[item as keyof typeof t.nav]}
-                </a>
-              ))}
-            </nav>
+          {t.nav[item as keyof typeof t.nav]}
+        </a>
+      ))}
+    </nav>
 
-            <div className="pt-8 border-t border-gray-100 space-y-6">
-              <div className="flex gap-4">
-                {(["de", "en", "ua"] as LangKey[]).map((l) => (
-                  <button key={l} onClick={() => toggleLang(l)} className={`text-lg font-bold ${lang === l ? "text-(--brand-gold)" : "text-gray-300"}`}>
-                    {l.toUpperCase()}
-                  </button>
-                ))}
-              </div>
-              <button 
-                onClick={() => { openBooking(); setIsMenuOpen(false); }} 
-                className="w-full bg-(--brand-gold) text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg"
-              >
-                {t.hero.primaryCta}
-              </button>
+    <div className="pt-8 border-t border-gray-100 space-y-6">
+      <div className="flex gap-4">
+        {(["de", "en", "ua"] as LangKey[]).map((l) => (
+          <button 
+            key={l} 
+            onClick={() => toggleLang(l)} 
+            className={`text-lg font-bold ${lang === l ? "text-(--brand-gold)" : "text-gray-300"}`}
+          >
+            {l.toUpperCase()}
+          </button>
+        ))}
+      </div>
+      <button 
+        onClick={() => { openBooking(); setIsMenuOpen(false); }} 
+        className="w-full bg-(--brand-gold) text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-transform"
+      >
+        {t.hero.primaryCta}
+      </button>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </div>
