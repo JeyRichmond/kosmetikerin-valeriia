@@ -45,6 +45,19 @@ export default function HomePage() {
   const t = translations[lang] ?? translations.de;
   const { openBooking } = useBooking();
 
+// Создаем "умную" функцию записи с датчиком рекламы
+  const handleBookingWithTracking = () => {
+    // Проверяем наличие gtag без использования "any"
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17869784445/GxbfCK_qxeEbEP2K_chC'
+      });
+    }
+    
+    setIsMenuOpen(false);
+    openBooking();
+  };
+
   const toggleLang = (l: LangKey) => {
     setLang(l);
     localStorage.setItem("lang", l);
@@ -144,11 +157,11 @@ export default function HomePage() {
                 </a>
 
                 <button
-                  onClick={openBooking}
-                  className="bg-(--brand-gold) text-white font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-(--brand-gold)/90 transition-all active:brightness-95"
-                >
-                  {t.hero.primaryCta}
-                </button>
+  onClick={handleBookingWithTracking} // <--- Теперь вызываем новую функцию
+  className="bg-(--brand-gold) text-white font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-(--brand-gold)/90 transition-all active:brightness-95"
+>
+  {t.hero.primaryCta}
+</button>
               </div>
             </div>
           </div>
@@ -393,12 +406,12 @@ export default function HomePage() {
       {/* Главная кнопка действия */}
       <div className="pt-4">
         <button 
-          onClick={() => { openBooking(); setIsMenuOpen(false); }} 
-          className="w-full bg-(--brand-gold) text-white py-5 rounded-full font-bold uppercase tracking-[0.2em] shadow-xl shadow-gold/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
-        >
-          <span>{t.hero.primaryCta}</span>
-          <span className="text-xl">✨</span>
-        </button>
+  onClick={handleBookingWithTracking} // <--- Теперь здесь тоже наш "датчик"
+  className="w-full bg-(--brand-gold) text-white py-5 rounded-full font-bold uppercase tracking-[0.2em] shadow-xl shadow-gold/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+>
+  <span>{t.hero.primaryCta}</span>
+  <span className="text-xl">✨</span>
+</button>
       </div>
 
       {/* Футер внутри меню для завершенности */}
