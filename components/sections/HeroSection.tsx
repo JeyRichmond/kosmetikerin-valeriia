@@ -23,8 +23,6 @@ export default function HeroSection({ t }: Props) {
   const sliderImages = [
     "/Kosmetikerin_Valeriia_002.jpg",
     "/Kosmetikerin_Valeriia_006.jpg",
-    "/Kosmetikerin_Valeriia_014.jpg",
-    "/Kosmetikerin_Valeriia_012.jpg",
     "/Kosmetikerin_Valeriia_013.jpg",
     "/Kosmetikerin_Valeriia_009.jpg",
     "/Kosmetikerin_Valeriia_004.jpg",
