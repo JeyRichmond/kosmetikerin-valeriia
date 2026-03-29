@@ -21,12 +21,14 @@ export default function HeroSection({ t }: Props) {
   const { openBooking, openServices } = useBooking();
 
   const sliderImages = [
+    "/Kosmetikerin_Valeriia_005.jpg",
     "/Kosmetikerin_Valeriia_002.jpg",
-    "/Kosmetikerin_Valeriia_006.jpg",
-    "/Kosmetikerin_Valeriia_013.jpg",
+    "/Kosmetikerin_Valeriia_003.jpg",
+    "/Kosmetikerin_Valeriia_011.jpg",
     "/Kosmetikerin_Valeriia_009.jpg",
     "/Kosmetikerin_Valeriia_004.jpg",
-    "/Kosmetikerin_Valeriia_007.jpg",
+    "/Kosmetikerin_Valeriia_008.jpg",
+    "/Kosmetikerin_Valeriia_010.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
