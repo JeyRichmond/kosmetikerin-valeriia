@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function PromoSection() {
-  const bookingLink = "https://kosmetikerinvaleriia.setmore.com/book?step=additional-products&products=621bcffb-13d5-4777-9a6c-322e7f87be9a&type=service&staff=0101b36a-e3f3-4441-a43d-3e609a6d6fd7&staffSelected=false";
+  const bookingLink = "https://kosmetikerinvaleriia.setmore.com/book?step=additional-products&products=f6dc9371-c606-4fad-bb1e-f4eb7f044e56&type=service&staff=0101b36a-e3f3-4441-a43d-3e609a6d6fd7&staffSelected=false";
 
   return (
     <section className="border-b border-gray-100 bg-white">
@@ -34,21 +34,21 @@ export default function PromoSection() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-medium">
                 <span className="w-6 h-px bg-gray-400" />
-                <span>Aktion des Monats &quot;Waxing-Spezial&quot; </span>
+                <span>Aktion des Monats &quot;Glow Gesichtsbehandlung&quot; </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
-                • 2 Zonen Waxing – <span className="text-(--brand-gold)">20% Rabatt</span>
+                • SPRING GLOW <span className="text-(--brand-gold)">FACIAL</span>
               </h2>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
-                • 3 Zonen Waxing – <span className="text-(--brand-gold)">die günstigste gratis</span>
+              <h2 className="text-1xl sm:text-3xl font-semibold text-gray-900 leading-tight">
+                100 CHF STATT <span className="text-(--brand-gold)">150 CHF</span>
               </h2>
 
               <p className="text-gray-700 text-sm sm:text-base">
                 {/* <span className="font-bold">100 CHF</span> statt <span className="line-through opacity-60">180 CHF</span> */}
                 <span className="block text-[11px] text-gray-500 uppercase tracking-tighter mt-1 italic">
-                  *Nur von 1. bis 30. April!
+                  *Nur von 1. bis 31. May!
                 </span>
               </p>
             </div>
