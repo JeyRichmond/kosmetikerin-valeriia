@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function PromoSection() {
-  const bookingLink = "https://kosmetikerinvaleriia.setmore.com/book?step=additional-products&products=f6dc9371-c606-4fad-bb1e-f4eb7f044e56&type=service&staff=0101b36a-e3f3-4441-a43d-3e609a6d6fd7&staffSelected=false";
+  const bookingLink = "https://kosmetikerinvaleriia.setmore.com/book?step=additional-products&products=c75f6baa-4b0b-4395-8773-76c2a1648341&type=service&staff=0101b36a-e3f3-4441-a43d-3e609a6d6fd7&staffSelected=false";
 
   return (
     <section className="border-b border-gray-100 bg-white">
@@ -34,21 +34,24 @@ export default function PromoSection() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-medium">
                 <span className="w-6 h-px bg-gray-400" />
-                <span>Aktion des Monats &quot;Glow Gesichtsbehandlung&quot; </span>
+                <span>Aktion des Monats &quot;Juni&quot; </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
-                • SPRING GLOW <span className="text-(--brand-gold)">FACIAL</span>
+                • Brow & Lash <span className="text-(--brand-gold)">Summer Special</span>
               </h2>
 
-              <h2 className="text-1xl sm:text-3xl font-semibold text-gray-900 leading-tight">
-                100 CHF STATT <span className="text-(--brand-gold)">150 CHF</span>
+              <h2 className="text-1xl sm:text-2xl font-semibold text-gray-900 leading-tight">
+                Brow oder Lash Lifting <span className="text-(--brand-gold)">79 CHF STATT 100 CHF</span>
+              </h2>
+              <h2 className="text-1xl sm:text-2xl font-semibold text-gray-900 leading-tight">
+                Brow & Lash Lifting Combo <span className="text-(--brand-gold)">149 CHF STATT 180 CHF</span>
               </h2>
 
               <p className="text-gray-700 text-sm sm:text-base">
                 {/* <span className="font-bold">100 CHF</span> statt <span className="line-through opacity-60">180 CHF</span> */}
                 <span className="block text-[11px] text-gray-500 uppercase tracking-tighter mt-1 italic">
-                  *Nur von 1. bis 31. May!
+                  *Nur von 1. bis 30. Juni!
                 </span>
               </p>
             </div>
