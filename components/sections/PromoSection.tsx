@@ -34,7 +34,7 @@ export default function PromoSection() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-medium">
                 <span className="w-6 h-px bg-gray-400" />
-                <span>Aktion des Monats &quot;Juni&quot; </span>
+                <span>Aktion des Monats &quot;Juli&quot; </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
@@ -51,7 +51,7 @@ export default function PromoSection() {
               <p className="text-gray-700 text-sm sm:text-base">
                 {/* <span className="font-bold">100 CHF</span> statt <span className="line-through opacity-60">180 CHF</span> */}
                 <span className="block text-[11px] text-gray-500 uppercase tracking-tighter mt-1 italic">
-                  *Nur von 1. bis 30. Juni!
+                  *Nur von 1. bis 31. Juli!
                 </span>
               </p>
             </div>
