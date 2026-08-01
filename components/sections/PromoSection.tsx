@@ -34,24 +34,21 @@ export default function PromoSection() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-medium">
                 <span className="w-6 h-px bg-gray-400" />
-                <span>Aktion des Monats &quot;Juli&quot; </span>
+                <span>Aktion des Monats &quot;August&quot; </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
-                • Brow & Lash <span className="text-(--brand-gold)">Summer Special</span>
+                • Nadelfrei <span className="text-(--brand-gold)">Carboxytherapie</span>
               </h2>
 
               <h2 className="text-1xl sm:text-2xl font-semibold text-gray-900 leading-tight">
-                Brow oder Lash Lifting <span className="text-(--brand-gold)">79 CHF STATT 100 CHF</span>
-              </h2>
-              <h2 className="text-1xl sm:text-2xl font-semibold text-gray-900 leading-tight">
-                Brow & Lash Lifting Combo <span className="text-(--brand-gold)">149 CHF STATT 180 CHF</span>
+                100 CHF <span className="text-(--brand-gold)">STATT 130 CHF</span>
               </h2>
 
               <p className="text-gray-700 text-sm sm:text-base">
                 {/* <span className="font-bold">100 CHF</span> statt <span className="line-through opacity-60">180 CHF</span> */}
                 <span className="block text-[11px] text-gray-500 uppercase tracking-tighter mt-1 italic">
-                  *Nur von 1. bis 31. Juli!
+                  *Nur von 1. bis 31. August!
                 </span>
               </p>
             </div>
