@@ -34,21 +34,27 @@ export default function PromoSection() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-medium">
                 <span className="w-6 h-px bg-gray-400" />
-                <span>Aktion des Monats &quot;August&quot; </span>
+                <span>Aktion des Monats &quot;September&quot; </span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
-                • Nadelfrei <span className="text-(--brand-gold)">Carboxytherapie</span>
+                • ✨ Hydro Glow <span className="text-(--brand-gold)">Pflege</span>
+              </h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
+                • 🌿 Pure Balance <span className="text-(--brand-gold)">Pflege</span>
+              </h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
+                • 💎 Lifting Deluxe <span className="text-(--brand-gold)">Pflege</span>
               </h2>
 
               <h2 className="text-1xl sm:text-2xl font-semibold text-gray-900 leading-tight">
-                100 CHF <span className="text-(--brand-gold)">STATT 130 CHF</span>
+                120 CHF <span className="text-(--brand-gold)">STATT 150 CHF</span>
               </h2>
 
               <p className="text-gray-700 text-sm sm:text-base">
                 {/* <span className="font-bold">100 CHF</span> statt <span className="line-through opacity-60">180 CHF</span> */}
                 <span className="block text-[11px] text-gray-500 uppercase tracking-tighter mt-1 italic">
-                  *Nur von 1. bis 31. August!
+                  *Nur von 1. bis 30. September!
                 </span>
               </p>
             </div>
