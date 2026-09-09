@@ -6,7 +6,6 @@ import { translations, LangKey } from "@/lib/translations";
 
 import Header from "@/components/Header";
 import HeroSection from "@/components/sections/HeroSection";
-import PromoSection from "@/components/sections/PromoSection";
 import PricesSection from "@/components/sections/PricesSection";
 import AboutSection from "@/components/sections/AboutSection";
 
@@ -86,8 +85,6 @@ export default function HomePage() {
       ========================== */}
       <main className="flex-1 pt-19.5">
         {/* Пока оставляем существующие секции без изменений */}
-
-        <PromoSection />
 
         <HeroSection t={t} />
 

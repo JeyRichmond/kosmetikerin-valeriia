@@ -10,13 +10,34 @@ export const translations = {
       contact: "Kontakt",
       book: "Termin buchen",
     },
-    hero: {
-      title: "Kosmetikerin Valeriia",
-      subtitle:
-        "Professionelle Behandlungen für Gesicht & Haarentfernung in angenehmer Atmosphäre.",
-      primaryCta: "Termin buchen",
-      secondaryCta: "Booking ansehen",
-    },
+
+hero: {
+  eyebrow: "Kosmetikstudio · Zürich 8001",
+
+  titleLine1: "Professionelle",
+  titleLine2: "Gesichtsbehandlungen",
+  titleAccent: "& Kosmetik in Zürich",
+
+  subtitle:
+    "Individuelle Gesichtsbehandlungen, Brow & Lash sowie Waxing – professionell, persönlich und mit über 10 Jahren Erfahrung.",
+
+  trust1: "Präzise & hygienische Arbeit",
+  trust2: "Individuelle Beratung",
+  trust3: "Zürich 8001",
+
+  primaryCta: "Termin buchen",
+  secondaryCta: "Behandlungen entdecken",
+
+  address: "Weinbergstrasse 18 · 8001 Zürich",
+
+  experienceNumber: "10+",
+  experienceLabel: "Jahre Erfahrung",
+  experienceText:
+    "Persönliche Betreuung, präzise Arbeit und individuelle Hautpflege.",
+
+  locationBadge: "Zürich · Switzerland",
+},
+
     services: {
       title: "Leistungen",
       depilationTitle: "Depilation",
@@ -27,6 +48,7 @@ export const translations = {
         "Individuelle Behandlungen für gesunde, strahlende und gepflegte Haut.",
       more: "Mehr erfahren",
     },
+
     prices: {
       title: "Preise & Behandlungen",
       description:
@@ -40,9 +62,10 @@ export const translations = {
       book: "Termin buchen",
       label: "Preise & Behandlungen",
       title1: "Preisliste",
-      intro: "Alle kosmetischen Behandlungen, Preise und Behandlungsdauer auf einen Blick. Transparent, professionell und individuell auf Sie abgestimmt.",
-
+      intro:
+        "Alle kosmetischen Behandlungen, Preise und Behandlungsdauer auf einen Blick. Transparent, professionell und individuell auf Sie abgestimmt.",
     },
+
     about: {
       title: "Über mich",
       text:
@@ -56,6 +79,7 @@ export const translations = {
         " • Hautpflegeberatung\n\n" +
         "Ich freue mich darauf, dich bei mir in Zürich willkommen zu heissen!",
     },
+
     contact: {
       phoneLabel: "Telefon",
       addressLabel: "Adresse",
@@ -74,10 +98,12 @@ export const translations = {
       instagram: "Instagram",
       facebook: "Facebook",
     },
+
     footer: {
       rights: "© 2025 Richmond Design. Alle Rechte vorbehalten.",
     },
   },
+
   en: {
     nav: {
       home: "Home",
@@ -87,13 +113,34 @@ export const translations = {
       contact: "Contact",
       book: "Book Appointment",
     },
-    hero: {
-      title: "Beautician Valeriia",
-      subtitle:
-        "Professional facial & depilation treatments in a pleasant atmosphere.",
-      primaryCta: "Book Appointment",
-      secondaryCta: "View Booking",
-    },
+
+   hero: {
+  eyebrow: "Beauty Studio · Zurich 8001",
+
+  titleLine1: "Professional",
+  titleLine2: "Facial Treatments",
+  titleAccent: "& Beauty in Zurich",
+
+  subtitle:
+    "Individual facial treatments, Brow & Lash and waxing – professional, personal and backed by more than 10 years of experience.",
+
+  trust1: "Precise & hygienic work",
+  trust2: "Personal consultation",
+  trust3: "Zurich 8001",
+
+  primaryCta: "Book Appointment",
+  secondaryCta: "Explore Treatments",
+
+  address: "Weinbergstrasse 18 · 8001 Zurich",
+
+  experienceNumber: "10+",
+  experienceLabel: "Years Experience",
+  experienceText:
+    "Personal care, precise work and individually tailored skincare.",
+
+  locationBadge: "Zurich · Switzerland",
+},
+
     services: {
       title: "Services",
       depilationTitle: "Depilation",
@@ -104,6 +151,7 @@ export const translations = {
         "Individual treatments for healthy, radiant, and well-cared-for skin.",
       more: "Learn More",
     },
+
     prices: {
       title: "Prices & Treatments",
       description:
@@ -117,9 +165,10 @@ export const translations = {
       book: "Book Appointment",
       label: "Prices & Treatments",
       title1: "Price List",
-      intro: "All cosmetic treatments, prices and treatment durations at a glance. Transparent, professional and individually tailored to you.",
-   
+      intro:
+        "All cosmetic treatments, prices and treatment durations at a glance. Transparent, professional and individually tailored to you.",
     },
+
     about: {
       title: "About Me",
       text:
@@ -133,6 +182,7 @@ export const translations = {
         " • Skincare Consultation\n\n" +
         "I look forward to welcoming you in Zurich!",
     },
+
     contact: {
       phoneLabel: "Phone",
       addressLabel: "Address",
@@ -151,10 +201,12 @@ export const translations = {
       instagram: "Instagram",
       facebook: "Facebook",
     },
+
     footer: {
       rights: "© 2025 Richmond Design. All rights reserved.",
     },
   },
+
   ua: {
     nav: {
       home: "Головна",
@@ -164,13 +216,34 @@ export const translations = {
       contact: "Контакт",
       book: "Записатися",
     },
-    hero: {
-      title: "Косметолог Валерія",
-      subtitle:
-        "Професійні процедури для обличчя та депіляції в приємній атмосфері.",
-      primaryCta: "Записатися",
-      secondaryCta: "Переглянути бронювання",
-    },
+
+   hero: {
+  eyebrow: "Косметологічна студія · Цюрих 8001",
+
+  titleLine1: "Професійні",
+  titleLine2: "процедури для обличчя",
+  titleAccent: "& косметологія в Цюриху",
+
+  subtitle:
+    "Індивідуальні процедури для обличчя, Brow & Lash та воскова депіляція – професійно, персонально та з понад 10-річним досвідом.",
+
+  trust1: "Точна та гігієнічна робота",
+  trust2: "Індивідуальна консультація",
+  trust3: "Цюрих 8001",
+
+  primaryCta: "Записатися",
+  secondaryCta: "Переглянути процедури",
+
+  address: "Weinbergstrasse 18 · 8001 Цюрих",
+
+  experienceNumber: "10+",
+  experienceLabel: "Років досвіду",
+  experienceText:
+    "Персональний підхід, точна робота та індивідуальний догляд за шкірою.",
+
+  locationBadge: "Цюрих · Швейцарія",
+},
+
     services: {
       title: "Послуги",
       depilationTitle: "Депіляція",
@@ -181,6 +254,7 @@ export const translations = {
         "Індивідуальні процедури для здорової, сяючої та доглянутої шкіри.",
       more: "Детальніше",
     },
+
     prices: {
       title: "Ціни та процедури",
       description:
@@ -190,13 +264,14 @@ export const translations = {
       categoryFace: "ДОГЛЯД ЗА ОБЛИЧЧЯМ",
       categoryBrow: "BROW & LASH LIFTING",
       categoryAugen: "БРОВИ ТА ВІЇ",
-      categoryPeeling: "Пілінги",
+      categoryPeeling: "ПІЛІНГИ",
       book: "Записатися",
       label: "Ціни та процедури",
       title1: "Прайс-лист",
-      intro: "Усі косметичні процедури, ціни та тривалість в одному місці. Прозоро, професійно та індивідуально для вас.",
-    
+      intro:
+        "Усі косметичні процедури, ціни та тривалість в одному місці. Прозоро, професійно та індивідуально для вас.",
     },
+
     about: {
       title: "Про мене",
       text:
@@ -210,13 +285,14 @@ export const translations = {
         " • Консультації по догляду за шкірою\n\n" +
         "Буду рада вітати вас у Цюріху!",
     },
+
     contact: {
       phoneLabel: "Телефон",
       addressLabel: "Адреса",
       hoursLabel: "Години роботи",
       dummyPhone: "+41 76 516 51 54",
       dummyAddressLine1: "Weinbergstrasse 18,",
-      dummyAddressLine2: "8001 Цюріх",
+      dummyAddressLine2: "8001 Цюрих",
       dummyAddressLine3: "(у приміщенні",
       dummyAddressLine4: "Belmed-Esthetic)",
       dummyAddressLine5: "📍 Будь ласка, дзвоніть → Valeriia",
@@ -228,6 +304,7 @@ export const translations = {
       instagram: "Instagram",
       facebook: "Facebook",
     },
+
     footer: {
       rights: "© 2025 Richmond Design. Всі права захищені.",
     },
@@ -247,13 +324,44 @@ export type Translation = {
     contact: string;
     book: string;
   };
+
   hero: {
-    title: string;
+    eyebrow: string;
+
+    titleLine1: string;
+    titleLine2: string;
+    titleAccent: string;
+
     subtitle: string;
+
+    trust1: string;
+    trust2: string;
+    trust3: string;
+
     primaryCta: string;
     secondaryCta: string;
+
+    address: string;
+
+    experienceNumber: string;
+    experienceLabel: string;
+    experienceText: string;
+
+    locationBadge: string;
   };
+
+  services: {
+    title: string;
+    depilationTitle: string;
+    depilationText: string;
+    faceTitle: string;
+    faceText: string;
+    more: string;
+  };
+
   prices: {
+    title: string;
+    description: string;
     label: string;
     title1: string;
     intro: string;
@@ -262,11 +370,15 @@ export type Translation = {
     categoryPeeling: string;
     categoryDepilation: string;
     categoryDepilation1: string;
+    categoryBrow: string;
+    categoryAugen: string;
   };
+
   about: {
     title: string;
     text: string;
   };
+
   contact: {
     phoneLabel: string;
     addressLabel: string;
@@ -285,6 +397,7 @@ export type Translation = {
     instagram: string;
     facebook: string;
   };
+
   footer: {
     rights: string;
   };

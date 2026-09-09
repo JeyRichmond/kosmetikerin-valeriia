@@ -1,15 +1,33 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { ArrowDown, Check, MapPin } from "lucide-react";
 import { useBooking } from "@/components/useBooking";
 
 type HeroTranslations = {
   hero: {
-    title: string;
+    eyebrow: string;
+
+    titleLine1: string;
+    titleLine2: string;
+    titleAccent: string;
+
     subtitle: string;
+
+    trust1: string;
+    trust2: string;
+    trust3: string;
+
     primaryCta: string;
     secondaryCta: string;
+
+    address: string;
+
+    experienceNumber: string;
+    experienceLabel: string;
+    experienceText: string;
+
+    locationBadge: string;
   };
 };
 
@@ -18,167 +36,169 @@ type Props = {
 };
 
 export default function HeroSection({ t }: Props) {
-  const { openBooking, openServices } = useBooking();
+  const { openBooking } = useBooking();
 
-  const sliderImages = [
-    "/Kosmetikerin_Valeriia_005.jpg",
-    "/Kosmetikerin_Valeriia_014.jpg",
-    "/Kosmetikerin_Valeriia_002.jpg",
-    "/Kosmetikerin_Valeriia_016.png",
-    "/Kosmetikerin_Valeriia_003.jpg",
-    "/Kosmetikerin_Valeriia_011.jpg",
-    "/Kosmetikerin_Valeriia_015.jpg",
-    "/Kosmetikerin_Valeriia_006.jpg",
-    "/Kosmetikerin_Valeriia_009.jpg",
-    "/Kosmetikerin_Valeriia_004.jpg",
-    "/Kosmetikerin_Valeriia_008.jpg",
-    "/Kosmetikerin_Valeriia_010.jpg",
-  ];
+  const handleBooking = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17869784445/GxbfCK_qxeEbEP2K_chC",
+      });
+    }
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  
-  // Для обработки свайпов на телефонах
-  const touchStartX = useRef<number | null>(null);
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-  }, [sliderImages.length]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
-  }, [sliderImages.length]);
-
-  // Автоматическая прокрутка
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(nextSlide, 5000); // 5 секунд для более спокойного темпа
-    return () => clearInterval(interval);
-  }, [isHovered, nextSlide]);
-
-  // Логика свайпа
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    openBooking();
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStartX.current) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
+  const scrollToServices = () => {
+    const section = document.getElementById("services");
 
-    if (Math.abs(diff) > 50) { // Порог чувствительности 50px
-      if (diff > 0) nextSlide();
-      else prevSlide();
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
-    touchStartX.current = null;
   };
 
   return (
     <section
-      id="hero"
-      className="max-w-6xl mx-auto px-4 py-10 md:py-16 grid md:grid-cols-2 gap-10 items-center"
+      id="home"
+      className="relative overflow-hidden bg-[#FAF9F6] scroll-mt-19.5"
     >
-      {/* LEFT SIDE */}
-      <div className="space-y-6">
-        <p className="text-xs tracking-[0.3em] uppercase text-(--brand-gold) font-medium">
-          Kosmetik · Zürich
-        </p>
+      <div className="mx-auto grid min-h-[calc(100vh-78px)] max-w-360 lg:grid-cols-[0.92fr_1.08fr]">
+        {/* LEFT SIDE */}
+        <div className="flex items-center px-6 py-14 sm:px-10 sm:py-16 lg:px-12 lg:py-20 xl:px-20">
+          <div className="w-full max-w-152.5">
+            {/* Eyebrow */}
+            <div className="mb-7 flex items-center gap-3">
+              <span className="h-px w-8 bg-[#D5AA1B]" />
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-          {t.hero.title}
-        </h1>
-
-        <p className="text-gray-600 text-sm md:text-base max-w-lg leading-relaxed">
-          {t.hero.subtitle}
-        </p>
-
-        <div className="flex flex-wrap gap-3">
-          <button
-            onClick={openBooking}
-            className="bg-(--brand-gold) text-white text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all hover:shadow-lg active:scale-95"
-          >
-            {t.hero.primaryCta}
-          </button>
-
-          <button
-            onClick={openServices}
-            className="border border-(--brand-gold) text-(--brand-gold)
-            text-sm px-6 py-3 rounded-full
-            hover:bg-(--brand-gold) hover:text-white transition-all active:scale-95"
-          >
-            {t.hero.secondaryCta}
-          </button>
-        </div>
-      </div>
-
-      {/* RIGHT SIDE — PREMIUM SLIDER */}
-      <div
-        className="relative group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div className="h-105 md:h-135 rounded-3xl border border-gray-100 overflow-hidden shadow-xl relative bg-gray-50">
-          
-          {sliderImages.map((src, index) => (
-            <div
-              key={src}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentSlide ? "opacity-100 z-1" : "opacity-0 z-0"
-              }`}
-            >
-              <Image
-                src={src}
-                alt={`Kosmetik Bild ${index + 1}`}
-                fill
-                className={`object-cover transition-transform duration-6000 ease-linear ${
-                  index === currentSlide ? "scale-110" : "scale-100"
-                }`}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority={index === 0}
-              />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#A77F13] sm:text-[11px]">
+                {t.hero.eyebrow}
+              </p>
             </div>
-          ))}
 
-          {/* Overlay для мягкости */}
-          <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent pointer-events-none z-2" />
+            {/* Heading */}
+            <h1 className="max-w-150 text-[40px] font-semibold leading-[1.06] tracking-[-0.035em] text-[#151515] sm:text-[50px] lg:text-[54px] xl:text-[64px]">
+              <span className="block">{t.hero.titleLine1}</span>
+              <span className="block">{t.hero.titleLine2}</span>
+              <span className="block text-[#B98A16]">
+                {t.hero.titleAccent}
+              </span>
+            </h1>
 
-          {/* КНОПКИ-СТРЕЛКИ (Скрыты на мобилках, видны при ховере на десктопе) */}
-          <button
-            onClick={prevSlide}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white/40 transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Previous slide"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
+            {/* Subtitle */}
+            <p className="mt-7 max-w-135 text-[15px] leading-[1.8] text-[#666] sm:text-[16px]">
+              {t.hero.subtitle}
+            </p>
 
-          <button
-            onClick={nextSlide}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white/40 transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Next slide"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
+            {/* Trust */}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-7">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#B98A16]">
+                  <Check size={12} strokeWidth={2} />
+                </span>
+
+                <span className="text-[13px] text-[#444]">
+                  {t.hero.trust1}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#B98A16]">
+                  <Check size={12} strokeWidth={2} />
+                </span>
+
+                <span className="text-[13px] text-[#444]">
+                  {t.hero.trust2}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#B98A16]">
+                  <MapPin size={12} strokeWidth={2} />
+                </span>
+
+                <span className="text-[13px] text-[#444]">
+                  {t.hero.trust3}
+                </span>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button
+                type="button"
+                onClick={handleBooking}
+                className="inline-flex min-h-13 items-center justify-center rounded-full bg-[#D5AA1B] px-8 text-[12px] font-semibold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#B98A16] hover:shadow-lg active:scale-[0.98]"
+              >
+                {t.hero.primaryCta}
+              </button>
+
+              <button
+                type="button"
+                onClick={scrollToServices}
+                className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-full px-6 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333] transition-colors hover:text-[#B98A16]"
+              >
+                {t.hero.secondaryCta}
+
+                <ArrowDown
+                  size={15}
+                  strokeWidth={1.5}
+                  className="transition-transform duration-300 group-hover:translate-y-1"
+                />
+              </button>
+            </div>
+
+            {/* Address */}
+            <div className="mt-11 border-t border-black/[0.07] pt-6">
+              <p className="text-[11px] uppercase tracking-[0.16em] text-black/40">
+                {t.hero.address}
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* ИНДИКАТОРЫ (DOTS) */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-0 flex gap-2">
-          {sliderImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "w-8 bg-(--brand-gold)"
-                  : "w-2 bg-gray-200 hover:bg-gray-300"
-              }`}
-            />
-          ))}
+        {/* RIGHT SIDE */}
+        <div className="relative min-h-130 overflow-hidden sm:min-h-155 lg:min-h-[calc(100vh-78px)]">
+          <Image
+            src="/Kosmetikerin_Valeriia_005.jpg"
+            alt="Kosmetikerin Valeriia in Zürich"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 55vw"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent lg:bg-linear-to-r lg:from-[#FAF9F6]/10 lg:via-transparent lg:to-transparent" />
+
+          {/* Experience Card */}
+          <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-auto lg:bottom-10 lg:left-10">
+            <div className="max-w-77.5 rounded-[22px] border border-white/40 bg-white/88 px-6 py-5 shadow-xl backdrop-blur-md">
+              <div className="flex items-end gap-3">
+                <span className="text-[34px] font-semibold leading-none tracking-[-0.04em] text-[#B98A16]">
+                  {t.hero.experienceNumber}
+                </span>
+
+                <span className="pb-0.5 text-[11px] font-semibold uppercase leading-[1.4] tracking-[0.12em] text-[#333]">
+                  {t.hero.experienceLabel}
+                </span>
+              </div>
+
+              <div className="mt-4 h-px w-full bg-black/[0.07]" />
+
+              <p className="mt-4 text-[12px] leading-[1.6] text-[#555]">
+                {t.hero.experienceText}
+              </p>
+            </div>
+          </div>
+
+          {/* Location Badge */}
+          <div className="absolute right-5 top-5 hidden rounded-full border border-white/30 bg-black/20 px-4 py-2 backdrop-blur-md sm:block lg:right-8 lg:top-8">
+            <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white">
+              {t.hero.locationBadge}
+            </span>
+          </div>
         </div>
       </div>
     </section>

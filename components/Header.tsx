@@ -105,13 +105,13 @@ export default function Header({
             : "bg-[#FAF9F6]"
         }`}
       >
-        <div className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto flex h-19.5 max-w-360 items-center justify-between px-5 sm:px-8 lg:px-12">
           {/* Logo */}
           <button
             type="button"
             onClick={() => scrollToSection("home")}
             aria-label="Kosmetikerin Valeriia"
-            className="flex h-[72px] w-[145px] items-center justify-center overflow-hidden"
+            className="flex h-18 w-36.25 items-center justify-center overflow-hidden"
           >
             <Image
               src="/KV12.png"
@@ -119,7 +119,7 @@ export default function Header({
               width={140}
               height={80}
               priority
-              className="h-auto w-[155px] object-contain"
+              className="h-auto w-38.75 object-contain"
             />
           </button>
 
@@ -219,7 +219,7 @@ export default function Header({
       ====================================================== */}
 
       <div
-        className={`fixed inset-0 z-[100] bg-[#FAF9F6] transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-100 bg-[#FAF9F6] transition-all duration-500 lg:hidden ${
           isMenuOpen
             ? "visible translate-x-0 opacity-100"
             : "invisible translate-x-full opacity-0"
@@ -227,20 +227,20 @@ export default function Header({
       >
         <div className="flex h-full flex-col">
           {/* Mobile Menu Header */}
-          <div className="flex h-[78px] shrink-0 items-center justify-between border-b border-black/5 px-5 sm:px-8">
+          <div className="flex h-19.5 shrink-0 items-center justify-between border-b border-black/5 px-5 sm:px-8">
             {/* Logo */}
             <button
               type="button"
               onClick={() => scrollToSection("home")}
               aria-label="Kosmetikerin Valeriia"
-              className="flex h-[68px] w-[105px] items-center justify-center overflow-hidden"
+              className="flex h-17 w-26.25 items-center justify-center overflow-hidden"
             >
               <Image
                 src="/KV12.png"
                 alt="Kosmetikerin Valeriia"
                 width={140}
                 height={80}
-                className="h-auto w-[125px] scale-[1.15] object-contain"
+                className="h-auto w-31.25 scale-[1.15] object-contain"
               />
             </button>
 
@@ -304,7 +304,7 @@ export default function Header({
                         className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-[11px] font-medium uppercase tracking-[0.08em] transition-all ${
                           lang === language
                             ? "bg-[#D5AA1B] text-white"
-                            : "bg-black/[0.05] text-[#777]"
+                            : "bg-black/5 text-[#777]"
                         }`}
                       >
                         {language}
