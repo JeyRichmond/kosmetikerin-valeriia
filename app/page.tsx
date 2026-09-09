@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/sections/HeroSection";
 import PricesSection from "@/components/sections/PricesSection";
 import AboutSection from "@/components/sections/AboutSection";
+import PhilosophySection from "@/components/sections/PhilosophySection";
 
 export default function HomePage() {
   const [lang, setLang] = useState<LangKey>(() => {
@@ -87,6 +88,8 @@ export default function HomePage() {
         {/* Пока оставляем существующие секции без изменений */}
 
         <HeroSection t={t} />
+
+        <PhilosophySection t={t} />
 
         {/*
          * Временный якорь для пункта "Leistungen".

@@ -38,6 +38,33 @@ hero: {
   locationBadge: "Zürich · Switzerland",
 },
 
+philosophy: {
+  eyebrow: "Meine Philosophie",
+  title: "Ihre Haut verdient individuelle Pflege.",
+  text:
+    "Jede Haut ist anders. Deshalb beginnt eine gute Behandlung für mich mit Aufmerksamkeit, einer persönlichen Beratung und einem klaren Verständnis dafür, was Ihre Haut wirklich braucht.",
+
+  item1Title: "Individuelle Pflege",
+  item1Text:
+    "Behandlungen werden auf Ihren Hautzustand, Ihre Wünsche und Ihre persönlichen Bedürfnisse abgestimmt.",
+
+  item2Title: "Persönliche Betreuung",
+  item2Text:
+    "Zeit, Aufmerksamkeit und eine ehrliche Beratung stehen bei jeder Behandlung im Mittelpunkt.",
+
+  item3Title: "Präzise & hygienisch",
+  item3Text:
+    "Sauberes, sorgfältiges und professionelles Arbeiten ist für mich selbstverständlich.",
+
+  item4Title: "Hochwertige Produkte",
+  item4Text:
+    "Ich arbeite mit ausgewählten Produkten und Pflegekonzepten, die gezielt zur jeweiligen Behandlung passen.",
+
+  value1: "Persönlich",
+  value2: "Präzise",
+  value3: "Professionell",
+},
+
     services: {
       title: "Leistungen",
       depilationTitle: "Depilation",
@@ -141,6 +168,33 @@ hero: {
   locationBadge: "Zurich · Switzerland",
 },
 
+philosophy: {
+  eyebrow: "My Philosophy",
+  title: "Your skin deserves individual care.",
+  text:
+    "Every skin is different. That is why a good treatment begins with attention, personal consultation and a clear understanding of what your skin truly needs.",
+
+  item1Title: "Individual Care",
+  item1Text:
+    "Treatments are tailored to your skin condition, your wishes and your individual needs.",
+
+  item2Title: "Personal Attention",
+  item2Text:
+    "Time, attention and honest consultation are at the heart of every treatment.",
+
+  item3Title: "Precise & Hygienic",
+  item3Text:
+    "Clean, careful and professional work is an essential part of every treatment.",
+
+  item4Title: "Quality Products",
+  item4Text:
+    "I work with carefully selected products and skincare concepts suited to each individual treatment.",
+
+  value1: "Personal",
+  value2: "Precise",
+  value3: "Professional",
+},
+
     services: {
       title: "Services",
       depilationTitle: "Depilation",
@@ -242,6 +296,33 @@ hero: {
     "Персональний підхід, точна робота та індивідуальний догляд за шкірою.",
 
   locationBadge: "Цюрих · Швейцарія",
+},
+
+philosophy: {
+  eyebrow: "Моя філософія",
+  title: "Ваша шкіра заслуговує на індивідуальний догляд.",
+  text:
+    "Кожна шкіра особлива. Тому для мене якісна процедура починається з уваги, персональної консультації та розуміння того, що саме потрібно вашій шкірі.",
+
+  item1Title: "Індивідуальний догляд",
+  item1Text:
+    "Процедури підбираються відповідно до стану вашої шкіри, ваших побажань та індивідуальних потреб.",
+
+  item2Title: "Персональна увага",
+  item2Text:
+    "Час, увага та чесна консультація є важливою частиною кожної процедури.",
+
+  item3Title: "Точно та гігієнічно",
+  item3Text:
+    "Чиста, акуратна та професійна робота для мене є обов’язковим стандартом.",
+
+  item4Title: "Якісні продукти",
+  item4Text:
+    "Я працюю з ретельно підібраними продуктами та програмами догляду, які відповідають конкретній процедурі.",
+
+  value1: "Персонально",
+  value2: "Точно",
+  value3: "Професійно",
 },
 
     services: {
@@ -349,6 +430,28 @@ export type Translation = {
 
     locationBadge: string;
   };
+
+  philosophy: {
+  eyebrow: string;
+  title: string;
+  text: string;
+
+  item1Title: string;
+  item1Text: string;
+
+  item2Title: string;
+  item2Text: string;
+
+  item3Title: string;
+  item3Text: string;
+
+  item4Title: string;
+  item4Text: string;
+
+  value1: string;
+  value2: string;
+  value3: string;
+};
 
   services: {
     title: string;
