@@ -69,28 +69,32 @@ export default function Header({
     onLangChange(language);
   };
 
-  const navItems = [
-    {
-      label: t.nav.home,
-      id: "home",
-    },
-    {
-      label: t.nav.services,
-      id: "services",
-    },
-    {
-      label: t.nav.about,
-      id: "about",
-    },
-    {
-      label: t.nav.prices,
-      id: "prices",
-    },
-    {
-      label: t.nav.contact,
-      id: "contact",
-    },
-  ];
+const navItems = [
+  {
+    label: t.nav.home,
+    id: "home",
+  },
+  {
+    label: t.nav.services,
+    id: "services",
+  },
+  {
+    label: t.nav.prices,
+    id: "prices",
+  },
+  {
+    label: t.nav.about,
+    id: "about",
+  },
+  {
+    label: t.nav.faq,
+    id: "faq",
+  },
+  {
+    label: t.nav.contact,
+    id: "contact",
+  },
+];
 
   return (
     <>

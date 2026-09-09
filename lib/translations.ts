@@ -7,6 +7,7 @@ export const translations = {
       services: "Leistungen",
       about: "Über mich",
       prices: "Preise",
+      faq: "FAQ",
       contact: "Kontakt",
       book: "Termin buchen",
     },
@@ -178,6 +179,7 @@ Ich freue mich darauf, Sie persönlich kennenzulernen.`,
       services: "Services",
       about: "About Me",
       prices: "Prices",
+      faq: "FAQ",
       contact: "Contact",
       book: "Book Appointment",
     },
@@ -349,6 +351,7 @@ I look forward to meeting you personally.`,
       services: "Послуги",
       about: "Про мене",
       prices: "Ціни",
+      faq: "FAQ",
       contact: "Контакт",
       book: "Записатися",
     },
@@ -525,6 +528,7 @@ export type Translation = {
     services: string;
     about: string;
     prices: string;
+    faq: string;
     contact: string;
     book: string;
   };

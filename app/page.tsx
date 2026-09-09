@@ -14,6 +14,7 @@ import ReviewsSection from "@/components/sections/ReviewsSection";
 import WhyValeriiaSection from "@/components/sections/WhyValeriiaSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const [lang, setLang] = useState<LangKey>(() => {
@@ -121,14 +122,8 @@ export default function HomePage() {
 
       </main>
 
-      {/* =========================
-          FOOTER
-      ========================== */}
-      <footer className="border-t border-gray-100 bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div>{t.footer.rights}</div>
-        </div>
-      </footer>
+<Footer lang={lang} />
+
     </div>
   );
 }

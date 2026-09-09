@@ -97,9 +97,9 @@ export default function ContactSection({ lang, onBook }: Props) {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-[78px] overflow-hidden bg-[#FAF9F6]"
+      className="relative scroll-mt-19.5 overflow-hidden bg-[#FAF9F6]"
     >
-      <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 md:py-18 lg:px-12 lg:py-20 xl:px-20">
+      <div className="mx-auto max-w-360 px-6 py-16 sm:px-10 md:py-18 lg:px-12 lg:py-20 xl:px-20">
         <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 xl:gap-20">
           {/* ================= LEFT ================= */}
           <div>
@@ -113,19 +113,19 @@ export default function ContactSection({ lang, onBook }: Props) {
             </div>
 
             {/* title */}
-            <h2 className="max-w-[560px] text-[38px] font-semibold leading-[1.08] tracking-[-0.035em] text-[#171717] sm:text-[44px] lg:text-[48px]">
+            <h2 className="max-w-140 text-[38px] font-semibold leading-[1.08] tracking-[-0.035em] text-[#171717] sm:text-[44px] lg:text-[48px]">
               {t.title}
             </h2>
 
             {/* intro */}
-            <p className="mt-5 max-w-[500px] text-[14px] leading-[1.8] text-[#666] sm:text-[15px]">
+            <p className="mt-5 max-w-125 text-[14px] leading-[1.8] text-[#666] sm:text-[15px]">
               {t.intro}
             </p>
 
             {/* INFO GRID */}
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {/* ADDRESS */}
-              <div className="rounded-[22px] border border-black/[0.06] bg-white p-5 sm:p-6">
+              <div className="rounded-[22px] border border-black/6 bg-white p-5 sm:p-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#FAF9F6] text-[#A77F13]">
                     <MapPin size={16} strokeWidth={1.6} />
@@ -146,7 +146,7 @@ export default function ContactSection({ lang, onBook }: Props) {
               </div>
 
               {/* HOURS */}
-              <div className="rounded-[22px] border border-black/[0.06] bg-white p-5 sm:p-6">
+              <div className="rounded-[22px] border border-black/6 bg-white p-5 sm:p-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#FAF9F6] text-[#A77F13]">
                     <Clock3 size={16} strokeWidth={1.6} />
@@ -168,7 +168,7 @@ export default function ContactSection({ lang, onBook }: Props) {
             </div>
 
             {/* CONTACT ROW */}
-            <div className="mt-3 rounded-[22px] border border-black/[0.06] bg-white p-5 sm:p-6">
+            <div className="mt-3 rounded-[22px] border border-black/6 bg-white p-5 sm:p-6">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-4">
                   <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#FAF9F6] text-[#A77F13]">
@@ -199,7 +199,7 @@ export default function ContactSection({ lang, onBook }: Props) {
                       rel="noreferrer"
                       aria-label={label}
                       title={label}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-black/[0.08] text-[#444] transition-all duration-300 hover:border-[#D5AA1B]/40 hover:bg-[#FAF9F6] hover:text-[#A77F13]"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-black/8 text-[#444] transition-all duration-300 hover:border-[#D5AA1B]/40 hover:bg-[#FAF9F6] hover:text-[#A77F13]"
                     >
                       <Icon size={15} strokeWidth={1.6} />
                     </a>
@@ -236,7 +236,7 @@ export default function ContactSection({ lang, onBook }: Props) {
               <p className="text-[10px] text-black/35">Zürich · 8001</p>
             </div>
 
-            <div className="relative h-[390px] overflow-hidden rounded-[28px] border border-black/[0.06] bg-white sm:h-[420px] lg:h-[445px]">
+            <div className="relative h-97.5 overflow-hidden rounded-[28px] border border-black/6 bg-white sm:h-105 lg:h-111.25">
               <iframe
                 title="Kosmetikerin Valeriia – Google Maps"
                 src="https://www.google.com/maps?q=Kosmetikerin+Valeriia+Zürich&output=embed"
