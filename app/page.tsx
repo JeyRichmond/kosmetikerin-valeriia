@@ -12,6 +12,7 @@ import PhilosophySection from "@/components/sections/PhilosophySection";
 import TreatmentsSection from "@/components/sections/TreatmentsSection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import WhyValeriiaSection from "@/components/sections/WhyValeriiaSection";
+import FAQSection from "@/components/sections/FAQSection";
 
 export default function HomePage() {
   const [lang, setLang] = useState<LangKey>(() => {
@@ -109,6 +110,8 @@ export default function HomePage() {
 />
 
 <AboutSection t={t} />
+
+<FAQSection lang={lang} />
 
         {/* =========================
             CONTACT
