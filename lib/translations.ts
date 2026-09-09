@@ -35,7 +35,7 @@ hero: {
   experienceText:
     "Persönliche Betreuung, präzise Arbeit und individuelle Hautpflege.",
 
-  locationBadge: "Zürich · Switzerland",
+  locationBadge: "Zürich · Schweiz",
 },
 
 philosophy: {
@@ -114,6 +114,11 @@ treatments: {
       book: "Termin buchen",
       label: "Preise & Behandlungen",
       title1: "Preisliste",
+      transparent: "Transparent",
+clear: "Klar",
+noSurprises: "Ohne Überraschungen",
+readMore: "Mehr lesen",
+readLess: "Weniger anzeigen",
       intro:
         "Alle kosmetischen Behandlungen, Preise und Behandlungsdauer auf einen Blick. Transparent, professionell und individuell auf Sie abgestimmt.",
     },
@@ -269,6 +274,11 @@ treatments: {
       book: "Book Appointment",
       label: "Prices & Treatments",
       title1: "Price List",
+      transparent: "Transparent",
+clear: "Clear",
+noSurprises: "No surprises",
+readMore: "Read more",
+readLess: "Show less",
       intro:
         "All cosmetic treatments, prices and treatment durations at a glance. Transparent, professional and individually tailored to you.",
     },
@@ -424,6 +434,11 @@ treatments: {
       book: "Записатися",
       label: "Ціни та процедури",
       title1: "Прайс-лист",
+      transparent: "Прозоро",
+clear: "Зрозуміло",
+noSurprises: "Без сюрпризів",
+readMore: "Детальніше",
+readLess: "Згорнути",
       intro:
         "Усі косметичні процедури, ціни та тривалість в одному місці. Прозоро, професійно та індивідуально для вас.",
     },
@@ -550,6 +565,11 @@ export type Translation = {
     categoryDepilation1: string;
     categoryBrow: string;
     categoryAugen: string;
+    transparent: string;
+clear: string;
+noSurprises: string;
+readMore: string;
+readLess: string;
   };
 
   about: {

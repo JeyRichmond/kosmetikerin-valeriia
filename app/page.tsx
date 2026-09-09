@@ -94,7 +94,7 @@ export default function HomePage() {
 
         <TreatmentsSection t={t} />
 
-        <PricesSection t={t} />
+        <PricesSection t={t} lang={lang} />
 
         <AboutSection t={t} />
 

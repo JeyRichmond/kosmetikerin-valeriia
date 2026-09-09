@@ -161,7 +161,7 @@ export default function HeroSection({ t }: Props) {
         {/* RIGHT SIDE */}
         <div className="relative min-h-130 overflow-hidden sm:min-h-155 lg:min-h-[calc(100vh-78px)]">
           <Image
-            src="/Kosmetikerin_Valeriia_005.jpg"
+            src="/Kosmetikerin_Valeriia_006.jpg"
             alt="Kosmetikerin Valeriia in Zürich"
             fill
             priority

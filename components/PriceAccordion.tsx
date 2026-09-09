@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Minus, Plus } from "lucide-react";
 import { useBooking } from "@/components/useBooking";
 
 type Item = {
@@ -17,6 +18,8 @@ type Props = {
   description?: string;
   items: Item[];
   bookLabel: string;
+  readMore: string;
+  readLess: string;
 };
 
 export default function PriceAccordion({
@@ -25,131 +28,175 @@ export default function PriceAccordion({
   description,
   items,
   bookLabel,
+  readMore,
+  readLess,
 }: Props) {
   const [open, setOpen] = useState(false);
   const { openBooking } = useBooking();
 
   return (
-<section className="max-w-6xl mx-auto px-4 py-3">
-  <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.04)]">
+    <div className="overflow-hidden">
+      {/* CATEGORY HEADER */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="group/header w-full px-6 py-5 text-left transition-colors duration-300 hover:bg-white sm:px-8 sm:py-6 lg:px-9"
+      >
+        <div className="flex items-start justify-between gap-6">
+          <div className="max-w-225">
+            <h3 className="text-[14px] font-semibold uppercase tracking-[0.18em] text-[#171717] sm:text-[15px]">
+              {title}
+            </h3>
 
-    {/* CATEGORY HEADER */}
-    <button
-      onClick={() => setOpen(v => !v)}
-      className="w-full px-5 py-4 text-left hover:bg-gray-50 transition"
-    >
-      <h3 className="text-[13px] md:text-sm font-semibold uppercase tracking-[0.22em] text-(--brand-dark)">
-        {title}
-      </h3>
+            {subtitle && (
+              <p className="mt-2 text-[13px] font-medium leading-relaxed text-[#B98A16] sm:text-[14px]">
+                {subtitle}
+              </p>
+            )}
 
-      {subtitle && (
-        <p className="mt-1.5 text-[13px] text-(--brand-gold) font-medium">
-          {subtitle}
-        </p>
-      )}
+            {description && (
+              <div className="mt-3 max-w-205 space-y-2 text-[13px] leading-[1.7] text-[#666] sm:text-[14px]">
+                {description.split("\n\n").map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            )}
+          </div>
 
-      {description && (
-        <div className="mt-2 space-y-1.5 text-[13px] text-gray-600 max-w-3xl leading-relaxed">
-          {description.split("\n\n").map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          <div
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+              open
+                ? "border-[#D5AA1B] bg-[#D5AA1B] text-white"
+                : "border-black/10 bg-white text-[#171717] group-hover/header:border-[#D5AA1B]/50"
+            }`}
+          >
+            {open ? (
+              <Minus size={18} strokeWidth={1.5} />
+            ) : (
+              <Plus size={18} strokeWidth={1.5} />
+            )}
+          </div>
         </div>
-      )}
+      </button>
 
-      <div className="mt-2 text-[11px] text-gray-400">
-        {open ? "▲ Weniger anzeigen" : "▼ Mehr anzeigen"}
-      </div>
-    </button>
-
-    {/* CONTENT */}
-    <div
-      className={`grid transition-all duration-500 ease-in-out ${
-        open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-      }`}
-    >
-      <div className="overflow-hidden divide-y divide-gray-100 bg-gray-50/40">
-        {items.map((item, idx) => (
-          <ProcedureRow
-            key={idx}
-            item={item}
-            bookLabel={bookLabel}
-            openBooking={openBooking}
-          />
-        ))}
+      {/* CONTENT */}
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-500 ease-in-out ${
+          open
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="border-t border-black/6 bg-white">
+            {items.map((item, index) => (
+              <ProcedureRow
+                key={index}
+                item={item}
+                bookLabel={bookLabel}
+                openBooking={openBooking}
+                isLast={index === items.length - 1}
+                readMore={readMore}
+                readLess={readLess}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-</section>
   );
 }
 
 /* ---------------------------------- */
-/* PROCEDURE ROW */
+/* PROCEDURE ROW                      */
 /* ---------------------------------- */
 
 function ProcedureRow({
   item,
   bookLabel,
   openBooking,
+  isLast,
+  readMore,
+  readLess,
 }: {
   item: Item;
   bookLabel: string;
+  readMore: string;
+  readLess: string;
   openBooking: () => void;
+  isLast: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="px-6 py-5 hover:bg-white transition">
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-
-        <div className="max-w-3xl">
-          <h4 className="text-sm font-semibold text-(--brand-dark)">
+    <div
+      className={`px-6 py-5 transition-colors duration-300 hover:bg-[#FAF9F6]/70 sm:px-8 sm:py-6 lg:px-9 ${
+        !isLast ? "border-b border-black/6" : ""
+      }`}
+    >
+      <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+        {/* PROCEDURE INFO */}
+        <div className="max-w-190">
+          <h4 className="text-[15px] font-semibold tracking-[-0.01em] text-[#171717] sm:text-[16px]">
             {item.name}
           </h4>
 
           {item.shortDescription && (
-            <p className="mt-1 text-sm text-gray-600">
+            <p className="mt-2 text-[13px] leading-[1.65] text-[#666] sm:text-[14px]">
               {item.shortDescription}
             </p>
           )}
 
           {item.fullDescription && (
             <>
-              {expanded && (
-                <div className="mt-4 space-y-3 text-sm text-gray-600 leading-relaxed">
-                  {item.fullDescription.split("\n\n").map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
+              <div
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ${
+                  expanded
+                    ? "mt-4 grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-3 text-[13px] leading-[1.7] text-[#666] sm:text-[14px]">
+                    {item.fullDescription
+                      .split("\n\n")
+                      .map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                      ))}
+                  </div>
                 </div>
-              )}
+              </div>
 
               <button
+                type="button"
                 onClick={() => setExpanded((v) => !v)}
-                className="mt-2 text-xs text-(--brand-gold) hover:underline"
+                className="mt-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#A77F13] transition-opacity hover:opacity-60"
               >
-                {expanded ? "Weniger anzeigen" : "Mehr lesen"}
+                {expanded ? readLess : readMore}
               </button>
             </>
           )}
 
-          <div className="mt-2 text-xs text-gray-400">
+          <div className="mt-3 text-[12px] font-medium text-black/40">
             {item.duration}
           </div>
         </div>
 
-        <div className="flex items-center gap-4 shrink-0">
-          <div className="text-sm font-semibold">
+        {/* PRICE + BOOKING */}
+        <div className="flex items-center justify-between gap-5 border-t border-black/6 pt-5 md:min-w-57.5 md:justify-end md:border-0 md:pt-0">
+          <div className="whitespace-nowrap text-[16px] font-semibold text-[#171717]">
             {item.price}
           </div>
+
           <button
+            type="button"
             onClick={openBooking}
-            className="text-xs bg-(--brand-gold) text-white px-4 py-2 rounded-full hover:opacity-90"
+            className="whitespace-nowrap rounded-full bg-[#D5AA1B] px-5 py-3 text-[11px] font-semibold text-white transition-all duration-300 hover:bg-[#B98A16]"
           >
             {bookLabel}
           </button>
         </div>
-
       </div>
     </div>
   );
