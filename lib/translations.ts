@@ -65,6 +65,31 @@ philosophy: {
   value3: "Professionell",
 },
 
+treatments: {
+  eyebrow: "Behandlungen",
+  title: "Kosmetik, abgestimmt auf Ihre Bedürfnisse.",
+  text:
+    "Von intensiver Gesichtspflege über Peelings bis hin zu Brow & Lash und Waxing – jede Behandlung wird sorgfältig und individuell auf Sie abgestimmt.",
+
+  facialTitle: "Gesichtsbehandlungen",
+  facialSubtitle:
+    "Hydro Glow · Pure Balance · Lifting Deluxe",
+
+  peelingTitle: "Peelings",
+  peelingSubtitle:
+    "Gezielte Peeling-Behandlungen für ein glatteres und frischeres Hautbild.",
+
+  browsTitle: "Brows & Lashes",
+  browsSubtitle:
+    "Brow Lifting · Lash Lifting",
+
+  waxingTitle: "Waxing",
+  waxingSubtitle:
+    "Professionelle Haarentfernung für Frauen und Männer.",
+
+  discover: "Entdecken",
+},
+
     services: {
       title: "Leistungen",
       depilationTitle: "Depilation",
@@ -195,6 +220,31 @@ philosophy: {
   value3: "Professional",
 },
 
+treatments: {
+  eyebrow: "Treatments",
+  title: "Beauty treatments tailored to your needs.",
+  text:
+    "From advanced facial care and peels to Brow & Lash and waxing – every treatment is carefully tailored to your individual needs.",
+
+  facialTitle: "Facial Treatments",
+  facialSubtitle:
+    "Hydro Glow · Pure Balance · Lifting Deluxe",
+
+  peelingTitle: "Peels",
+  peelingSubtitle:
+    "Targeted peel treatments for smoother and fresher-looking skin.",
+
+  browsTitle: "Brows & Lashes",
+  browsSubtitle:
+    "Brow Lifting · Lash Lifting",
+
+  waxingTitle: "Waxing",
+  waxingSubtitle:
+    "Professional hair removal for women and men.",
+
+  discover: "Discover",
+},
+
     services: {
       title: "Services",
       depilationTitle: "Depilation",
@@ -323,6 +373,31 @@ philosophy: {
   value1: "Персонально",
   value2: "Точно",
   value3: "Професійно",
+},
+
+treatments: {
+  eyebrow: "Процедури",
+  title: "Косметологія, адаптована до ваших потреб.",
+  text:
+    "Від професійного догляду за обличчям і пілінгів до Brow & Lash та воскової депіляції – кожна процедура підбирається індивідуально.",
+
+  facialTitle: "Процедури для обличчя",
+  facialSubtitle:
+    "Hydro Glow · Pure Balance · Lifting Deluxe",
+
+  peelingTitle: "Пілінги",
+  peelingSubtitle:
+    "Професійні пілінги для більш гладкої, свіжої та доглянутої шкіри.",
+
+  browsTitle: "Brows & Lashes",
+  browsSubtitle:
+    "Brow Lifting · Lash Lifting",
+
+  waxingTitle: "Воскова депіляція",
+  waxingSubtitle:
+    "Професійне видалення волосся для жінок і чоловіків.",
+
+  discover: "Переглянути",
 },
 
     services: {

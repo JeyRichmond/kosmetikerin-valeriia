@@ -56,10 +56,10 @@ export default function PhilosophySection({ t }: Props) {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 md:py-24 lg:px-12 xl:px-20">
+      <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 xl:px-20">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           {/* LEFT */}
-          <div className="max-w-[520px]">
+          <div className="max-w-130">
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-[#D5AA1B]" />
 
@@ -72,7 +72,7 @@ export default function PhilosophySection({ t }: Props) {
               {t.philosophy.title}
             </h2>
 
-            <p className="mt-7 max-w-[470px] text-[15px] leading-[1.8] text-[#666] sm:text-[16px]">
+            <p className="mt-7 max-w-117.5 text-[15px] leading-[1.8] text-[#666] sm:text-[16px]">
               {t.philosophy.text}
             </p>
 
@@ -86,7 +86,7 @@ export default function PhilosophySection({ t }: Props) {
           </div>
 
           {/* RIGHT */}
-          <div className="grid gap-px overflow-hidden rounded-[28px] border border-black/[0.06] bg-black/[0.06] sm:grid-cols-2">
+          <div className="grid gap-px overflow-hidden rounded-[28px] border border-black/6 bg-black/6 sm:grid-cols-2">
             {items.map((item, index) => {
               const Icon = item.icon;
 

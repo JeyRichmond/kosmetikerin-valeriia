@@ -9,6 +9,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import PricesSection from "@/components/sections/PricesSection";
 import AboutSection from "@/components/sections/AboutSection";
 import PhilosophySection from "@/components/sections/PhilosophySection";
+import TreatmentsSection from "@/components/sections/TreatmentsSection";
 
 export default function HomePage() {
   const [lang, setLang] = useState<LangKey>(() => {
@@ -91,12 +92,7 @@ export default function HomePage() {
 
         <PhilosophySection t={t} />
 
-        {/*
-         * Временный якорь для пункта "Leistungen".
-         * Позже здесь появится новая полноценная
-         * TreatmentsSection.
-         */}
-        <div id="services" className="scroll-mt-19.5" />
+        <TreatmentsSection t={t} />
 
         <PricesSection t={t} />
 
