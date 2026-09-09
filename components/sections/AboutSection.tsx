@@ -1,59 +1,73 @@
-"use client";
-
 import Image from "next/image";
 
 type Props = {
   t: {
     about: {
-      title: string;
-      text: string;
-    };
+  eyebrow: string;
+  title: string;
+  quote: string;
+  text: string;
+};
   };
 };
 
 export default function AboutSection({ t }: Props) {
   return (
-    <section id="about" className="border-t border-gray-100 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-        
-        {/* LEFT SIDE: IMAGE WITH DECOR */}
-        <div className="relative order-2 md:order-1 group">
-          {/* Декоративное свечение */}
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-(--brand-gold)/10 rounded-full blur-3xl group-hover:bg-(--brand-gold)/20 transition-colors duration-700" />
-          
-          <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl z-10 transition-transform duration-700 group-hover:scale-[1.01]">
-            <Image
-              src="/Kosmetikerin_Valeriia_001.jpg"
-              alt="Kosmetikerin Valeriia"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
-          </div>
-        </div>
+    <section
+      id="about"
+      className="relative overflow-hidden bg-[#FAF9F6]"
+    >
+      <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 xl:gap-28">
+          {/* ================= IMAGE ================= */}
+          <div className="relative">
+            {/* decorative line */}
+            <div className="absolute -left-5 top-12 hidden h-45 w-px bg-[#D5AA1B]/30 lg:block" />
 
-        {/* RIGHT SIDE: TEXT */}
-        <div className="space-y-6 md:space-y-8 order-1 md:order-2">
-          <div className="space-y-4">
-            {/* Маленький акцентный штрих над заголовком */}
-            <div className="w-12 h-1 bg-(--brand-gold) rounded-full mb-4 opacity-60" />
-            <h2 className="text-3xl md:text-4xl font-semibold text-(--brand-dark) leading-tight">
+            <div className="relative mx-auto max-w-147.5 lg:mx-0">
+              <div className="relative aspect-4/5 overflow-hidden rounded-[30px] bg-[#EEEAE3]">
+                <Image
+                  src="/Kosmetikerin_Valeriia_001.jpg"
+                  alt="Valeriia – Kosmetikerin in Zürich"
+                  fill
+                  className="object-cover transition-transform duration-1200 hover:scale-[1.015]"
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* ================= CONTENT ================= */}
+          <div className="pt-4 lg:pt-0">
+            {/* eyebrow */}
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-[#D5AA1B]" />
+
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#A77F13] sm:text-[11px]">
+                {t.about.eyebrow}
+              </p>
+            </div>
+
+            {/* title */}
+            <h2 className="max-w-162.5 text-[38px] font-semibold leading-[1.08] tracking-[-0.035em] text-[#171717] sm:text-[46px] lg:text-[52px]">
               {t.about.title}
             </h2>
-          </div>
 
-          <div className="relative">
-            {/* Большая кавычка */}
-            <span className="absolute -top-8 -left-4 text-7xl text-gray-100 pointer-events-none font-serif z-0">
-              &ldquo;
-            </span>
-            
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed whitespace-pre-line relative z-10">
-              {t.about.text}
-            </p>
+            {/* quote */}
+            <div className="mt-8 border-l border-[#D5AA1B]/45 pl-6 sm:pl-8">
+              <p className="max-w-145 text-[17px] font-medium leading-[1.7] tracking-[-0.01em] text-[#2A2A2A] sm:text-[19px]">
+                {t.about.quote}
+              </p>
+            </div>
+
+            {/* about text */}
+            <div className="mt-8 max-w-152.5">
+              <p className="whitespace-pre-line text-[14px] leading-[1.9] text-[#666] sm:text-[15.5px]">
+                {t.about.text}
+              </p>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

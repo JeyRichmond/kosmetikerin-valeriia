@@ -133,18 +133,20 @@ readLess: "Weniger anzeigen",
 },
 
     about: {
-      title: "Über mich",
-      text:
-        "Hallo, ich bin Valeria - diplomierte Kosmetikerin mit über 10 Jahren Erfahrung im Bereich Waxing, Brow Styling und professioneller Hautpflege.\n\n" +
-        "Meine berufliche Laufbahn begann in der Ukraine, wo ich viele Jahre in Beauty-Studios gearbeitet, zahlreiche Schulungen besucht und meine Techniken perfektioniert habe. Heute freue ich mich, meine Leidenschaft und Expertise nach Zürich zu bringen.\n\n" +
-        "Ich glaube, dass Schönheit mit Wohlbefinden beginnt. Deshalb arbeite ich besonders sanft, präzise und hygienisch, mit hochwertigen Produkten und individuellem Ansatz. Mein Ziel ist, dass jede Kundin sich nach der Behandlung leicht, gepflegt und selbstbewusst fühlt.\n\n" +
-        "Meine Spezialisierungen:\n" +
-        " • Waxing & Haarentfernung (schonend, schnell, für glatte Haut ohne Irritationen)\n" +
-        " • Brow & Lash Styling\n" +
-        " • Gesichtsbehandlungen, Peelings & Pflegeprogramme\n" +
-        " • Hautpflegeberatung\n\n" +
-        "Ich freue mich darauf, dich bei mir in Zürich willkommen zu heissen!",
-    },
+  eyebrow: "Über mich",
+  title: "Über mich",
+  quote:
+    "Schönheit beginnt für mich dort, wo Sie sich in Ihrer Haut wirklich wohlfühlen.",
+  text: `Hallo, ich bin Valeriia.
+
+Meine berufliche Reise in der Kosmetik begann in der Ukraine. Dort habe ich viele Jahre in Beauty-Studios gearbeitet, mich kontinuierlich weitergebildet und meine Erfahrung in der professionellen Kosmetik vertieft.
+
+Heute lebe und arbeite ich in Zürich und freue mich, hier meinen eigenen Weg weiterzugehen. Besonders wichtig ist mir die persönliche Verbindung zu meinen Kundinnen und Kunden – viele begleiten mich bereits seit Jahren.
+
+Für mich bedeutet Kosmetik nicht nur eine Behandlung, sondern auch Zeit für sich selbst. Ich möchte, dass Sie sich bei mir wohlfühlen, entspannen und meinen Salon mit einem guten Gefühl verlassen.
+
+Ich freue mich darauf, Sie persönlich kennenzulernen.`,
+},
 
     contact: {
       phoneLabel: "Telefon",
@@ -301,19 +303,21 @@ readLess: "Show less",
   button: "View all reviews",
 },
 
-    about: {
-      title: "About Me",
-      text:
-        "Hello, I'm Valeria - a certified beautician with over 10 years of experience in waxing, brow styling, and professional skincare.\n\n" +
-        "My career began in Ukraine, where I worked many years in beauty studios, attended numerous trainings, and perfected my techniques. Today, I am excited to bring my passion and expertise to Zurich.\n\n" +
-        "I believe beauty starts with well-being. That's why I work especially gently, precisely, and hygienically, using high-quality products and a personalized approach. My goal is for every client to feel light, cared-for, and confident after treatment.\n\n" +
-        "My specializations:\n" +
-        " • Waxing & Hair Removal (gentle, fast, for smooth skin without irritation)\n" +
-        " • Brow & Lash Styling\n" +
-        " • Facial Treatments, Peels & Care Programs\n" +
-        " • Skincare Consultation\n\n" +
-        "I look forward to welcoming you in Zurich!",
-    },
+about: {
+  eyebrow: "About me",
+  title: "About me",
+  quote:
+    "For me, beauty begins when you truly feel comfortable in your own skin.",
+  text: `Hello, I'm Valeriia.
+
+My professional journey in beauty began in Ukraine. I spent many years working in beauty studios, continuously developing my skills and deepening my experience in professional beauty care.
+
+Today I live and work in Zürich, where I am happy to continue building my own path. The personal connection with my clients is especially important to me – many of them have been with me for years.
+
+For me, beauty care is not just about a treatment. It is also time for yourself. I want you to feel comfortable, relax and leave my studio feeling good.
+
+I look forward to meeting you personally.`,
+},
 
     contact: {
       phoneLabel: "Phone",
@@ -470,19 +474,21 @@ readLess: "Згорнути",
   button: "Переглянути всі відгуки",
 },
 
-    about: {
-      title: "Про мене",
-      text:
-        "Привіт, я Валерія - сертифікований косметолог з понад 10-річним досвідом у депіляції, оформленні брів та догляді за шкірою.\n\n" +
-        "Моя кар’єра почалася в Україні, де я працювала багато років у студіях краси, пройшла численні навчання та вдосконалила свої техніки. Сьогодні я рада приносити свою пристрасть та досвід до Цюріха.\n\n" +
-        "Я вірю, що краса починається з добробуту. Тому я працюю максимально дбайливо, точно та гігієнічно, використовуючи високоякісні продукти та індивідуальний підхід. Моя мета - щоб кожна клієнтка почувалася легкою, доглянутою та впевненою після процедури.\n\n" +
-        "Мої спеціалізації:\n" +
-        " • Депіляція та видалення волосся (делікатно, швидко, для гладкої шкіри без подразнень)\n" +
-        " • Оформлення брів та вій\n" +
-        " • Догляд за обличчям, пілінги та програми догляду\n" +
-        " • Консультації по догляду за шкірою\n\n" +
-        "Буду рада вітати вас у Цюріху!",
-    },
+about: {
+  eyebrow: "Про мене",
+  title: "Про мене",
+  quote:
+    "Для мене краса починається тоді, коли ви по-справжньому комфортно почуваєтеся у своїй шкірі.",
+  text: `Привіт, я Valeriia.
+
+Мій професійний шлях у сфері краси розпочався в Україні. Там я багато років працювала в beauty-студіях, постійно вдосконалювала свої навички та поглиблювала досвід у професійній косметології.
+
+Сьогодні я живу та працюю в Цюриху й рада продовжувати тут свій власний професійний шлях. Для мене особливо важливий особистий зв’язок із клієнтами – багато з них залишаються зі мною вже багато років.
+
+Для мене косметологія – це не лише процедура, а й час для себе. Я хочу, щоб у мене ви могли почуватися комфортно, розслабитися та залишити салон із приємним відчуттям.
+
+Буду рада познайомитися з вами особисто.`,
+},
 
     contact: {
       phoneLabel: "Телефон",
@@ -609,9 +615,11 @@ readLess: string;
 };
 
   about: {
-    title: string;
-    text: string;
-  };
+  eyebrow: string;
+  title: string;
+  quote: string;
+  text: string;
+};
 
   contact: {
     phoneLabel: string;
