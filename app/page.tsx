@@ -94,9 +94,7 @@ export default function HomePage() {
         <PhilosophySection t={t} />
 
         <TreatmentsSection t={t} />
-
-        <PricesSection t={t} lang={lang} />
-
+        
         <PricesSection t={t} lang={lang} />
 
 <ReviewsSection
