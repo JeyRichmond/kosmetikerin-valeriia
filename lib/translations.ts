@@ -123,6 +123,15 @@ readLess: "Weniger anzeigen",
         "Alle kosmetischen Behandlungen, Preise und Behandlungsdauer auf einen Blick. Transparent, professionell und individuell auf Sie abgestimmt.",
     },
 
+    reviews: {
+  eyebrow: "Google Bewertungen",
+  title: "Was meine Kundinnen & Kunden sagen.",
+  text: "Echte Erfahrungen von Kundinnen und Kunden, die ihre Behandlung bei mir in Zürich bereits erlebt haben.",
+  ratingLabel: "5.0 von 5 Sternen",
+  googleLabel: "Google Bewertungen",
+  button: "Alle Bewertungen ansehen",
+},
+
     about: {
       title: "Über mich",
       text:
@@ -282,6 +291,15 @@ readLess: "Show less",
       intro:
         "All cosmetic treatments, prices and treatment durations at a glance. Transparent, professional and individually tailored to you.",
     },
+
+    reviews: {
+  eyebrow: "Google Reviews",
+  title: "What my clients say.",
+  text: "Real experiences from clients who have already visited me for their treatment in Zürich.",
+  ratingLabel: "5.0 out of 5 stars",
+  googleLabel: "Google Reviews",
+  button: "View all reviews",
+},
 
     about: {
       title: "About Me",
@@ -443,6 +461,15 @@ readLess: "Згорнути",
         "Усі косметичні процедури, ціни та тривалість в одному місці. Прозоро, професійно та індивідуально для вас.",
     },
 
+    reviews: {
+  eyebrow: "Відгуки Google",
+  title: "Що говорять мої клієнти.",
+  text: "Реальні враження клієнтів, які вже відвідали мене та пройшли процедури в Цюриху.",
+  ratingLabel: "5.0 із 5 зірок",
+  googleLabel: "Відгуки Google",
+  button: "Переглянути всі відгуки",
+},
+
     about: {
       title: "Про мене",
       text:
@@ -571,6 +598,15 @@ noSurprises: string;
 readMore: string;
 readLess: string;
   };
+
+  reviews: {
+  eyebrow: string;
+  title: string;
+  text: string;
+  ratingLabel: string;
+  googleLabel: string;
+  button: string;
+};
 
   about: {
     title: string;
