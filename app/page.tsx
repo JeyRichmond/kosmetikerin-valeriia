@@ -11,6 +11,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import PhilosophySection from "@/components/sections/PhilosophySection";
 import TreatmentsSection from "@/components/sections/TreatmentsSection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
+import WhyValeriiaSection from "@/components/sections/WhyValeriiaSection";
 
 export default function HomePage() {
   const [lang, setLang] = useState<LangKey>(() => {
@@ -100,6 +101,11 @@ export default function HomePage() {
 <ReviewsSection
   t={t}
   googleReviewsUrl="https://www.google.com/maps/place/Kosmetikerin+Valeriia/@47.3784471,8.5419189,17z/data=!3m1!4b1!4m6!3m5!1s0x479aa13c5020309d:0xeea018b7890a540c!8m2!3d47.3784471!4d8.5444938!16s%2Fg%2F11yvtsshkm?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+/>
+
+        <WhyValeriiaSection
+  lang={lang}
+  onBook={handleBookingWithTracking}
 />
 
 <AboutSection t={t} />
