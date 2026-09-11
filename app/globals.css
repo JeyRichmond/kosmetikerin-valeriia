@@ -57,20 +57,23 @@
 }
 
 @keyframes bookingPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(250, 206, 10, 0.658);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 14px rgba(238, 187, 17, 0);
-  }
+  0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(238, 187, 17, 0);
+  }
+
+  50% {
+    transform: scale(1.04);
   }
 }
 
 .floating-booking {
-  animation: bookingPulse 2.8s infinite;
+  animation: bookingPulse 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-booking {
+    animation: none;
+  }
 }
