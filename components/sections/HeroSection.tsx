@@ -39,7 +39,7 @@ export default function HeroSection({ t }: Props) {
   const { openBooking } = useBooking();
 
   const handleBooking = () => {
-  openBooking();
+    openBooking();
   };
 
   const scrollToServices = () => {
@@ -75,7 +75,7 @@ export default function HeroSection({ t }: Props) {
             <h1 className="max-w-150 text-[40px] font-semibold leading-[1.06] tracking-[-0.035em] text-[#151515] sm:text-[50px] lg:text-[54px] xl:text-[64px]">
               <span className="block">{t.hero.titleLine1}</span>
               <span className="block">{t.hero.titleLine2}</span>
-              <span className="block text-[#B98A16]">
+              <span className="block text-[#8A650D]">
                 {t.hero.titleAccent}
               </span>
             </h1>
@@ -88,7 +88,7 @@ export default function HeroSection({ t }: Props) {
             {/* Trust */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-7">
               <div className="flex items-center gap-2.5">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#B98A16]">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#8A650D]">
                   <Check size={12} strokeWidth={2} />
                 </span>
 
@@ -98,7 +98,7 @@ export default function HeroSection({ t }: Props) {
               </div>
 
               <div className="flex items-center gap-2.5">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#B98A16]">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#8A650D]">
                   <Check size={12} strokeWidth={2} />
                 </span>
 
@@ -108,7 +108,7 @@ export default function HeroSection({ t }: Props) {
               </div>
 
               <div className="flex items-center gap-2.5">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#B98A16]">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D5AA1B]/10 text-[#8A650D]">
                   <MapPin size={12} strokeWidth={2} />
                 </span>
 
@@ -123,7 +123,7 @@ export default function HeroSection({ t }: Props) {
               <button
                 type="button"
                 onClick={handleBooking}
-                className="inline-flex min-h-13 items-center justify-center rounded-full bg-[#D5AA1B] px-8 text-[12px] font-semibold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#B98A16] hover:shadow-lg active:scale-[0.98]"
+                className="inline-flex min-h-13 items-center justify-center rounded-full bg-[#D5AA1B] px-8 text-[12px] font-semibold uppercase tracking-widest text-[#111111] transition-all duration-300 hover:bg-[#B98A16] hover:shadow-lg active:scale-[0.98]"
               >
                 {t.hero.primaryCta}
               </button>
@@ -131,7 +131,7 @@ export default function HeroSection({ t }: Props) {
               <button
                 type="button"
                 onClick={scrollToServices}
-                className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-full px-6 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333] transition-colors hover:text-[#B98A16]"
+                className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-full px-6 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333] transition-colors hover:text-[#8A650D]"
               >
                 {t.hero.secondaryCta}
 
@@ -145,7 +145,7 @@ export default function HeroSection({ t }: Props) {
 
             {/* Address */}
             <div className="mt-11 border-t border-black/[0.07] pt-6">
-              <p className="text-[11px] uppercase tracking-[0.16em] text-black/40">
+              <p className="text-[11px] uppercase tracking-[0.16em] text-[#666]">
                 {t.hero.address}
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function HeroSection({ t }: Props) {
           <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-auto lg:bottom-10 lg:left-10">
             <div className="max-w-77.5 rounded-[22px] border border-white/40 bg-white/88 px-6 py-5 shadow-xl backdrop-blur-md">
               <div className="flex items-end gap-3">
-                <span className="text-[34px] font-semibold leading-none tracking-[-0.04em] text-[#B98A16]">
+                <span className="text-[34px] font-semibold leading-none tracking-[-0.04em] text-[#8A650D]">
                   {t.hero.experienceNumber}
                 </span>
 
@@ -188,7 +188,7 @@ export default function HeroSection({ t }: Props) {
           </div>
 
           {/* Location Badge */}
-          <div className="absolute right-5 top-5 hidden rounded-full border border-white/30 bg-black/20 px-4 py-2 backdrop-blur-md sm:block lg:right-8 lg:top-8">
+          <div className="absolute right-5 top-5 hidden rounded-full border border-white/30 bg-black/30 px-4 py-2 backdrop-blur-md sm:block lg:right-8 lg:top-8">
             <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white">
               {t.hero.locationBadge}
             </span>

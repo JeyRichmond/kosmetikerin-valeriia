@@ -11,7 +11,7 @@ export default function FloatingBookingButton() {
       className="
         fixed bottom-5 right-5 z-50
         px-5 py-3 rounded-full
-        bg-(--brand-gold) text-white
+        bg-(--brand-gold) text-[#111111]
         text-sm font-semibold
         shadow-lg
         floating-booking

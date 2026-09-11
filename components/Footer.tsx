@@ -22,7 +22,6 @@ const content = {
     instagram: "Instagram",
     whatsapp: "WhatsApp",
     location: "Zürich · 8001",
-    copyright: "© 2026 Kosmetikerin Valeriia",
     design: "Richmond Design",
   },
 
@@ -38,7 +37,6 @@ const content = {
     instagram: "Instagram",
     whatsapp: "WhatsApp",
     location: "Zürich · 8001",
-    copyright: "© 2026 Kosmetikerin Valeriia",
     design: "Richmond Design",
   },
 
@@ -54,7 +52,6 @@ const content = {
     instagram: "Instagram",
     whatsapp: "WhatsApp",
     location: "Цюрих · 8001",
-    copyright: "© 2026 Kosmetikerin Valeriia",
     design: "Richmond Design",
   },
 } as const;
@@ -141,10 +138,11 @@ export default function Footer({ lang }: Props) {
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/8 pt-6 pb-2 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
+<div className="mt-10 flex flex-col gap-3 border-t border-white/8 pt-6 pb-2 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
+  <p>© {new Date().getFullYear()} Kosmetikerin Valeriia</p>
 
-          <p>{t.design}</p>
-        </div>
+  <p>{t.design}</p>
+</div>
       </div>
     </footer>
   );
