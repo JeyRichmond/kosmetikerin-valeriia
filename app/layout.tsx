@@ -51,11 +51,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://kosmetikerin-valeriia.ch",
-    languages: {
-      "de-CH": "https://kosmetikerin-valeriia.ch",
-      "en-CH": "https://kosmetikerin-valeriia.ch/?lang=en",
-      "uk-UA": "https://kosmetikerin-valeriia.ch/?lang=ua",
-    },
   },
 
   /* ================== OPEN GRAPH (SOCIAL + GOOGLE) ================== */
