@@ -15,9 +15,9 @@ type Props = {
 export default function AboutSection({ t }: Props) {
   return (
     <section
-      id="about"
-      className="relative overflow-hidden bg-[#FAF9F6]"
-    >
+  id="about"
+  className="relative scroll-mt-19.5 overflow-hidden bg-[#FAF9F6]"
+>
       <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 xl:gap-28">
           {/* ================= IMAGE ================= */}

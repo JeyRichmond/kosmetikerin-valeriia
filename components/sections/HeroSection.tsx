@@ -39,13 +39,7 @@ export default function HeroSection({ t }: Props) {
   const { openBooking } = useBooking();
 
   const handleBooking = () => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-17869784445/GxbfCK_qxeEbEP2K_chC",
-      });
-    }
-
-    openBooking();
+  openBooking();
   };
 
   const scrollToServices = () => {

@@ -16,8 +16,17 @@ export function useBooking() {
     }
   };
 
+  const trackBookingConversion = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17869784445/GxbfCK_qxeEbEP2K_chC",
+      });
+    }
+  };
+
   const openBooking = () => {
     trackEvent("booking_click", "Termin buchen");
+    trackBookingConversion();
 
     window.open(
       "https://kosmetikerinvaleriia.setmore.com/team/0101b36a-e3f3-4441-a43d-3e609a6d6fd7",
@@ -41,4 +50,3 @@ export function useBooking() {
     openServices,
   };
 }
-

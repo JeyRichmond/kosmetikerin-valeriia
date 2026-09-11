@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Kosmetikerin Valeriia",
   },
   description:
-    "Professionelle Kosmetik, Gesichtsbehandlungen, Peelings & Haarentfernung in Zürich. Jetzt Termin online buchen.",
+  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash sowie Peelings in Zürich 8001. Persönliche Betreuung bei Kosmetikerin Valeriia.",
 
   /* ================== GOOGLE VERIFICATION ================== */
   verification: {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kosmetikerin Valeriia – Zürich",
     description:
-      "Professionelle Gesichtsbehandlungen, Peelings & Haarentfernung in Zürich. Jetzt Termin buchen!",
+  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash sowie Peelings in Zürich 8001. Persönliche Betreuung bei Kosmetikerin Valeriia.",
     url: "https://kosmetikerin-valeriia.ch",
     siteName: "Kosmetikerin Valeriia",
     locale: "de_CH",
@@ -126,14 +126,14 @@ export default function RootLayout({
         >
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": ["BeautySalon", "LocalBusiness"],
+            "@type": "BeautySalon",
             "@id": "https://kosmetikerin-valeriia.ch/#beautysalon",
             name: "Kosmetikerin Valeriia",
             url: "https://kosmetikerin-valeriia.ch",
             logo: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
             image: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
             description:
-              "Professionelle Gesichtsbehandlungen, Peelings & Haarentfernung in Zürich.",
+  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash und Peelings in Zürich 8001.",
             telephone: "+41 76 516 51 54",
             address: {
               "@type": "PostalAddress",
@@ -169,7 +169,11 @@ export default function RootLayout({
             priceRange: "$$",
             currenciesAccepted: "CHF",
             paymentAccepted: "Cash, Credit Card, TWINT",
-            sameAs: ["https://kosmetikerinvaleriia.setmore.com"],
+            sameAs: [
+  "https://www.instagram.com/kosmetikerin_valeriia",
+  "https://www.facebook.com/profile.php?id=100030670843113",
+  "https://kosmetikerinvaleriia.setmore.com",
+],
             hasOfferCatalog: {
               "@type": "OfferCatalog",
               name: "Behandlungen",

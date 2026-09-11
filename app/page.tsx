@@ -50,14 +50,8 @@ export default function HomePage() {
    * сначала отправит conversion в Google Ads,
    * а затем откроет Setmore.
    */
-  const handleBookingWithTracking = () => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-17869784445/GxbfCK_qxeEbEP2K_chC",
-      });
-    }
-
-    openBooking();
+const handleBooking = () => {
+  openBooking();
   };
 
   /*
@@ -84,7 +78,7 @@ export default function HomePage() {
       <Header
         lang={lang}
         onLangChange={toggleLang}
-        onBook={handleBookingWithTracking}
+        onBook={handleBooking}
       />
 
       {/* =========================
@@ -108,7 +102,7 @@ export default function HomePage() {
 
         <WhyValeriiaSection
   lang={lang}
-  onBook={handleBookingWithTracking}
+  onBook={handleBooking}
 />
 
 <AboutSection t={t} />
@@ -117,7 +111,7 @@ export default function HomePage() {
 
 <ContactSection
   lang={lang}
-  onBook={handleBookingWithTracking}
+  onBook={handleBooking}
 />
 
       </main>

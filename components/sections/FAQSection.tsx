@@ -152,9 +152,9 @@ export default function FAQSection({ lang }: Props) {
 
   return (
     <section
-      id="faq"
-      className="relative overflow-hidden bg-white"
-    >
+  id="faq"
+  className="relative scroll-mt-19.5 overflow-hidden bg-white"
+>
       <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20 xl:gap-28">
           {/* LEFT */}
