@@ -69,32 +69,32 @@ export default function Header({
     onLangChange(language);
   };
 
-const navItems = [
-  {
-    label: t.nav.home,
-    id: "home",
-  },
-  {
-    label: t.nav.services,
-    id: "services",
-  },
-  {
-    label: t.nav.prices,
-    id: "prices",
-  },
-  {
-    label: t.nav.about,
-    id: "about",
-  },
-  {
-    label: t.nav.faq,
-    id: "faq",
-  },
-  {
-    label: t.nav.contact,
-    id: "contact",
-  },
-];
+  const navItems = [
+    {
+      label: t.nav.home,
+      id: "home",
+    },
+    {
+      label: t.nav.services,
+      id: "services",
+    },
+    {
+      label: t.nav.prices,
+      id: "prices",
+    },
+    {
+      label: t.nav.about,
+      id: "about",
+    },
+    {
+      label: t.nav.faq,
+      id: "faq",
+    },
+    {
+      label: t.nav.contact,
+      id: "contact",
+    },
+  ];
 
   return (
     <>
@@ -177,8 +177,8 @@ const navItems = [
                   onClick={() => handleLanguageChange(language)}
                   className={`px-1.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] transition-colors ${
                     lang === language
-                      ? "text-[#B98A16]"
-                      : "text-[#777] hover:text-[#222]"
+                    ? "text-[#333333]"
+                    : "text-[#777] hover:text-[#222]"
                   }`}
                 >
                   {language}
@@ -190,7 +190,7 @@ const navItems = [
             <button
               type="button"
               onClick={handleBooking}
-              className="rounded-full bg-[#D5AA1B] px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-white transition-all duration-200 hover:bg-[#B98A16] hover:shadow-md"
+              className="rounded-full bg-[#D5AA1B] px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#111111] transition-all duration-200 hover:bg-[#B98A16] hover:shadow-md"
             >
               {t.nav.book}
             </button>
@@ -201,7 +201,7 @@ const navItems = [
             <button
               type="button"
               onClick={handleBooking}
-              className="rounded-full bg-[#D5AA1B] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.07em] text-white sm:px-5 sm:text-[11px]"
+              className="rounded-full bg-[#D5AA1B] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.07em] text-[#111111] sm:px-5 sm:text-[11px]"
             >
               {t.nav.book}
             </button>
@@ -252,7 +252,7 @@ const navItems = [
               <button
                 type="button"
                 onClick={handleBooking}
-                className="rounded-full bg-[#D5AA1B] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.07em] text-white sm:px-5 sm:text-[11px]"
+                className="rounded-full bg-[#D5AA1B] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.07em] text-[#111111] sm:px-5 sm:text-[11px]"
               >
                 {t.nav.book}
               </button>
@@ -307,7 +307,7 @@ const navItems = [
                         onClick={() => handleLanguageChange(language)}
                         className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-[11px] font-medium uppercase tracking-[0.08em] transition-all ${
                           lang === language
-                            ? "bg-[#D5AA1B] text-white"
+                            ? "bg-[#D5AA1B] text-[#111111]"
                             : "bg-black/5 text-[#777]"
                         }`}
                       >
@@ -344,7 +344,7 @@ const navItems = [
                 <button
                   type="button"
                   onClick={handleBooking}
-                  className="mt-7 w-full rounded-full bg-[#D5AA1B] px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#B98A16]"
+                  className="mt-7 w-full rounded-full bg-[#D5AA1B] px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#111111] transition-colors hover:bg-[#B98A16]"
                 >
                   {t.nav.book}
                 </button>
