@@ -239,7 +239,7 @@ const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
       previousTime = time;
 
       if (!pauseRef.current) {
-        element.scrollLeft += delta * 0.022;
+        element.scrollLeft += delta * 0.03;
 
         /*
          * There are two identical copies of the review list.
@@ -281,6 +281,10 @@ const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 const handlePointerDown = (
   event: React.PointerEvent<HTMLDivElement>
 ) => {
+  // На телефонах и планшетах используем нативный touch-scroll браузера.
+  // Ручной drag оставляем только для мыши.
+  if (event.pointerType !== "mouse") return;
+
   const slider = sliderRef.current;
 
   if (!slider) return;
@@ -297,6 +301,8 @@ const handlePointerDown = (
 const handlePointerMove = (
   event: React.PointerEvent<HTMLDivElement>
 ) => {
+  if (event.pointerType !== "mouse") return;
+
   const slider = sliderRef.current;
 
   if (!slider || !isDraggingRef.current) return;
@@ -309,6 +315,8 @@ const handlePointerMove = (
 const handlePointerEnd = (
   event: React.PointerEvent<HTMLDivElement>
 ) => {
+  if (event.pointerType !== "mouse") return;
+
   const slider = sliderRef.current;
 
   isDraggingRef.current = false;
@@ -318,6 +326,18 @@ const handlePointerEnd = (
   }
 
   pauseTemporarily(1000);
+};
+
+const handleTouchStart = () => {
+  pauseRef.current = true;
+
+  if (resumeTimeoutRef.current) {
+    clearTimeout(resumeTimeoutRef.current);
+  }
+};
+
+const handleTouchEnd = () => {
+  pauseTemporarily(900);
 };
 
 const scrollReviews = (direction: "left" | "right") => {
@@ -453,24 +473,34 @@ const scrollReviews = (direction: "left" | "right") => {
         <div className="pointer-events-none absolute bottom-0 right-0 top-16 z-10 hidden w-20 bg-linear-to-l from-[#FAF9F6] via-[#FAF9F6]/70 to-transparent lg:block" />
 
         {/* scroll container */}
-        <div
+<div
   ref={sliderRef}
   onPointerDown={handlePointerDown}
   onPointerMove={handlePointerMove}
   onPointerUp={handlePointerEnd}
   onPointerCancel={handlePointerEnd}
-  onMouseEnter={() => {
-    pauseRef.current = true;
+  onPointerEnter={(event) => {
+    if (event.pointerType === "mouse") {
+      pauseRef.current = true;
+    }
   }}
-  onMouseLeave={() => {
-    if (!isDraggingRef.current && !isPaused) {
+  onPointerLeave={(event) => {
+    if (
+      event.pointerType === "mouse" &&
+      !isDraggingRef.current &&
+      !isPaused
+    ) {
       pauseRef.current = false;
     }
   }}
+  onTouchStart={handleTouchStart}
+  onTouchEnd={handleTouchEnd}
+  onTouchCancel={handleTouchEnd}
   className="
     flex min-h-97.5
     cursor-grab gap-5
     overflow-x-auto
+    overscroll-x-contain
     px-6 pb-7
     select-none
     active:cursor-grabbing
@@ -482,7 +512,7 @@ const scrollReviews = (direction: "left" | "right") => {
   style={{
     scrollbarWidth: "none",
     WebkitOverflowScrolling: "touch",
-    touchAction: "pan-y",
+    touchAction: "pan-x pan-y",
   }}
 >
           {duplicatedReviews.map((review, index) => (
