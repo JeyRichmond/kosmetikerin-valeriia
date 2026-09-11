@@ -16,11 +16,11 @@ hero: {
   eyebrow: "Kosmetikstudio · Zürich 8001",
 
   titleLine1: "Professionelle",
-  titleLine2: "Gesichtsbehandlungen",
-  titleAccent: "& Kosmetik in Zürich",
+  titleLine2: "Behandlungen",
+  titleAccent: "in Zürich",
 
   subtitle:
-    "Individuelle Gesichtsbehandlungen, Brow & Lash sowie Waxing – professionell, persönlich und mit über 10 Jahren Erfahrung.",
+    "Gesichtsbehandlungen · Haarentfernung · Brow & Lash",
 
   trust1: "Präzise & hygienische Arbeit",
   trust2: "Individuelle Beratung",
@@ -34,7 +34,7 @@ hero: {
   experienceNumber: "10+",
   experienceLabel: "Jahre Erfahrung",
   experienceText:
-    "Persönliche Betreuung, präzise Arbeit und individuelle Hautpflege.",
+    "Persönliche Betreuung, sorgfältige Arbeit und individuelle Behandlungen – abgestimmt auf Ihre Wünsche und Bedürfnisse.",
 
   locationBadge: "Zürich · Schweiz",
 },
@@ -184,29 +184,29 @@ Ich freue mich darauf, Sie persönlich kennenzulernen.`,
       book: "Book Appointment",
     },
 
-   hero: {
+hero: {
   eyebrow: "Beauty Studio · Zurich 8001",
 
   titleLine1: "Professional",
-  titleLine2: "Facial Treatments",
-  titleAccent: "& Beauty in Zurich",
+  titleLine2: "Beauty Treatments",
+  titleAccent: "in Zurich",
 
   subtitle:
-    "Individual facial treatments, Brow & Lash and waxing – professional, personal and backed by more than 10 years of experience.",
+    "Facial Treatments · Hair Removal · Brow & Lash",
 
   trust1: "Precise & hygienic work",
-  trust2: "Personal consultation",
+  trust2: "Individual consultation",
   trust3: "Zurich 8001",
 
-  primaryCta: "Book Appointment",
-  secondaryCta: "Explore Treatments",
+  primaryCta: "Book appointment",
+  secondaryCta: "Discover treatments",
 
   address: "Weinbergstrasse 18 · 8001 Zurich",
 
   experienceNumber: "10+",
-  experienceLabel: "Years Experience",
+  experienceLabel: "Years of experience",
   experienceText:
-    "Personal care, precise work and individually tailored skincare.",
+    "Personal care, meticulous work and individual treatments – tailored to your wishes and needs.",
 
   locationBadge: "Zurich · Switzerland",
 },
@@ -356,29 +356,29 @@ I look forward to meeting you personally.`,
       book: "Записатися",
     },
 
-   hero: {
+ hero: {
   eyebrow: "Косметологічна студія · Цюрих 8001",
 
   titleLine1: "Професійні",
-  titleLine2: "процедури для обличчя",
-  titleAccent: "& косметологія в Цюриху",
+  titleLine2: "процедури",
+  titleAccent: "у Цюриху",
 
   subtitle:
-    "Індивідуальні процедури для обличчя, Brow & Lash та воскова депіляція – професійно, персонально та з понад 10-річним досвідом.",
+    "Процедури для обличчя · Видалення волосся · Brow & Lash",
 
-  trust1: "Точна та гігієнічна робота",
+  trust1: "Акуратна та гігієнічна робота",
   trust2: "Індивідуальна консультація",
   trust3: "Цюрих 8001",
 
   primaryCta: "Записатися",
   secondaryCta: "Переглянути процедури",
 
-  address: "Weinbergstrasse 18 · 8001 Цюрих",
+  address: "Weinbergstrasse 18 · 8001 Zürich",
 
   experienceNumber: "10+",
   experienceLabel: "Років досвіду",
   experienceText:
-    "Персональний підхід, точна робота та індивідуальний догляд за шкірою.",
+    "Персональний підхід, ретельна робота та індивідуальні процедури – відповідно до ваших побажань і потреб.",
 
   locationBadge: "Цюрих · Швейцарія",
 },
