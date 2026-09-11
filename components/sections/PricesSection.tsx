@@ -3,6 +3,7 @@
 import PriceAccordion from "@/components/PriceAccordion";
 import { getPricesData } from "@/lib/pricesData";
 import type { LangKey, Translation } from "@/lib/translations";
+import Reveal from "@/components/Reveal";
 
 export default function PricesSection({
   t,
@@ -20,7 +21,7 @@ export default function PricesSection({
     >
       <div className="mx-auto max-w-360 px-6 py-16 sm:px-10 md:py-20 lg:px-12 lg:py-24 xl:px-20">
         {/* HEADER */}
-<div className="max-w-245">
+<Reveal className="max-w-245">
   <div className="mb-5 flex items-center gap-3">
     <span className="h-px w-8 bg-[#D5AA1B]" />
 
@@ -39,17 +40,20 @@ export default function PricesSection({
 
   <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] font-medium uppercase tracking-[0.16em] text-black/40">
     <span>{t.prices.transparent}</span>
-<span className="h-1 w-1 rounded-full bg-[#D5AA1B]" />
-<span>{t.prices.clear}</span>
-<span className="h-1 w-1 rounded-full bg-[#D5AA1B]" />
-<span>{t.prices.noSurprises}</span>
+    <span className="h-1 w-1 rounded-full bg-[#D5AA1B]" />
+    <span>{t.prices.clear}</span>
+    <span className="h-1 w-1 rounded-full bg-[#D5AA1B]" />
+    <span>{t.prices.noSurprises}</span>
   </div>
-</div>
+</Reveal>
 
 <div className="my-10 h-px w-full bg-black/6 lg:my-12" />
 
         {/* CATEGORIES */}
-        <div className="mx-auto mt-12 max-w-300 space-y-3 lg:mt-14">
+        <Reveal
+  delay={0.08}
+  className="mx-auto mt-12 max-w-300 space-y-3 lg:mt-14"
+>
           {categories.map((category, index) => (
             <div
               key={index}
@@ -66,7 +70,7 @@ export default function PricesSection({
               />
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

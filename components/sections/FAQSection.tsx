@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import type { LangKey } from "@/lib/translations";
+import Reveal from "@/components/Reveal";
 
 type Props = {
   lang: LangKey;
@@ -157,8 +158,8 @@ export default function FAQSection({ lang }: Props) {
       <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20 xl:gap-28">
           {/* LEFT */}
-          <div>
-            <div className="lg:sticky lg:top-30">
+            <Reveal>
+  <div className="lg:sticky lg:top-30">
               <div className="mb-6 flex items-center gap-3">
                 <span className="h-px w-8 bg-[#D5AA1B]" />
 
@@ -175,10 +176,10 @@ export default function FAQSection({ lang }: Props) {
                 {t.intro}
               </p>
             </div>
-          </div>
+          </Reveal>
 
           {/* RIGHT / ACCORDION */}
-          <div className="border-t border-black/9">
+          <Reveal delay={0.08} className="border-t border-black/9">
             {t.questions.map((item, index) => {
               const isOpen = openIndex === index;
 
@@ -248,7 +249,7 @@ export default function FAQSection({ lang }: Props) {
                 </div>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

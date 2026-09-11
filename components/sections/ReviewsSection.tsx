@@ -10,6 +10,7 @@ import {
   Quote,
   Star,
 } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 export type GoogleReview = {
   name: string;
@@ -368,7 +369,7 @@ const scrollReviews = (direction: "left" | "right") => {
       <div className="mx-auto max-w-360 px-6 pt-20 sm:px-10 md:pt-24 lg:px-12 lg:pt-28 xl:px-20">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           {/* LEFT */}
-          <div>
+          <Reveal>
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-[#D5AA1B]" />
 
@@ -380,10 +381,10 @@ const scrollReviews = (direction: "left" | "right") => {
             <h2 className="max-w-162.5 text-[36px] font-semibold leading-[1.08] tracking-[-0.03em] text-[#171717] sm:text-[44px] lg:text-[50px]">
               {t.reviews.title}
             </h2>
-          </div>
+          </Reveal>
 
           {/* RIGHT */}
-          <div className="lg:flex lg:justify-end">
+          <Reveal delay={0.08} className="lg:flex lg:justify-end">
             <div className="max-w-125">
               <p className="text-[15px] leading-[1.8] text-[#666] sm:text-[16px]">
                 {t.reviews.text}
@@ -414,7 +415,7 @@ const scrollReviews = (direction: "left" | "right") => {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
 
@@ -615,7 +616,7 @@ const scrollReviews = (direction: "left" | "right") => {
 
       {/* ================= CTA ================= */}
       <div className="mx-auto max-w-360 px-6 pb-20 pt-10 sm:px-10 md:pb-24 lg:px-12 lg:pb-28 xl:px-20">
-        <div className="flex justify-center">
+        <Reveal className="flex justify-center">
           <a
             href={googleReviewsUrl}
             target="_blank"
@@ -626,7 +627,7 @@ const scrollReviews = (direction: "left" | "right") => {
 
             <ExternalLink size={14} strokeWidth={1.5} />
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

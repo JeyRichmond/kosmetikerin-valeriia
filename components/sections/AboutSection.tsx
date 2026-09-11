@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 type Props = {
   t: {
@@ -20,7 +21,7 @@ export default function AboutSection({ t }: Props) {
       <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 xl:gap-28">
           {/* ================= IMAGE ================= */}
-          <div className="relative">
+          <Reveal className="relative">
             {/* decorative line */}
             <div className="absolute -left-5 top-12 hidden h-45 w-px bg-[#D5AA1B]/30 lg:block" />
 
@@ -35,10 +36,10 @@ export default function AboutSection({ t }: Props) {
                 />
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* ================= CONTENT ================= */}
-          <div className="pt-4 lg:pt-0">
+          <Reveal delay={0.08} className="pt-4 lg:pt-0">
             {/* eyebrow */}
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-[#D5AA1B]" />
@@ -66,7 +67,7 @@ export default function AboutSection({ t }: Props) {
                 {t.about.text}
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

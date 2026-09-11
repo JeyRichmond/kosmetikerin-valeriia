@@ -8,6 +8,8 @@ import {
   Send,
   Facebook,
 } from "lucide-react";
+
+import Reveal from "@/components/Reveal";
 import type { LangKey } from "@/lib/translations";
 
 type Props = {
@@ -102,7 +104,7 @@ export default function ContactSection({ lang, onBook }: Props) {
       <div className="mx-auto max-w-360 px-6 py-16 sm:px-10 md:py-18 lg:px-12 lg:py-20 xl:px-20">
         <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 xl:gap-20">
           {/* ================= LEFT ================= */}
-          <div>
+          <Reveal>
             {/* eyebrow */}
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-8 bg-[#D5AA1B]" />
@@ -224,10 +226,10 @@ export default function ContactSection({ lang, onBook }: Props) {
                 />
               </button>
             </div>
-          </div>
+          </Reveal>
 
           {/* ================= RIGHT / MAP ================= */}
-          <div>
+          <Reveal delay={0.08}>
             <div className="mb-3 flex items-center justify-between">
               <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-black/35">
                 {t.mapLabel}
@@ -249,7 +251,7 @@ export default function ContactSection({ lang, onBook }: Props) {
                 className="absolute inset-0 h-full w-full"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
 

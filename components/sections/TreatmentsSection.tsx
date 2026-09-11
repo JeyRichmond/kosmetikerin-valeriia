@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 type TreatmentsTranslations = {
   treatments: {
@@ -96,7 +97,7 @@ export default function TreatmentsSection({ t }: Props) {
       <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
         {/* HEADER */}
         <div className="mb-12 grid gap-7 lg:mb-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
-          <div>
+          <Reveal>
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-[#D5AA1B]" />
 
@@ -108,27 +109,31 @@ export default function TreatmentsSection({ t }: Props) {
             <h2 className="max-w-155 text-[36px] font-semibold leading-[1.08] tracking-[-0.03em] text-[#171717] sm:text-[44px] lg:text-[50px]">
               {t.treatments.title}
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="lg:flex lg:justify-end">
-            <p className="max-w-125 text-[15px] leading-[1.8] text-[#666] sm:text-[16px]">
-              {t.treatments.text}
-            </p>
-          </div>
+          <Reveal delay={0.12} className="lg:flex lg:justify-end">
+  <p className="max-w-125 text-[15px] leading-[1.8] text-[#666] sm:text-[16px]">
+    {t.treatments.text}
+  </p>
+</Reveal>
         </div>
 
         {/* TREATMENTS GRID */}
         <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
-          {treatments.map((item) => {
-            const content = getContent(item.key);
+  {treatments.map((item, index) => {
+    const content = getContent(item.key);
 
-            return (
-              <button
-                key={item.key}
-                type="button"
-                onClick={scrollToPrices}
-                className="group relative min-h-107.5 overflow-hidden rounded-[26px] text-left sm:min-h-125 lg:min-h-140"
-              >
+    return (
+      <Reveal
+        key={item.key}
+        delay={0.05 + index * 0.05}
+        className="h-full"
+      >
+        <button
+          type="button"
+          onClick={scrollToPrices}
+          className="group relative min-h-107.5 w-full overflow-hidden rounded-[26px] text-left sm:min-h-125 lg:min-h-140"
+        >
                 <Image
                   src={item.image}
                   alt={content.title}
@@ -179,6 +184,7 @@ export default function TreatmentsSection({ t }: Props) {
                   </div>
                 </div>
               </button>
+              </Reveal>
             );
           })}
         </div>

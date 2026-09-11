@@ -5,6 +5,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import Reveal from "@/components/Reveal";
 import type { LangKey } from "@/lib/translations";
 
 type Props = {
@@ -140,7 +141,7 @@ export default function WhyValeriiaSection({
       <div className="mx-auto max-w-360 px-6 py-20 sm:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-20">
         {/* HEADER */}
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <div>
+          <Reveal>
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-[#D5AA1B]" />
 
@@ -152,17 +153,20 @@ export default function WhyValeriiaSection({
             <h2 className="max-w-155 text-[38px] font-semibold leading-[1.08] tracking-[-0.035em] text-[#171717] sm:text-[46px] lg:text-[52px]">
               {t.title}
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="lg:flex lg:items-end">
+          <Reveal delay={0.08} className="lg:flex lg:items-end">
             <p className="max-w-150 text-[15px] leading-[1.85] text-[#666] sm:text-[16px] lg:text-[17px]">
               {t.intro}
             </p>
-          </div>
+          </Reveal>
         </div>
 
         {/* MAIN */}
-        <div className="mt-14 grid overflow-hidden rounded-[30px] border border-black/[0.07] bg-[#FAF9F6] lg:mt-16 lg:grid-cols-[0.78fr_1.22fr]">
+        <Reveal
+  delay={0.1}
+  className="mt-14 grid overflow-hidden rounded-[30px] border border-black/[0.07] bg-[#FAF9F6] lg:mt-16 lg:grid-cols-[0.78fr_1.22fr]"
+>
           {/* EXPERIENCE */}
           <div className="relative flex min-h-97.5 flex-col justify-between overflow-hidden border-b border-black/[0.07] p-8 sm:p-10 lg:min-h-140 lg:border-b-0 lg:border-r lg:p-12">
             {/* subtle decoration */}
@@ -256,7 +260,7 @@ export default function WhyValeriiaSection({
               );
             })}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
