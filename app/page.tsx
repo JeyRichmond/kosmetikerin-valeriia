@@ -17,41 +17,43 @@ import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
 export default function HomePage() {
-  const [lang, setLang] = useState<LangKey>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("lang") as LangKey | null;
-
-      return saved && translations[saved] ? saved : "de";
-    }
-
-    return "de";
-  });
-
-  const [hasRendered, setHasRendered] = useState(false);
+  const [lang, setLang] = useState<LangKey>("de");
 
   const t = translations[lang] ?? translations.de;
   const { openBooking } = useBooking();
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setHasRendered(true);
-    }, 0);
+  /*
+   * Восстанавливаем сохранённый язык
+   * после первого рендера.
+   *
+   * Благодаря этому немецкая версия
+   * рендерится сразу без пустого экрана,
+   * что лучше для LCP и SEO.
+   */
+ useEffect(() => {
+  const saved = localStorage.getItem("lang") as LangKey | null;
 
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
+  if (!saved || !translations[saved]) {
+    return;
+  }
+
+  const timeout = window.setTimeout(() => {
+    setLang(saved);
+  }, 0);
+
+  return () => {
+    window.clearTimeout(timeout);
+  };
+}, []);
 
   /*
-   * Booking + Google Ads conversion tracking
+   * Booking
    *
-   * Эту функцию передаём в Header.
-   * Поэтому любая кнопка "Termin buchen" в Header
-   * сначала отправит conversion в Google Ads,
-   * а затем откроет Setmore.
+   * Tracking и Google Ads conversion
+   * централизованы внутри useBooking().
    */
-const handleBooking = () => {
-  openBooking();
+  const handleBooking = () => {
+    openBooking();
   };
 
   /*
@@ -62,16 +64,8 @@ const handleBooking = () => {
     localStorage.setItem("lang", newLang);
   };
 
-  /*
-   * Избегаем различий между SSR и первым
-   * клиентским рендером из-за localStorage.
-   */
-  if (!hasRendered) {
-    return <div className="min-h-screen bg-[#FAF9F6]" />;
-  }
-
   return (
-    <div className="min-h-screen bg-white text-(--brand-dark) flex flex-col pb-18 lg:pb-0">
+    <div className="flex min-h-screen flex-col bg-white pb-18 text-(--brand-dark) lg:pb-0">
       {/* =========================
           HEADER
       ========================== */}
@@ -85,8 +79,6 @@ const handleBooking = () => {
           MAIN CONTENT
       ========================== */}
       <main className="flex-1 pt-19.5">
-        {/* Пока оставляем существующие секции без изменений */}
-
         <HeroSection t={t} />
 
         <PhilosophySection t={t} />
@@ -95,29 +87,27 @@ const handleBooking = () => {
 
         <PricesSection t={t} lang={lang} />
 
-<ReviewsSection
-  t={t}
-  googleReviewsUrl="https://www.google.com/maps/place/Kosmetikerin+Valeriia/@47.3784471,8.5419189,17z/data=!3m1!4b1!4m6!3m5!1s0x479aa13c5020309d:0xeea018b7890a540c!8m2!3d47.3784471!4d8.5444938!16s%2Fg%2F11yvtsshkm?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
-/>
+        <ReviewsSection
+          t={t}
+          googleReviewsUrl="https://www.google.com/maps/place/Kosmetikerin+Valeriia/@47.3784471,8.5419189,17z/data=!3m1!4b1!4m6!3m5!1s0x479aa13c5020309d:0xeea018b7890a540c!8m2!3d47.3784471!4d8.5444938!16s%2Fg%2F11yvtsshkm?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+        />
 
         <WhyValeriiaSection
-  lang={lang}
-  onBook={handleBooking}
-/>
+          lang={lang}
+          onBook={handleBooking}
+        />
 
-<AboutSection t={t} />
+        <AboutSection t={t} />
 
-<FAQSection lang={lang} />
+        <FAQSection lang={lang} />
 
-<ContactSection
-  lang={lang}
-  onBook={handleBooking}
-/>
-
+        <ContactSection
+          lang={lang}
+          onBook={handleBooking}
+        />
       </main>
 
-<Footer lang={lang} />
-
+      <Footer lang={lang} />
     </div>
   );
 }
