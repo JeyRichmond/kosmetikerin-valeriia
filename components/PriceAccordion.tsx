@@ -67,7 +67,7 @@ export default function PriceAccordion({
           <div
             className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
               open
-                ? "border-[#D5AA1B] bg-[#D5AA1B] text-white"
+                ? "border-[#D5AA1B] bg-[#D5AA1B] text-[#111111]"
                 : "border-black/10 bg-white text-[#171717] group-hover/header:border-[#D5AA1B]/50"
             }`}
           >
@@ -178,7 +178,7 @@ function ProcedureRow({
             </>
           )}
 
-          <div className="mt-3 text-[12px] font-medium text-black/40">
+          <div className="mt-3 text-[12px] font-medium text-[#666]">
             {item.duration}
           </div>
         </div>
@@ -192,7 +192,7 @@ function ProcedureRow({
           <button
             type="button"
             onClick={openBooking}
-            className="whitespace-nowrap rounded-full bg-[#D5AA1B] px-5 py-3 text-[11px] font-semibold text-white transition-all duration-300 hover:bg-[#B98A16]"
+            className="whitespace-nowrap rounded-full bg-[#D5AA1B] px-5 py-3 text-[11px] font-semibold text-[#111111] transition-all duration-300 hover:bg-[#B98A16]"
           >
             {bookLabel}
           </button>
