@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
   /* ================== GOOGLE VERIFICATION ================== */
   verification: {
-    google: "-DdpvDqDOj5fO8OIE4wPY-NdRscQzcb8zg3Qk-xMOzM",
+  google: "nnI9Nma8gS8bczn3GXW1enwi4OLuNBSjBhgDME4BEck",
   },
 
   /* ================== ICONS / LOGO ================== */
