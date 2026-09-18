@@ -57,11 +57,11 @@ const content = {
 } as const;
 
 const navItems = [
-  { key: "treatments", href: "#services" },
-  { key: "prices", href: "#prices" },
-  { key: "about", href: "#about" },
-  { key: "faq", href: "#faq" },
-  { key: "contact", href: "#contact" },
+  { key: "treatments", href: "/#services" },
+  { key: "prices", href: "/#prices" },
+  { key: "about", href: "/#about" },
+  { key: "faq", href: "/#faq" },
+  { key: "contact", href: "/#contact" },
 ] as const;
 
 export default function Footer({ lang }: Props) {

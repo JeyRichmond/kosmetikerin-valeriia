@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
@@ -54,6 +55,7 @@ const treatments = [
 ] as const;
 
 export default function TreatmentsSection({ t }: Props) {
+    const router = useRouter();
   const getContent = (key: (typeof treatments)[number]["key"]) => {
     switch (key) {
       case "facial":
@@ -87,6 +89,17 @@ export default function TreatmentsSection({ t }: Props) {
       behavior: "smooth",
       block: "start",
     });
+  };
+
+    const handleTreatmentClick = (
+    key: (typeof treatments)[number]["key"]
+  ) => {
+    if (key === "waxing") {
+      router.push("/waxing-zurich");
+      return;
+    }
+
+    scrollToPrices();
   };
 
   return (
@@ -130,10 +143,10 @@ export default function TreatmentsSection({ t }: Props) {
         className="h-full"
       >
         <button
-          type="button"
-          onClick={scrollToPrices}
-          className="group relative min-h-107.5 w-full overflow-hidden rounded-[26px] text-left sm:min-h-125 lg:min-h-140"
-        >
+  type="button"
+  onClick={() => handleTreatmentClick(item.key)}
+  className="group relative min-h-107.5 w-full overflow-hidden rounded-[26px] text-left sm:min-h-125 lg:min-h-140"
+>
                 <Image
                   src={item.image}
                   alt={content.title}

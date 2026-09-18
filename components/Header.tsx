@@ -2,7 +2,15 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X, Instagram, MessageCircle } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  Menu,
+  X,
+  Instagram,
+  MessageCircle,
+  ChevronDown,
+  ArrowUpRight,
+} from "lucide-react";
 import { translations, LangKey } from "@/lib/translations";
 
 type HeaderProps = {
@@ -18,6 +26,10 @@ export default function Header({
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const pathname = usePathname();
+  const router = useRouter();
 
   const t = translations[lang];
 
@@ -49,20 +61,39 @@ export default function Header({
 
   const handleBooking = () => {
     setIsMenuOpen(false);
+    setIsServicesOpen(false);
     onBook();
   };
 
-  const scrollToSection = (id: string) => {
+  const navigateToSection = (id: string) => {
     setIsMenuOpen(false);
+    setIsServicesOpen(false);
 
-    const element = document.getElementById(id);
+    if (pathname === "/") {
+      const element = document.getElementById(id);
 
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
     }
+
+    if (id === "home") {
+      router.push("/");
+      return;
+    }
+
+    router.push(`/#${id}`);
+  };
+
+  const navigateToService = (href: string) => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+    router.push(href);
   };
 
   const handleLanguageChange = (language: LangKey) => {
@@ -96,6 +127,29 @@ export default function Header({
     },
   ];
 
+  const serviceItems = [
+    {
+      title: "Gesichtsbehandlungen",
+      subtitle: "Pflege & Hautgesundheit",
+      href: "/#prices",
+    },
+    {
+      title: "Peelings",
+      subtitle: "Professionelle Hauterneuerung",
+      href: "/#prices",
+    },
+    {
+      title: "Brow & Lash",
+      subtitle: "Lifting & Styling",
+      href: "/#prices",
+    },
+    {
+      title: "Waxing",
+      subtitle: "Für Frauen & Männer",
+      href: "/waxing-zurich",
+    },
+  ];
+
   return (
     <>
       {/* =====================================================
@@ -113,7 +167,7 @@ export default function Header({
           {/* Logo */}
           <button
             type="button"
-            onClick={() => scrollToSection("home")}
+            onClick={() => navigateToSection("home")}
             aria-label="Kosmetikerin Valeriia"
             className="flex h-18 w-36.25 items-center justify-center overflow-hidden"
           >
@@ -129,18 +183,105 @@ export default function Header({
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 lg:flex">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => scrollToSection(item.id)}
-                className="group relative py-2 text-[13px] font-medium tracking-[0.02em] text-[#171717] transition-colors duration-200 hover:text-[#B98A16]"
-              >
-                {item.label}
+            {navItems.map((item) => {
+              if (item.id === "services") {
+                return (
+                  <div
+                    key={item.id}
+                    className="relative"
+                    onMouseEnter={() => setIsServicesOpen(true)}
+                    onMouseLeave={() => setIsServicesOpen(false)}
+                  >
+                    <div className="flex items-center">
+                      <button
+                        type="button"
+                        onClick={() => navigateToSection("services")}
+                        className="group relative py-2 text-[13px] font-medium tracking-[0.02em] text-[#171717] transition-colors duration-200 hover:text-[#B98A16]"
+                      >
+                        {item.label}
 
-                <span className="absolute inset-x-0 bottom-0 mx-auto h-px w-0 bg-[#D5AA1B] transition-all duration-200 group-hover:w-full" />
-              </button>
-            ))}
+                        <span className="absolute inset-x-0 bottom-0 mx-auto h-px w-0 bg-[#D5AA1B] transition-all duration-200 group-hover:w-full" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setIsServicesOpen((current) => !current)
+                        }
+                        aria-label="Leistungen öffnen"
+                        aria-expanded={isServicesOpen}
+                        className="ml-1 flex h-7 w-5 items-center justify-center text-[#777] transition-colors hover:text-[#B98A16]"
+                      >
+                        <ChevronDown
+                          size={14}
+                          strokeWidth={1.7}
+                          className={`transition-transform duration-200 ${
+                            isServicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    {/* Desktop Services Dropdown */}
+                    <div
+                      className={`absolute left-1/2 top-full w-82 -translate-x-1/2 pt-3 transition-all duration-200 ${
+                        isServicesOpen
+                          ? "visible translate-y-0 opacity-100"
+                          : "invisible -translate-y-2 opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden rounded-[22px] border border-black/5 bg-[#FAF9F6]/98 p-2 shadow-[0_18px_50px_rgba(0,0,0,0.12)] backdrop-blur-xl">
+                        <div className="px-4 pb-2 pt-3">
+                          <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#A77F13]">
+                            Leistungen
+                          </p>
+                        </div>
+
+                        {serviceItems.map((service) => (
+                          <button
+                            key={service.title}
+                            type="button"
+                            onClick={() =>
+                              navigateToService(service.href)
+                            }
+                            className="group/service flex w-full items-center justify-between rounded-[16px] px-4 py-3.5 text-left transition-colors duration-200 hover:bg-white"
+                          >
+                            <div>
+                              <p className="text-[14px] font-medium text-[#171717] transition-colors group-hover/service:text-[#B98A16]">
+                                {service.title}
+                              </p>
+
+                              <p className="mt-0.5 text-[11px] text-[#888]">
+                                {service.subtitle}
+                              </p>
+                            </div>
+
+                            <ArrowUpRight
+                              size={15}
+                              strokeWidth={1.5}
+                              className="text-[#B98A16] transition-transform duration-200 group-hover/service:translate-x-0.5 group-hover/service:-translate-y-0.5"
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => navigateToSection(item.id)}
+                  className="group relative py-2 text-[13px] font-medium tracking-[0.02em] text-[#171717] transition-colors duration-200 hover:text-[#B98A16]"
+                >
+                  {item.label}
+
+                  <span className="absolute inset-x-0 bottom-0 mx-auto h-px w-0 bg-[#D5AA1B] transition-all duration-200 group-hover:w-full" />
+                </button>
+              );
+            })}
           </nav>
 
           {/* Desktop Right Side */}
@@ -164,7 +305,6 @@ export default function Header({
               className="hidden items-center gap-2 text-[13px] text-[#333] transition-colors hover:text-[#B98A16] xl:flex"
             >
               <MessageCircle size={16} strokeWidth={1.6} />
-
               <span>+41 76 516 51 54</span>
             </a>
 
@@ -177,8 +317,8 @@ export default function Header({
                   onClick={() => handleLanguageChange(language)}
                   className={`px-1.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] transition-colors ${
                     lang === language
-                    ? "text-[#333333]"
-                    : "text-[#777] hover:text-[#222]"
+                      ? "text-[#333333]"
+                      : "text-[#777] hover:text-[#222]"
                   }`}
                 >
                   {language}
@@ -235,7 +375,7 @@ export default function Header({
             {/* Logo */}
             <button
               type="button"
-              onClick={() => scrollToSection("home")}
+              onClick={() => navigateToSection("home")}
               aria-label="Kosmetikerin Valeriia"
               className="flex h-17 w-26.25 items-center justify-center overflow-hidden"
             >
@@ -259,7 +399,10 @@ export default function Header({
 
               <button
                 type="button"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsServicesOpen(false);
+                }}
                 aria-label="Close menu"
                 className="flex h-10 w-10 items-center justify-center text-[#222]"
               >
@@ -272,26 +415,106 @@ export default function Header({
           <div className="flex flex-1 flex-col overflow-y-auto px-7 pb-8 pt-6 sm:px-10">
             {/* Navigation */}
             <nav className="flex flex-col">
-              {navItems.map((item, index) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => scrollToSection(item.id)}
-                  className={`group flex items-center justify-between py-5 text-left ${
-                    index !== navItems.length - 1
-                      ? "border-b border-black/5"
-                      : ""
-                  }`}
-                >
-                  <span className="text-[20px] font-medium tracking-[-0.01em] text-[#171717]">
-                    {item.label}
-                  </span>
+              {navItems.map((item, index) => {
+                if (item.id === "services") {
+                  return (
+                    <div
+                      key={item.id}
+                      className="border-b border-black/5"
+                    >
+                      <div className="flex items-center">
+                        <button
+                          type="button"
+                          onClick={() => navigateToSection("services")}
+                          className="flex flex-1 items-center py-5 text-left"
+                        >
+                          <span className="text-[20px] font-medium tracking-[-0.01em] text-[#171717]">
+                            {item.label}
+                          </span>
+                        </button>
 
-                  <span className="text-[19px] font-light text-[#D5AA1B] transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </button>
-              ))}
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setIsServicesOpen((current) => !current)
+                          }
+                          aria-label="Leistungen öffnen"
+                          aria-expanded={isServicesOpen}
+                          className="flex h-14 w-14 items-center justify-center text-[#D5AA1B]"
+                        >
+                          <ChevronDown
+                            size={20}
+                            strokeWidth={1.5}
+                            className={`transition-transform duration-300 ${
+                              isServicesOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      </div>
+
+                      <div
+                        className={`grid transition-all duration-300 ${
+                          isServicesOpen
+                            ? "grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="mb-4 rounded-[20px] bg-white/70 p-2">
+                            {serviceItems.map((service) => (
+                              <button
+                                key={service.title}
+                                type="button"
+                                onClick={() =>
+                                  navigateToService(service.href)
+                                }
+                                className="flex w-full items-center justify-between rounded-[15px] px-4 py-3 text-left transition-colors active:bg-[#FAF9F6]"
+                              >
+                                <div>
+                                  <p className="text-[14px] font-medium text-[#171717]">
+                                    {service.title}
+                                  </p>
+
+                                  <p className="mt-0.5 text-[11px] text-[#888]">
+                                    {service.subtitle}
+                                  </p>
+                                </div>
+
+                                <ArrowUpRight
+                                  size={15}
+                                  strokeWidth={1.5}
+                                  className="text-[#B98A16]"
+                                />
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => navigateToSection(item.id)}
+                    className={`group flex items-center justify-between py-5 text-left ${
+                      index !== navItems.length - 1
+                        ? "border-b border-black/5"
+                        : ""
+                    }`}
+                  >
+                    <span className="text-[20px] font-medium tracking-[-0.01em] text-[#171717]">
+                      {item.label}
+                    </span>
+
+                    <span className="text-[19px] font-light text-[#D5AA1B] transition-transform duration-200 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </button>
+                );
+              })}
             </nav>
 
             {/* Bottom area */}
@@ -300,20 +523,24 @@ export default function Header({
                 <div className="flex items-center justify-between">
                   {/* Languages */}
                   <div className="flex items-center gap-2">
-                    {(["de", "en", "ua"] as LangKey[]).map((language) => (
-                      <button
-                        key={language}
-                        type="button"
-                        onClick={() => handleLanguageChange(language)}
-                        className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-[11px] font-medium uppercase tracking-[0.08em] transition-all ${
-                          lang === language
-                            ? "bg-[#D5AA1B] text-[#111111]"
-                            : "bg-black/5 text-[#777]"
-                        }`}
-                      >
-                        {language}
-                      </button>
-                    ))}
+                    {(["de", "en", "ua"] as LangKey[]).map(
+                      (language) => (
+                        <button
+                          key={language}
+                          type="button"
+                          onClick={() =>
+                            handleLanguageChange(language)
+                          }
+                          className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-[11px] font-medium uppercase tracking-[0.08em] transition-all ${
+                            lang === language
+                              ? "bg-[#D5AA1B] text-[#111111]"
+                              : "bg-black/5 text-[#777]"
+                          }`}
+                        >
+                          {language}
+                        </button>
+                      )
+                    )}
                   </div>
 
                   {/* Social */}
@@ -325,7 +552,10 @@ export default function Header({
                       aria-label="WhatsApp"
                       className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-[#333]"
                     >
-                      <MessageCircle size={17} strokeWidth={1.5} />
+                      <MessageCircle
+                        size={17}
+                        strokeWidth={1.5}
+                      />
                     </a>
 
                     <a

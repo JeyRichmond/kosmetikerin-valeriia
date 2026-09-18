@@ -1,53 +1,93 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useBooking } from "@/components/useBooking";
 
 export default function FloatingBookingButton() {
   const { openBooking } = useBooking();
+  const pathname = usePathname();
 
   const [isHeroVisible, setIsHeroVisible] = useState(true);
   const [isContactVisible, setIsContactVisible] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    const hero = document.getElementById("home");
-    const contact = document.getElementById("contact");
+    if (pathname === "/") {
+      const hero = document.getElementById("home");
+      const contact = document.getElementById("contact");
 
-    if (!hero || !contact) {
-      return;
+      if (!hero || !contact) {
+        return;
+      }
+
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          setIsHeroVisible(entry.isIntersecting);
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+      const contactObserver = new IntersectionObserver(
+        ([entry]) => {
+          setIsContactVisible(entry.isIntersecting);
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      heroObserver.observe(hero);
+      contactObserver.observe(contact);
+
+      return () => {
+        heroObserver.disconnect();
+        contactObserver.disconnect();
+      };
     }
 
-    const heroObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeroVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.15,
-      }
-    );
+    const footer = document.querySelector("footer");
 
-    const contactObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsContactVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.2,
-      }
-    );
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 250);
+    };
 
-    heroObserver.observe(hero);
-    contactObserver.observe(contact);
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    let footerObserver: IntersectionObserver | null = null;
+
+    if (footer) {
+      footerObserver = new IntersectionObserver(
+        ([entry]) => {
+          setIsFooterVisible(entry.isIntersecting);
+        },
+        {
+          threshold: 0.05,
+        }
+      );
+
+      footerObserver.observe(footer);
+    }
 
     return () => {
-      heroObserver.disconnect();
-      contactObserver.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      footerObserver?.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
-  const isVisible = !isHeroVisible && !isContactVisible;
+  const isVisible =
+    pathname === "/"
+      ? !isHeroVisible && !isContactVisible
+      : hasScrolled && !isFooterVisible;
 
   return (
     <button
+      type="button"
       onClick={openBooking}
       aria-label="Online buchen"
       className={`
