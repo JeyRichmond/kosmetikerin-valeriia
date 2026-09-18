@@ -66,10 +66,10 @@ export default function WaxingPageContent() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-black/70">
-                <span>✓ {t.hero.benefits[0]}</span>
-                <span>✓ {t.hero.benefits[1]}</span>
-                <span>✓ {t.introduction.benefits[2].title}e Produkte</span>
-              </div>
+  <span>✓ {t.hero.benefits[0]}</span>
+  <span>✓ {t.hero.benefits[1]}</span>
+  <span>✓ {t.hero.benefits[2]}</span>
+</div>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <ServiceBookingButton className="inline-flex min-h-13 items-center justify-center rounded-full bg-[#D5AA1B] px-7 text-sm font-semibold text-[#111111] transition hover:bg-[#B98A16]">
@@ -197,21 +197,17 @@ export default function WaxingPageContent() {
             </p>
 
             <div className="mt-9 space-y-4">
-              {[
-                "Hygienische Vorbereitung",
-                "{t.introduction.benefits[2].title}e Waxing-Produkte",
-                "{t.introduction.benefits[1].title}e Beratung",
-                "Ruhige & diskrete Atmosphäre",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-black/8 pb-4"
-                >
-                  <span className="text-[#D5AA1B]">✓</span>
-                  <span className="text-black/70">{item}</span>
-                </div>
-              ))}
-            </div>
+  {t.personal.benefits.map((item) => (
+    <div
+      key={item}
+      className="flex items-center gap-4 border-b border-black/8 pb-4"
+    >
+      <span className="text-[#D5AA1B]">✓</span>
+      <span className="text-black/70">{item}</span>
+    </div>
+  ))}
+</div>
+
           </div>
         </div>
       </section>
@@ -244,7 +240,7 @@ export default function WaxingPageContent() {
           <div className="relative order-1 min-h-135 overflow-hidden rounded-4xl lg:order-2">
             <Image
               src="/images/waxing/italwax-cartridges.jpg"
-              alt="{t.introduction.benefits[2].title}e Waxing Produkte im Kosmetikstudio in Zürich"
+              alt="Professionelle Waxing-Produkte im Kosmetikstudio in Zürich"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -339,7 +335,7 @@ export default function WaxingPageContent() {
             <div className="relative min-h-125 overflow-hidden rounded-4xl">
               <Image
                 src="/images/waxing/blue-wax.jpg"
-                alt="{t.introduction.benefits[2].title}es Wachs für Haarentfernung"
+                alt="Professionelles Wachs für Haarentfernung"
                 fill
                 sizes="(max-width: 1024px) 50vw, 25vw"
                 className="object-cover"
@@ -484,11 +480,10 @@ export default function WaxingPageContent() {
               </h3>
 
               <div className="mt-7 space-y-4 text-black/60">
-                <p>✓ Reibung möglichst reduzieren.</p>
-                <p>✓ Direkt danach intensive Hitze vermeiden.</p>
-                <p>✓ Starkes Schwitzen zunächst reduzieren.</p>
-                <p>✓ {t.introduction.benefits[1].title}e Pflegehinweise beachten.</p>
-              </div>
+  {t.care.afterItems.map((item) => (
+    <p key={item}>✓ {item}</p>
+  ))}
+</div>
             </div>
           </div>
         </div>
@@ -503,7 +498,7 @@ export default function WaxingPageContent() {
         <div className="relative mx-auto min-h-150 max-w-6xl overflow-hidden rounded-4xl">
           <Image
             src="/images/waxing/waxing-man-close.jpg"
-            alt="{t.introduction.benefits[2].title}e Waxing Technik in Zürich"
+            alt="Professionelle Waxing-Technik in Zürich"
             fill
             sizes="(max-width: 1200px) 100vw, 1200px"
             className="object-cover"
