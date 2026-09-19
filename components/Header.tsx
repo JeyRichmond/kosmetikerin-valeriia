@@ -127,7 +127,8 @@ export default function Header({
     },
   ];
 
-  const serviceItems = [
+const serviceItems = {
+  de: [
     {
       title: "Gesichtsbehandlungen",
       subtitle: "Pflege & Hautgesundheit",
@@ -136,7 +137,7 @@ export default function Header({
     {
       title: "Peelings",
       subtitle: "Professionelle Hauterneuerung",
-      href: "/#prices",
+      href: "/peelings-zurich",
     },
     {
       title: "Brow & Lash",
@@ -148,7 +149,54 @@ export default function Header({
       subtitle: "Für Frauen & Männer",
       href: "/waxing-zurich",
     },
-  ];
+  ],
+
+  en: [
+    {
+      title: "Facial Treatments",
+      subtitle: "Skincare & skin health",
+      href: "/gesichtsbehandlungen-zurich",
+    },
+    {
+      title: "Peelings",
+      subtitle: "Professional skin renewal",
+      href: "/peelings-zurich",
+    },
+    {
+      title: "Brow & Lash",
+      subtitle: "Lifting & styling",
+      href: "/#prices",
+    },
+    {
+      title: "Waxing",
+      subtitle: "For women & men",
+      href: "/waxing-zurich",
+    },
+  ],
+
+  ua: [
+    {
+      title: "Процедури для обличчя",
+      subtitle: "Догляд та здоров’я шкіри",
+      href: "/gesichtsbehandlungen-zurich",
+    },
+    {
+      title: "Пілінги",
+      subtitle: "Професійне оновлення шкіри",
+      href: "/peelings-zurich",
+    },
+    {
+      title: "Брови та вії",
+      subtitle: "Ліфтинг та стайлінг",
+      href: "/#prices",
+    },
+    {
+      title: "Ваксинг",
+      subtitle: "Для жінок та чоловіків",
+      href: "/waxing-zurich",
+    },
+  ],
+}[lang];
 
   return (
     <>
@@ -233,7 +281,7 @@ export default function Header({
                       <div className="overflow-hidden rounded-[22px] border border-black/5 bg-[#FAF9F6]/98 p-2 shadow-[0_18px_50px_rgba(0,0,0,0.12)] backdrop-blur-xl">
                         <div className="px-4 pb-2 pt-3">
                           <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#A77F13]">
-                            Leistungen
+                            {t.nav.services}
                           </p>
                         </div>
 

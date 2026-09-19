@@ -45,7 +45,7 @@ const treatments = [
   {
     number: "03",
     key: "brows",
-    image: "/Kosmetikerin_Valeriia_014.jpg",
+    image: "/Kosmetikerin_Valeriia_004.jpg",
   },
   {
     number: "04",
@@ -91,16 +91,21 @@ export default function TreatmentsSection({ t }: Props) {
     });
   };
 
-   const handleTreatmentClick = (
+const handleTreatmentClick = (
   key: (typeof treatments)[number]["key"]
 ) => {
+  if (key === "waxing") {
+    router.push("/waxing-zurich");
+    return;
+  }
+
   if (key === "facial") {
     router.push("/gesichtsbehandlungen-zurich");
     return;
   }
 
-  if (key === "waxing") {
-    router.push("/waxing-zurich");
+  if (key === "peeling") {
+    router.push("/peelings-zurich");
     return;
   }
 
