@@ -38,9 +38,9 @@ export default function GesichtsbehandlungenPageContent() {
             <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 lg:py-24">
               <div className="max-w-xl">
                 <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-[#B98A16]">{t.hero.eyebrow}</p>
-                <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-                  {t.hero.title}
-                  <span className="mt-2 block text-[#D5AA1B]">{t.hero.titleAccent}</span>
+                <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[52px] xl:text-[58px]">
+                    {t.hero.title}
+                     <span className="mt-2 block text-[#D5AA1B]">{t.hero.titleAccent}</span>
                 </h1>
                 <p className="mt-7 max-w-lg text-lg leading-8 text-black/65">{t.hero.text}</p>
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-black/70">
