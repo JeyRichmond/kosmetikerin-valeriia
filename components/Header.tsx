@@ -142,7 +142,7 @@ const serviceItems = {
     {
       title: "Brow & Lash",
       subtitle: "Lifting & Styling",
-      href: "/#prices",
+      href: "/brow-lash-zurich",
     },
     {
       title: "Waxing",

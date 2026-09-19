@@ -109,6 +109,11 @@ const handleTreatmentClick = (
     return;
   }
 
+  if (key === "brows") {
+    router.push("/brow-lash-zurich");
+    return;
+  }
+
   scrollToPrices();
 };
 
