@@ -135,7 +135,7 @@ export default function PeelingsPageContent() {
             <div className="mt-14 grid gap-5 md:grid-cols-3">
               {t.introduction.cards.map((card, index) => (
                 <Reveal key={card.title} delay={0.05 + index * 0.06}>
-                  <div className="h-full rounded-[24px] border border-black/7 bg-[#FAF9F6] p-7">
+                  <div className="h-full rounded-3xl border border-black/7 bg-[#FAF9F6] p-7">
                     <div className="mb-6 h-px w-10 bg-[#D5AA1B]" />
 
                     <h3 className="text-xl font-semibold">{card.title}</h3>
