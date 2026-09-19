@@ -131,7 +131,7 @@ export default function Header({
     {
       title: "Gesichtsbehandlungen",
       subtitle: "Pflege & Hautgesundheit",
-      href: "/#prices",
+      href: "/gesichtsbehandlungen-zurich",
     },
     {
       title: "Peelings",
@@ -244,7 +244,7 @@ export default function Header({
                             onClick={() =>
                               navigateToService(service.href)
                             }
-                            className="group/service flex w-full items-center justify-between rounded-[16px] px-4 py-3.5 text-left transition-colors duration-200 hover:bg-white"
+                            className="group/service flex w-full items-center justify-between rounded-2xl px-4 py-3.5 text-left transition-colors duration-200 hover:bg-white"
                           >
                             <div>
                               <p className="text-[14px] font-medium text-[#171717] transition-colors group-hover/service:text-[#B98A16]">

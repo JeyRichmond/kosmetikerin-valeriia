@@ -91,16 +91,21 @@ export default function TreatmentsSection({ t }: Props) {
     });
   };
 
-    const handleTreatmentClick = (
-    key: (typeof treatments)[number]["key"]
-  ) => {
-    if (key === "waxing") {
-      router.push("/waxing-zurich");
-      return;
-    }
+   const handleTreatmentClick = (
+  key: (typeof treatments)[number]["key"]
+) => {
+  if (key === "facial") {
+    router.push("/gesichtsbehandlungen-zurich");
+    return;
+  }
 
-    scrollToPrices();
-  };
+  if (key === "waxing") {
+    router.push("/waxing-zurich");
+    return;
+  }
+
+  scrollToPrices();
+};
 
   return (
     <section
