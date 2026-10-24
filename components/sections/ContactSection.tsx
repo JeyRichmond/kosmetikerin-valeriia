@@ -24,7 +24,7 @@ const content = {
     intro:
       "Mein Studio befindet sich zentral in Zürich. Termine können Sie bequem online buchen oder mich direkt kontaktieren.",
     addressLabel: "Adresse",
-    addressLine1: "Weinbergstrasse 18",
+    addressLine1: "Weinbergstrasse 43",
     addressLine2: "8001 Zürich",
     hoursLabel: "Öffnungszeiten",
     hoursLine1: "Montag – Samstag",
@@ -41,7 +41,7 @@ const content = {
     intro:
       "My studio is centrally located in Zürich. You can conveniently book your appointment online or contact me directly.",
     addressLabel: "Address",
-    addressLine1: "Weinbergstrasse 18",
+    addressLine1: "Weinbergstrasse 43",
     addressLine2: "8001 Zürich",
     hoursLabel: "Opening hours",
     hoursLine1: "Monday – Saturday",
@@ -58,7 +58,7 @@ const content = {
     intro:
       "Мій салон знаходиться в центральній частині Цюриха. Ви можете зручно записатися онлайн або зв’язатися зі мною напряму.",
     addressLabel: "Адреса",
-    addressLine1: "Weinbergstrasse 18",
+    addressLine1: "Weinbergstrasse 43",
     addressLine2: "8001 Zürich",
     hoursLabel: "Години роботи",
     hoursLine1: "Понеділок – Субота",

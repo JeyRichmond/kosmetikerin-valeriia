@@ -50,7 +50,7 @@ const content = {
       {
         question: "Wo befindet sich das Studio?",
         answer:
-          "Das Studio befindet sich an der Weinbergstrasse 18, 8001 Zürich, in zentraler Lage. Die genaue Position finden Sie weiter unten auf der Karte.",
+          "Das Studio befindet sich an der Weinbergstrasse 43, 8001 Zürich, in zentraler Lage. Die genaue Position finden Sie weiter unten auf der Karte.",
       },
     ],
   },
@@ -95,7 +95,7 @@ const content = {
       {
         question: "Where is the studio located?",
         answer:
-          "The studio is located at Weinbergstrasse 18, 8001 Zürich, in a central location. You will find the exact location on the map further down the page.",
+          "The studio is located at Weinbergstrasse 43, 8001 Zürich, in a central location. You will find the exact location on the map further down the page.",
       },
     ],
   },
@@ -140,7 +140,7 @@ const content = {
       {
         question: "Де знаходиться салон?",
         answer:
-          "Салон знаходиться за адресою Weinbergstrasse 18, 8001 Zürich, у центральній частині міста. Точне розташування ви побачите нижче на карті.",
+          "Салон знаходиться за адресою Weinbergstrasse 43, 8001 Zürich, у центральній частині міста. Точне розташування ви побачите нижче на карті.",
       },
     ],
   },

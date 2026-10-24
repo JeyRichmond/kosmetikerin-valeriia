@@ -14,7 +14,7 @@ export const peelingsTranslations = {
       ],
       bookingButton: "Termin buchen",
       treatmentsButton: "Peelings entdecken",
-      location: "Weinbergstrasse 18, 8001 Zürich",
+      location: "Weinbergstrasse 43, 8001 Zürich",
       locationNote: "Nur wenige Minuten vom Zürich HB",
       experience: "10+ Jahre",
       experienceText: "Erfahrung in der Kosmetik",
@@ -155,8 +155,8 @@ export const peelingsTranslations = {
     location: {
       eyebrow: "ZENTRAL IN ZÜRICH",
       title: "Dein Peeling in Zürich 8001",
-      text: "Die Behandlungen finden an der Weinbergstrasse 18, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
-      address: "Weinbergstrasse 18, 8001 Zürich",
+      text: "Die Behandlungen finden an der Weinbergstrasse 43, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+      address: "Weinbergstrasse 43, 8001 Zürich",
     },
 
     faq: {
@@ -201,7 +201,7 @@ export const peelingsTranslations = {
         {
           question: "Wo werden die Peelings in Zürich angeboten?",
           answer:
-            "Die Behandlungen finden an der Weinbergstrasse 18, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+            "Die Behandlungen finden an der Weinbergstrasse 43, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
         },
       ],
     },
@@ -227,7 +227,7 @@ export const peelingsTranslations = {
       ],
       bookingButton: "Book appointment",
       treatmentsButton: "Discover peels",
-      location: "Weinbergstrasse 18, 8001 Zurich",
+      location: "Weinbergstrasse 43, 8001 Zurich",
       locationNote: "Just a few minutes from Zurich HB",
       experience: "10+ years",
       experienceText: "Experience in cosmetology",
@@ -368,8 +368,8 @@ export const peelingsTranslations = {
     location: {
       eyebrow: "CENTRAL ZURICH",
       title: "Your peel in Zurich 8001",
-      text: "Treatments take place at Weinbergstrasse 18, 8001 Zurich – centrally located and only a few minutes from Zurich main station.",
-      address: "Weinbergstrasse 18, 8001 Zurich",
+      text: "Treatments take place at Weinbergstrasse 43, 8001 Zurich – centrally located and only a few minutes from Zurich main station.",
+      address: "Weinbergstrasse 43, 8001 Zurich",
     },
 
     faq: {
@@ -414,7 +414,7 @@ export const peelingsTranslations = {
         {
           question: "Where are the peels offered in Zurich?",
           answer:
-            "Treatments take place at Weinbergstrasse 18, 8001 Zurich – centrally located and only a few minutes from Zurich main station.",
+            "Treatments take place at Weinbergstrasse 43, 8001 Zurich – centrally located and only a few minutes from Zurich main station.",
         },
       ],
     },
@@ -440,7 +440,7 @@ export const peelingsTranslations = {
       ],
       bookingButton: "Записатися",
       treatmentsButton: "Переглянути пілінги",
-      location: "Weinbergstrasse 18, 8001 Zürich",
+      location: "Weinbergstrasse 43, 8001 Zürich",
       locationNote: "Лише кілька хвилин від Zürich HB",
       experience: "10+ років",
       experienceText: "досвіду в косметології",
@@ -581,8 +581,8 @@ export const peelingsTranslations = {
     location: {
       eyebrow: "У ЦЕНТРІ ЦЮРИХА",
       title: "Ваш пілінг у Zürich 8001",
-      text: "Процедури проводяться за адресою Weinbergstrasse 18, 8001 Zürich – у центрі міста, лише за кілька хвилин від Zürich Hauptbahnhof.",
-      address: "Weinbergstrasse 18, 8001 Zürich",
+      text: "Процедури проводяться за адресою Weinbergstrasse 43, 8001 Zürich – у центрі міста, лише за кілька хвилин від Zürich Hauptbahnhof.",
+      address: "Weinbergstrasse 43, 8001 Zürich",
     },
 
     faq: {
@@ -627,7 +627,7 @@ export const peelingsTranslations = {
         {
           question: "Де проводяться пілінги в Цюриху?",
           answer:
-            "Процедури проводяться за адресою Weinbergstrasse 18, 8001 Zürich – у центрі міста, лише за кілька хвилин від Zürich Hauptbahnhof.",
+            "Процедури проводяться за адресою Weinbergstrasse 43, 8001 Zürich – у центрі міста, лише за кілька хвилин від Zürich Hauptbahnhof.",
         },
       ],
     },

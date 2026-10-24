@@ -174,7 +174,7 @@ export const browLashTranslations = {
       title: "Brow & Lash Lifting in Zürich",
       text:
         "Professionelle Brow- und Lash-Behandlungen in zentraler Lage in Zürich – persönlich, sorgfältig und individuell auf dich abgestimmt.",
-      address: "Weinbergstrasse 18, 8001 Zürich",
+      address: "Weinbergstrasse 43, 8001 Zürich",
       button: "Termin buchen",
     },
 
@@ -397,7 +397,7 @@ export const browLashTranslations = {
       title: "Brow & Lash Lifting in Zurich",
       text:
         "Professional brow and lash treatments in a central Zurich location – personal, careful and individually tailored to you.",
-      address: "Weinbergstrasse 18, 8001 Zurich",
+      address: "Weinbergstrasse 43, 8001 Zurich",
       button: "Book appointment",
     },
 
@@ -620,7 +620,7 @@ export const browLashTranslations = {
       title: "Brow & Lash Lifting у Цюриху",
       text:
         "Професійні процедури для брів і вій у зручній центральній локації Цюриха – персонально, ретельно та індивідуально для тебе.",
-      address: "Weinbergstrasse 18, 8001 Zürich",
+      address: "Weinbergstrasse 43, 8001 Zürich",
       button: "Записатися",
     },
 

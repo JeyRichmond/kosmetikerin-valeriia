@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "Wo werden die Peelings in Zürich angeboten?",
     answer:
-      "Die Behandlungen finden an der Weinbergstrasse 18, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+      "Die Behandlungen finden an der Weinbergstrasse 43, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
   },
 ];
 

@@ -15,7 +15,7 @@ export const waxingTranslations = {
       ],
       booking: "Termin online buchen",
       prices: "Preise ansehen",
-      address: "Weinbergstrasse 18 · 8001 Zürich",
+      address: "Weinbergstrasse 43 · 8001 Zürich",
       location: "nur wenige Minuten vom Zürich HB",
       experience: "Jahre Erfahrung",
     },
@@ -179,7 +179,7 @@ export const waxingTranslations = {
       eyebrow: "Zentral in Zürich",
       title: "Dein Waxing-Termin in Zürich",
       text:
-        "Persönliche Behandlung in zentraler Lage an der Weinbergstrasse 18, 8001 Zürich.",
+        "Persönliche Behandlung in zentraler Lage an der Weinbergstrasse 43, 8001 Zürich.",
     },
 
     faq: {
@@ -226,7 +226,7 @@ export const waxingTranslations = {
         {
           question: "Wo befindet sich das Kosmetikstudio?",
           answer:
-            "Das Studio befindet sich an der Weinbergstrasse 18, 8001 Zürich – zentral und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+            "Das Studio befindet sich an der Weinbergstrasse 43, 8001 Zürich – zentral und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
         },
       ],
     },
@@ -237,7 +237,7 @@ export const waxingTranslations = {
       text:
         "Wähle deine gewünschte Behandlung und finde direkt online einen passenden Termin.",
       booking: "Termin online buchen",
-      address: "Weinbergstrasse 18 · 8001 Zürich",
+      address: "Weinbergstrasse 43 · 8001 Zürich",
       hours: "Montag–Samstag · 09:00–21:00",
     },
   },
@@ -256,7 +256,7 @@ export const waxingTranslations = {
       ],
       booking: "Book online",
       prices: "View prices",
-      address: "Weinbergstrasse 18 · 8001 Zurich",
+      address: "Weinbergstrasse 43 · 8001 Zurich",
       location: "just a few minutes from Zurich Main Station",
       experience: "Years of experience",
     },
@@ -420,7 +420,7 @@ export const waxingTranslations = {
       eyebrow: "Central Zurich",
       title: "Your waxing appointment in Zurich",
       text:
-        "Personal treatment in a central location at Weinbergstrasse 18, 8001 Zurich.",
+        "Personal treatment in a central location at Weinbergstrasse 43, 8001 Zurich.",
     },
 
     faq: {
@@ -467,7 +467,7 @@ export const waxingTranslations = {
         {
           question: "Where is the beauty studio located?",
           answer:
-            "The studio is located at Weinbergstrasse 18, 8001 Zurich – centrally located and only a few minutes from Zurich Main Station.",
+            "The studio is located at Weinbergstrasse 43, 8001 Zurich – centrally located and only a few minutes from Zurich Main Station.",
         },
       ],
     },
@@ -478,7 +478,7 @@ export const waxingTranslations = {
       text:
         "Choose your preferred treatment and find a suitable appointment directly online.",
       booking: "Book online",
-      address: "Weinbergstrasse 18 · 8001 Zurich",
+      address: "Weinbergstrasse 43 · 8001 Zurich",
       hours: "Monday–Saturday · 09:00–21:00",
     },
   },
@@ -497,7 +497,7 @@ export const waxingTranslations = {
       ],
       booking: "Записатися онлайн",
       prices: "Переглянути ціни",
-      address: "Weinbergstrasse 18 · 8001 Zürich",
+      address: "Weinbergstrasse 43 · 8001 Zürich",
       location: "лише кілька хвилин від головного вокзалу Цюриха",
       experience: "років досвіду",
     },
@@ -661,7 +661,7 @@ export const waxingTranslations = {
       eyebrow: "У центрі Цюриха",
       title: "Ваш запис на ваксинг у Цюриху",
       text:
-        "Індивідуальна процедура в зручному центральному розташуванні за адресою Weinbergstrasse 18, 8001 Zürich.",
+        "Індивідуальна процедура в зручному центральному розташуванні за адресою Weinbergstrasse 43, 8001 Zürich.",
     },
 
     faq: {
@@ -708,7 +708,7 @@ export const waxingTranslations = {
         {
           question: "Де знаходиться косметологічна студія?",
           answer:
-            "Студія знаходиться за адресою Weinbergstrasse 18, 8001 Zürich – у центрі міста, лише за кілька хвилин від головного вокзалу Цюриха.",
+            "Студія знаходиться за адресою Weinbergstrasse 43, 8001 Zürich – у центрі міста, лише за кілька хвилин від головного вокзалу Цюриха.",
         },
       ],
     },
@@ -719,7 +719,7 @@ export const waxingTranslations = {
       text:
         "Оберіть бажану процедуру та знайдіть зручний час для запису онлайн.",
       booking: "Записатися онлайн",
-      address: "Weinbergstrasse 18 · 8001 Zürich",
+      address: "Weinbergstrasse 43 · 8001 Zürich",
       hours: "Понеділок–субота · 09:00–21:00",
     },
   },

@@ -132,7 +132,7 @@ export default function RootLayout({
             telephone: "+41 76 516 51 54",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Weinbergstrasse 18",
+              streetAddress: "Weinbergstrasse 43",
               addressLocality: "Zürich",
               postalCode: "8001",
               addressCountry: "CH",

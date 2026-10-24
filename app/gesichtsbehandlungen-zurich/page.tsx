@@ -73,7 +73,7 @@ const faqs = [
   {
     question: "Wo befindet sich das Kosmetikstudio?",
     answer:
-      "Das Studio befindet sich an der Weinbergstrasse 18, 8001 Zürich – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+      "Das Studio befindet sich an der Weinbergstrasse 43, 8001 Zürich – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
   },
 ];
 

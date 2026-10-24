@@ -206,7 +206,7 @@ export default function WhyValeriiaSection({
                   strokeWidth={1.7}
                   className="text-[#D5AA1B]"
                 />
-                Zürich · Weinbergstrasse 18
+                Zürich · Weinbergstrasse 43 · 8001
               </div>
             </div>
           </div>
