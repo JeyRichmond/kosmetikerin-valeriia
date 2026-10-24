@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Brow & Lash Lifting Zürich",
 
   description:
-    "Professionelles Brow & Lash Lifting in Zürich 8001. Natürlich geformte Brauen und geschwungene Wimpern bei Kosmetikerin Valeriia – individuell und sorgfältig.",
+    "Professionelles Brow & Lash Lifting in Zürich 8006. Natürlich geformte Brauen und geschwungene Wimpern bei Kosmetikerin Valeriia – individuell und sorgfältig.",
 
   alternates: {
     canonical: "/brow-lash-zurich",
@@ -54,7 +54,7 @@ const serviceSchema = {
   name: "Brow & Lash Lifting in Zürich",
 
   description:
-    "Professionelles Brow Lifting und Lash Lifting in Zürich 8001. Individuell abgestimmte Behandlungen für natürlich geformte Brauen und geschwungene Wimpern.",
+    "Professionelles Brow Lifting und Lash Lifting in Zürich 8006. Individuell abgestimmte Behandlungen für natürlich geformte Brauen und geschwungene Wimpern.",
 
   url:
     "https://kosmetikerin-valeriia.ch/brow-lash-zurich",

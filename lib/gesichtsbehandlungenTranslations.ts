@@ -3,7 +3,7 @@ export type GesichtsbehandlungenLangKey = "de" | "en" | "ua";
 export const gesichtsbehandlungenTranslations = {
   de: {
     hero: {
-      eyebrow: "GESICHTSBEHANDLUNGEN · ZÜRICH 8001",
+      eyebrow: "GESICHTSBEHANDLUNGEN · ZÜRICH 8006",
       title: "Gesichtsbehandlungen",
       titleAccent: "in Zürich",
       text:
@@ -15,7 +15,7 @@ export const gesichtsbehandlungenTranslations = {
       ],
       bookingButton: "Termin online buchen",
       treatmentsButton: "Behandlungen entdecken",
-      location: "Weinbergstrasse 43 · 8001 Zürich",
+      location: "Weinbergstrasse 43 · 8006 Zürich",
       locationNote: "Nur wenige Minuten vom Zürich HB",
       experience: "10+",
       experienceText: "Jahre Erfahrung",
@@ -188,8 +188,8 @@ export const gesichtsbehandlungenTranslations = {
       eyebrow: "KOSMETIKSTUDIO IN ZÜRICH",
       title: "Zentral in Zürich – persönlich für dich da",
       text:
-        "Du findest mich an der Weinbergstrasse 43, 8001 Zürich. Das Studio liegt zentral und ist vom Zürich Hauptbahnhof in wenigen Minuten erreichbar.",
-      address: "Weinbergstrasse 43, 8001 Zürich",
+        "Du findest mich an der Weinbergstrasse 43, 8006 Zürich. Das Studio liegt zentral und ist vom Zürich Hauptbahnhof in wenigen Minuten erreichbar.",
+      address: "Weinbergstrasse 43, 8006 Zürich",
       note: "Nur wenige Minuten vom Zürich HB",
       button: "Termin online buchen",
     },
@@ -237,7 +237,7 @@ export const gesichtsbehandlungenTranslations = {
         {
           question: "Wo befindet sich das Kosmetikstudio?",
           answer:
-            "Das Studio befindet sich an der Weinbergstrasse 43, 8001 Zürich – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+            "Das Studio befindet sich an der Weinbergstrasse 43, 8006 Zürich – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
         },
       ],
     },
@@ -248,13 +248,13 @@ export const gesichtsbehandlungenTranslations = {
       text:
         "Buche deine Gesichtsbehandlung online und wir wählen gemeinsam die passende Pflege für deine Haut.",
       button: "Termin online buchen",
-      location: "Weinbergstrasse 43 · 8001 Zürich",
+      location: "Weinbergstrasse 43 · 8006 Zürich",
     },
   },
 
   en: {
     hero: {
-      eyebrow: "FACIAL TREATMENTS · ZURICH 8001",
+      eyebrow: "FACIAL TREATMENTS · ZURICH 8006",
       title: "Facial treatments",
       titleAccent: "in Zurich",
       text:
@@ -266,7 +266,7 @@ export const gesichtsbehandlungenTranslations = {
       ],
       bookingButton: "Book appointment",
       treatmentsButton: "Explore treatments",
-      location: "Weinbergstrasse 43 · 8001 Zurich",
+      location: "Weinbergstrasse 43 · 8006 Zurich",
       locationNote: "Just a few minutes from Zurich HB",
       experience: "10+",
       experienceText: "years of experience",
@@ -439,8 +439,8 @@ export const gesichtsbehandlungenTranslations = {
       eyebrow: "BEAUTY STUDIO IN ZURICH",
       title: "Central Zurich – personal care for you",
       text:
-        "You can find me at Weinbergstrasse 43, 8001 Zurich. The studio is centrally located and only a few minutes from Zurich main station.",
-      address: "Weinbergstrasse 43, 8001 Zurich",
+        "You can find me at Weinbergstrasse 43, 8006 Zurich. The studio is centrally located and only a few minutes from Zurich main station.",
+      address: "Weinbergstrasse 43, 8006 Zurich",
       note: "Just a few minutes from Zurich HB",
       button: "Book appointment",
     },
@@ -487,7 +487,7 @@ export const gesichtsbehandlungenTranslations = {
         {
           question: "Where is the beauty studio located?",
           answer:
-            "The studio is located at Weinbergstrasse 43, 8001 Zurich, only a few minutes from Zurich main station.",
+            "The studio is located at Weinbergstrasse 43, 8006 Zurich, only a few minutes from Zurich main station.",
         },
       ],
     },
@@ -498,13 +498,13 @@ export const gesichtsbehandlungenTranslations = {
       text:
         "Book your facial treatment online and together we will select suitable care for your skin.",
       button: "Book appointment",
-      location: "Weinbergstrasse 43 · 8001 Zurich",
+      location: "Weinbergstrasse 43 · 8006 Zurich",
     },
   },
 
   ua: {
     hero: {
-      eyebrow: "ДОГЛЯД ЗА ОБЛИЧЧЯМ · ЦЮРИХ 8001",
+      eyebrow: "ДОГЛЯД ЗА ОБЛИЧЧЯМ · ЦЮРИХ 8006",
       title: "Процедури для обличчя",
       titleAccent: "у Цюриху",
       text:
@@ -516,7 +516,7 @@ export const gesichtsbehandlungenTranslations = {
       ],
       bookingButton: "Записатися онлайн",
       treatmentsButton: "Переглянути процедури",
-      location: "Weinbergstrasse 43 · 8001 Zürich",
+      location: "Weinbergstrasse 43 · 8006 Zürich",
       locationNote: "Лише кілька хвилин від Zürich HB",
       experience: "10+",
       experienceText: "років досвіду",
@@ -689,8 +689,8 @@ export const gesichtsbehandlungenTranslations = {
       eyebrow: "КОСМЕТОЛОГ У ЦЮРИХУ",
       title: "У центрі Цюриха — персонально для вас",
       text:
-        "Я приймаю за адресою Weinbergstrasse 18, 8001 Zürich. Студія розташована в центрі міста, лише за кілька хвилин від головного вокзалу.",
-      address: "Weinbergstrasse 43, 8001 Zürich",
+        "Я приймаю за адресою Weinbergstrasse 18, 8006 Zürich. Студія розташована в центрі міста, лише за кілька хвилин від головного вокзалу.",
+      address: "Weinbergstrasse 43, 8006 Zürich",
       note: "Лише кілька хвилин від Zürich HB",
       button: "Записатися онлайн",
     },
@@ -737,7 +737,7 @@ export const gesichtsbehandlungenTranslations = {
         {
           question: "Де знаходиться косметологічна студія?",
           answer:
-            "Студія знаходиться за адресою Weinbergstrasse 43, 8001 Zürich, лише за кілька хвилин від головного вокзалу Цюриха.",
+            "Студія знаходиться за адресою Weinbergstrasse 43, 8006 Zürich, лише за кілька хвилин від головного вокзалу Цюриха.",
         },
       ],
     },
@@ -748,7 +748,7 @@ export const gesichtsbehandlungenTranslations = {
       text:
         "Запишіться на процедуру онлайн, і разом ми підберемо відповідний догляд для вашої шкіри.",
       button: "Записатися онлайн",
-      location: "Weinbergstrasse 43 · 8001 Zürich",
+      location: "Weinbergstrasse 43 · 8006 Zürich",
     },
   },
 } as const;

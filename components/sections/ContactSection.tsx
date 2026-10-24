@@ -25,7 +25,7 @@ const content = {
       "Mein Studio befindet sich zentral in Zürich. Termine können Sie bequem online buchen oder mich direkt kontaktieren.",
     addressLabel: "Adresse",
     addressLine1: "Weinbergstrasse 43",
-    addressLine2: "8001 Zürich",
+    addressLine2: "8006 Zürich",
     hoursLabel: "Öffnungszeiten",
     hoursLine1: "Montag – Samstag",
     hoursLine2: "09:00 – 21:00",
@@ -42,7 +42,7 @@ const content = {
       "My studio is centrally located in Zürich. You can conveniently book your appointment online or contact me directly.",
     addressLabel: "Address",
     addressLine1: "Weinbergstrasse 43",
-    addressLine2: "8001 Zürich",
+    addressLine2: "8006 Zürich",
     hoursLabel: "Opening hours",
     hoursLine1: "Monday – Saturday",
     hoursLine2: "09:00 – 21:00",
@@ -59,7 +59,7 @@ const content = {
       "Мій салон знаходиться в центральній частині Цюриха. Ви можете зручно записатися онлайн або зв’язатися зі мною напряму.",
     addressLabel: "Адреса",
     addressLine1: "Weinbergstrasse 43",
-    addressLine2: "8001 Zürich",
+    addressLine2: "8006 Zürich",
     hoursLabel: "Години роботи",
     hoursLine1: "Понеділок – Субота",
     hoursLine2: "09:00 – 21:00",
@@ -235,7 +235,7 @@ export default function ContactSection({ lang, onBook }: Props) {
                 {t.mapLabel}
               </p>
 
-              <p className="text-[10px] text-black/35">Zürich · 8001</p>
+              <p className="text-[10px] text-black/35">Zürich · 8006</p>
             </div>
 
             <div className="relative h-97.5 overflow-hidden rounded-[28px] border border-black/6 bg-white sm:h-105 lg:h-111.25">

@@ -17,7 +17,7 @@ export default function FAQSection() {
     {
       question: "Wo befindet sich das Studio?",
       answer:
-        "Das Studio befindet sich in Zürich, 8001, in der Weinbergstrasse 43.",
+        "Das Studio befindet sich in Zürich, 8006, in der Weinbergstrasse 43.",
     },
     {
       question: "Arbeiten Sie mit empfindlicher Haut?",

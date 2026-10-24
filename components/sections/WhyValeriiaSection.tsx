@@ -46,7 +46,7 @@ const content = {
 
     trust1: "10+ Jahre Erfahrung",
     trust2: "Persönliche Beratung",
-    trust3: "Zürich 8001",
+    trust3: "Zürich 8006",
 
     button: "Termin buchen",
   },
@@ -83,7 +83,7 @@ const content = {
 
     trust1: "10+ years experience",
     trust2: "Personal consultation",
-    trust3: "Zürich 8001",
+    trust3: "Zürich 8006",
 
     button: "Book appointment",
   },
@@ -120,7 +120,7 @@ const content = {
 
     trust1: "10+ років досвіду",
     trust2: "Особиста консультація",
-    trust3: "Zürich 8001",
+    trust3: "Zürich 8006",
 
     button: "Записатися",
   },
@@ -206,7 +206,7 @@ export default function WhyValeriiaSection({
                   strokeWidth={1.7}
                   className="text-[#D5AA1B]"
                 />
-                Zürich · Weinbergstrasse 43 · 8001
+                Zürich · Weinbergstrasse 43 · 8006
               </div>
             </div>
           </div>

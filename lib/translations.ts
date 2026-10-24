@@ -13,7 +13,7 @@ export const translations = {
     },
 
 hero: {
-  eyebrow: "Kosmetikstudio · Zürich 8001",
+  eyebrow: "Kosmetikstudio · Zürich 8006",
 
   titleLine1: "Professionelle",
   titleLine2: "Behandlungen",
@@ -24,12 +24,12 @@ hero: {
 
   trust1: "Präzise & hygienische Arbeit",
   trust2: "Individuelle Beratung",
-  trust3: "Zürich 8001",
+  trust3: "Zürich 8006",
 
   primaryCta: "Termin buchen",
   secondaryCta: "Behandlungen entdecken",
 
-  address: "Weinbergstrasse 43 · 8001 Zürich",
+  address: "Weinbergstrasse 43 · 8006 Zürich",
 
   experienceNumber: "10+",
   experienceLabel: "Jahre Erfahrung",
@@ -155,7 +155,7 @@ Ich freue mich darauf, Sie persönlich kennenzulernen.`,
       hoursLabel: "Öffnungszeiten",
       dummyPhone: "+41 76 516 51 54",
       dummyAddressLine1: "Weinbergstrasse 43,",
-      dummyAddressLine2: "8001 Zürich",
+      dummyAddressLine2: "8006 Zürich",
       dummyAddressLine3: "(in den Räumlichkeiten",
       dummyAddressLine4: "von Belmed-Esthetic)",
       dummyAddressLine5: "📍 Bitte klingeln → Valeriia",
@@ -185,7 +185,7 @@ Ich freue mich darauf, Sie persönlich kennenzulernen.`,
     },
 
 hero: {
-  eyebrow: "Beauty Studio · Zurich 8001",
+  eyebrow: "Beauty Studio · Zurich 8006",
 
   titleLine1: "Professional",
   titleLine2: "Beauty Treatments",
@@ -196,12 +196,12 @@ hero: {
 
   trust1: "Precise & hygienic work",
   trust2: "Individual consultation",
-  trust3: "Zurich 8001",
+  trust3: "Zurich 8006",
 
   primaryCta: "Book appointment",
   secondaryCta: "Discover treatments",
 
-  address: "Weinbergstrasse 43 · 8001 Zurich",
+  address: "Weinbergstrasse 43 · 8006 Zurich",
 
   experienceNumber: "10+",
   experienceLabel: "Years of experience",
@@ -327,7 +327,7 @@ I look forward to meeting you personally.`,
       hoursLabel: "Opening Hours",
       dummyPhone: "+41 76 516 51 54",
       dummyAddressLine1: "Weinbergstrasse 43,",
-      dummyAddressLine2: "8001 Zurich",
+      dummyAddressLine2: "8006 Zurich",
       dummyAddressLine3: "(inside the premises",
       dummyAddressLine4: "of Belmed-Esthetic)",
       dummyAddressLine5: "📍 Please ring → Valeriia",
@@ -357,7 +357,7 @@ I look forward to meeting you personally.`,
     },
 
  hero: {
-  eyebrow: "Косметологічна студія · Цюрих 8001",
+  eyebrow: "Косметологічна студія · Цюрих 8006",
 
   titleLine1: "Професійні",
   titleLine2: "процедури",
@@ -368,12 +368,12 @@ I look forward to meeting you personally.`,
 
   trust1: "Акуратна та гігієнічна робота",
   trust2: "Індивідуальна консультація",
-  trust3: "Цюрих 8001",
+  trust3: "Цюрих 8006",
 
   primaryCta: "Записатися",
   secondaryCta: "Переглянути процедури",
 
-  address: "Weinbergstrasse 43 · 8001 Zürich",
+  address: "Weinbergstrasse 43 · 8006 Zürich",
 
   experienceNumber: "10+",
   experienceLabel: "Років досвіду",
@@ -499,7 +499,7 @@ about: {
       hoursLabel: "Години роботи",
       dummyPhone: "+41 76 516 51 54",
       dummyAddressLine1: "Weinbergstrasse 43,",
-      dummyAddressLine2: "8001 Цюрих",
+      dummyAddressLine2: "8006 Цюрих",
       dummyAddressLine3: "(у приміщенні",
       dummyAddressLine4: "Belmed-Esthetic)",
       dummyAddressLine5: "📍 Будь ласка, дзвоніть → Valeriia",

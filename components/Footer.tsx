@@ -21,7 +21,7 @@ const content = {
     },
     instagram: "Instagram",
     whatsapp: "WhatsApp",
-    location: "Zürich · 8001",
+    location: "Zürich · 8006",
     design: "Richmond Design",
   },
 
@@ -36,7 +36,7 @@ const content = {
     },
     instagram: "Instagram",
     whatsapp: "WhatsApp",
-    location: "Zürich · 8001",
+    location: "Zürich · 8006",
     design: "Richmond Design",
   },
 
@@ -51,7 +51,7 @@ const content = {
     },
     instagram: "Instagram",
     whatsapp: "WhatsApp",
-    location: "Цюрих · 8001",
+    location: "Цюрих · 8006",
     design: "Richmond Design",
   },
 } as const;

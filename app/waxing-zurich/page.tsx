@@ -5,7 +5,7 @@ import WaxingPageContent from "@/components/waxing/WaxingPageContent";
 export const metadata: Metadata = {
   title: "Waxing Zürich für Frauen & Männer",
   description:
-    "Professionelles Waxing in Zürich 8001 für Frauen und Männer. Haarentfernung für Gesicht und Körper bei Kosmetikerin Valeriia – zentral in Zürich.",
+    "Professionelles Waxing in Zürich 8006 für Frauen und Männer. Haarentfernung für Gesicht und Körper bei Kosmetikerin Valeriia – zentral in Zürich.",
 
   alternates: {
     canonical: "/waxing-zurich",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Waxing Zürich für Frauen & Männer | Kosmetikerin Valeriia",
     description:
-      "Professionelles Waxing in Zürich 8001 für Frauen und Männer. Persönliche Betreuung und Haarentfernung für verschiedene Körperbereiche.",
+      "Professionelles Waxing in Zürich 8006 für Frauen und Männer. Persönliche Betreuung und Haarentfernung für verschiedene Körperbereiche.",
     url: "/waxing-zurich",
     siteName: "Kosmetikerin Valeriia",
     locale: "de_CH",
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "Wo befindet sich das Kosmetikstudio?",
     answer:
-      "Das Studio befindet sich an der Weinbergstrasse 18, 8001 Zürich – zentral und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+      "Das Studio befindet sich an der Weinbergstrasse 18, 8006 Zürich – zentral und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
   },
 ];
 
@@ -82,7 +82,7 @@ const serviceSchema = {
   "@id": "https://kosmetikerin-valeriia.ch/waxing-zurich#service",
   name: "Waxing in Zürich für Frauen & Männer",
   description:
-    "Professionelles Waxing in Zürich 8001 für Frauen und Männer. Haarentfernung für Gesicht und verschiedene Körperbereiche bei Kosmetikerin Valeriia.",
+    "Professionelles Waxing in Zürich 8006 für Frauen und Männer. Haarentfernung für Gesicht und verschiedene Körperbereiche bei Kosmetikerin Valeriia.",
   url: "https://kosmetikerin-valeriia.ch/waxing-zurich",
   image:
     "https://kosmetikerin-valeriia.ch/images/waxing/hero.jpg",

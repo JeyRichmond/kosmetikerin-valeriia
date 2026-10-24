@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Kosmetikerin Valeriia",
   },
   description:
-  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash sowie Peelings in Zürich 8001. Persönliche Betreuung bei Kosmetikerin Valeriia.",
+  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash sowie Peelings in Zürich 8006. Persönliche Betreuung bei Kosmetikerin Valeriia.",
 
   /* ================== GOOGLE VERIFICATION ================== */
   verification: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kosmetikerin Valeriia – Zürich",
     description:
-  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash sowie Peelings in Zürich 8001. Persönliche Betreuung bei Kosmetikerin Valeriia.",
+  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash sowie Peelings in Zürich 8006. Persönliche Betreuung bei Kosmetikerin Valeriia.",
     url: "https://kosmetikerin-valeriia.ch",
     siteName: "Kosmetikerin Valeriia",
     locale: "de_CH",
@@ -128,13 +128,13 @@ export default function RootLayout({
             logo: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
             image: "https://kosmetikerin-valeriia.ch/android-chrome-512x512.png",
             description:
-  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash und Peelings in Zürich 8001.",
+  "Gesichtsbehandlungen, Haarentfernung, Brow & Lash und Peelings in Zürich 8006.",
             telephone: "+41 76 516 51 54",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Weinbergstrasse 43",
               addressLocality: "Zürich",
-              postalCode: "8001",
+              postalCode: "8006",
               addressCountry: "CH",
             },
             geo: {

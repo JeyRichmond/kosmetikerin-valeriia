@@ -478,7 +478,7 @@ export default function PeelingsPageContent() {
         <section className="relative min-h-125 overflow-hidden sm:min-h-145">
           <Image
             src="/images/peelings/consultation.jpg"
-            alt="Kosmetikstudio in Zürich 8001"
+            alt="Kosmetikstudio in Zürich 8006"
             fill
             sizes="100vw"
             className="object-cover"

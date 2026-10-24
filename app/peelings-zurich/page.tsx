@@ -5,7 +5,7 @@ import PeelingsPageContent from "@/components/peelings/PeelingsPageContent";
 export const metadata: Metadata = {
   title: "Peeling Zürich | Professionelle Peelings | Kosmetikerin Valeriia",
   description:
-    "Professionelle Peelings in Zürich 8001 bei Kosmetikerin Valeriia. Manssol, Jessol, Balance Recovery, Tagespeeling und Tri Peel – individuell auf deine Haut abgestimmt.",
+    "Professionelle Peelings in Zürich 8006 bei Kosmetikerin Valeriia. Manssol, Jessol, Balance Recovery, Tagespeeling und Tri Peel – individuell auf deine Haut abgestimmt.",
 
   alternates: {
     canonical: "/peelings-zurich",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Peeling Zürich | Kosmetikerin Valeriia",
     description:
-      "Professionelle Peelings in Zürich 8001 – individuell auf Hautzustand und Pflegeziel abgestimmt. Manssol, Jessol, Balance Recovery, Tagespeeling und Tri Peel.",
+      "Professionelle Peelings in Zürich 8006 – individuell auf Hautzustand und Pflegeziel abgestimmt. Manssol, Jessol, Balance Recovery, Tagespeeling und Tri Peel.",
     url: "/peelings-zurich",
     siteName: "Kosmetikerin Valeriia",
     locale: "de_CH",
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "Wo werden die Peelings in Zürich angeboten?",
     answer:
-      "Die Behandlungen finden an der Weinbergstrasse 43, 8001 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+      "Die Behandlungen finden an der Weinbergstrasse 43, 8006 Zürich statt – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
   },
 ];
 
@@ -84,7 +84,7 @@ const serviceSchema = {
   name: "Professionelle Peelings in Zürich",
 
   description:
-    "Professionelle Peelings in Zürich 8001 bei Kosmetikerin Valeriia. Manssol, Jessol, Balance Recovery, Tagespeeling und Tri Peel – individuell auf Hautzustand und Pflegeziel abgestimmt.",
+    "Professionelle Peelings in Zürich 8006 bei Kosmetikerin Valeriia. Manssol, Jessol, Balance Recovery, Tagespeeling und Tri Peel – individuell auf Hautzustand und Pflegeziel abgestimmt.",
 
   url: "https://kosmetikerin-valeriia.ch/peelings-zurich",
 

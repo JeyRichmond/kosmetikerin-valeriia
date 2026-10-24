@@ -5,7 +5,7 @@ import GesichtsbehandlungenPageContent from "@/components/gesichtsbehandlungen/G
 export const metadata: Metadata = {
   title: "Gesichtsbehandlungen Zürich | Kosmetikerin Valeriia",
   description:
-    "Professionelle Gesichtsbehandlungen in Zürich 8001 – individuell abgestimmt auf deine Haut. Gesichtsreinigung, Hydro Glow, Pure Balance, Lifting Deluxe und Carboxytherapie bei Kosmetikerin Valeriia.",
+    "Professionelle Gesichtsbehandlungen in Zürich 8006 – individuell abgestimmt auf deine Haut. Gesichtsreinigung, Hydro Glow, Pure Balance, Lifting Deluxe und Carboxytherapie bei Kosmetikerin Valeriia.",
 
   alternates: {
     canonical: "/gesichtsbehandlungen-zurich",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gesichtsbehandlungen Zürich | Kosmetikerin Valeriia",
     description:
-      "Professionelle Gesichtsbehandlungen in Zürich 8001. Individuelle Pflege mit Gesichtsreinigung, Hydro Glow, Pure Balance, Lifting Deluxe und Carboxytherapie.",
+      "Professionelle Gesichtsbehandlungen in Zürich 8006. Individuelle Pflege mit Gesichtsreinigung, Hydro Glow, Pure Balance, Lifting Deluxe und Carboxytherapie.",
     url: "/gesichtsbehandlungen-zurich",
     siteName: "Kosmetikerin Valeriia",
     locale: "de_CH",
@@ -73,7 +73,7 @@ const faqs = [
   {
     question: "Wo befindet sich das Kosmetikstudio?",
     answer:
-      "Das Studio befindet sich an der Weinbergstrasse 43, 8001 Zürich – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
+      "Das Studio befindet sich an der Weinbergstrasse 43, 8006 Zürich – zentral gelegen und nur wenige Minuten vom Zürich Hauptbahnhof entfernt.",
   },
 ];
 
@@ -86,7 +86,7 @@ const serviceSchema = {
   name: "Gesichtsbehandlungen in Zürich",
 
   description:
-    "Professionelle Gesichtsbehandlungen in Zürich 8001 bei Kosmetikerin Valeriia. Individuelle Gesichtspflege mit Gesichtsreinigung, Hydro Glow, Pure Balance, Lifting Deluxe und Carboxytherapie.",
+    "Professionelle Gesichtsbehandlungen in Zürich 8006 bei Kosmetikerin Valeriia. Individuelle Gesichtspflege mit Gesichtsreinigung, Hydro Glow, Pure Balance, Lifting Deluxe und Carboxytherapie.",
 
   url: "https://kosmetikerin-valeriia.ch/gesichtsbehandlungen-zurich",
 
